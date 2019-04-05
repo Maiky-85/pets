@@ -1,32 +1,21 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor. Teste
+ */
 package pets;
 
-import javax.swing.JOptionPane;
-
+/**
+ *
+ * @author Maiky
+ */
 public class Main {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        
-        String rua = JOptionPane.showInputDialog("Rua");
-        String numero = JOptionPane.showInputDialog("Numero");
-	String bairro = JOptionPane.showInputDialog("Bairro");	
-        String cidade = JOptionPane.showInputDialog("Cidade");
-	String estado = JOptionPane.showInputDialog("Estado");
-	
-	Endereco enderecoClinica = new Endereco(rua, numero, bairro, cidade, estado);
-
-	String nome = JOptionPane.showInputDialog("Nome");
-	String telefone = JOptionPane.showInputDialog("Telefone");
-	String email = JOptionPane.showInputDialog("Email");
-
-	Clinica clinicaVet = new Clinica(nome, enderecoClinica, telefone, email);
-        
-        PersistenciaArquivo salvar = new PersistenciaArquivo();
-        salvar.salvarDadosClinica(clinicaVet);
-     
-        
-        
-        
+        // TODO code application logic here
     }
     
 }
