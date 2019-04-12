@@ -33,5 +33,56 @@ public class PersistenciaArquivo {
             Logger.getLogger(PersistenciaArquivo.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }
+    
+    public void salvarDadosDono(Dono dono) {
 
+        
+        FileWriter arq;
+        try {
+            arq = new FileWriter("dono.txt", true);  
+            
+            PrintWriter gravarArq = new PrintWriter(arq);
+            
+            gravarArq.append("\r\nDono Animal " + dono.getNome() + 
+                " | Endereco: Rua " + dono.getEndereco().getRua() + 
+                ", " + dono.getEndereco().getNumero() +
+                ", " + dono.getEndereco().getBairro() +
+                ", " + dono.getEndereco().getCidade() +
+                " - " + dono.getEndereco().getEstado() +
+                " | Telefone: " + dono.getTelefone() + 
+                " | Email: " + dono.getEmail() + "\r\n");   
+            
+            arq.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(PersistenciaArquivo.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    }
+    
+    public void salvarDadosAnimal(Animal animal) {
+
+        
+        FileWriter arq;
+        try {
+            arq = new FileWriter("animal.txt", true);  
+            
+            PrintWriter gravarArq = new PrintWriter(arq);
+            
+            gravarArq.append("\r\n" + animal.getTipo() + " " + animal.getNome() + 
+                " | Cor " + animal.getCor() + 
+                " | Raça " + animal.getRaca() +
+                " | Sexo: " + animal.getSexo()+
+                " | Porte:  " + animal.getPorte() +
+                " | Idade " + animal.getIdade() + "anos" +
+                " | Castrado: " + animal.getCastrado() + 
+                " | Vacinas: " + animal.getVacinas() + 
+                " | Vermifugado: " + animal.getVermifug()+     
+                " | Observações: " + animal.getObs() + "\r\n");   
+            
+            arq.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(PersistenciaArquivo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
