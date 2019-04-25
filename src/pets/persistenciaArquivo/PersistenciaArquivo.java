@@ -1,11 +1,14 @@
 
-package pets;
+package pets.persistenciaArquivo;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import pets.modelo.Animal;
+import pets.Clinica;
+import pets.Dono;
 
 public class PersistenciaArquivo {
 

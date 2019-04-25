@@ -1,6 +1,8 @@
 
 package pets;
 
+import pets.modelo.Animal;
+import pets.persistenciaArquivo.PersistenciaArquivo;
 import javax.swing.JOptionPane;
 
 public class Main {
