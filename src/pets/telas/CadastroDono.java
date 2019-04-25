@@ -41,6 +41,8 @@ public class CadastroDono extends javax.swing.JPanel {
         campoInstagram = new javax.swing.JTextField();
         campoTwitter = new javax.swing.JTextField();
         botaoFinaizar = new javax.swing.JButton();
+        whatsapp = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
         dadosDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         dadosDono.setText("Contato");
@@ -71,6 +73,14 @@ public class CadastroDono extends javax.swing.JPanel {
 
         botaoFinaizar.setText("Finalizar");
 
+        whatsapp.setText("WhatsApp");
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,11 +110,13 @@ public class CadastroDono extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(instagram)
-                                    .addComponent(twitter))
+                                    .addComponent(twitter)
+                                    .addComponent(whatsapp))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoInstagram)
-                                    .addComponent(campoTwitter)))))
+                                    .addComponent(campoTwitter)
+                                    .addComponent(jFormattedTextField1)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(180, 180, 180)
                         .addComponent(botaoFinaizar)))
@@ -137,9 +149,13 @@ public class CadastroDono extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(twitter)
                     .addComponent(campoTwitter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(whatsapp)
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
                 .addComponent(botaoFinaizar)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -156,8 +172,10 @@ public class CadastroDono extends javax.swing.JPanel {
     private javax.swing.JLabel email;
     private javax.swing.JLabel facebook;
     private javax.swing.JLabel instagram;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel numCelular;
     private javax.swing.JLabel numTelefone;
     private javax.swing.JLabel twitter;
+    private javax.swing.JLabel whatsapp;
     // End of variables declaration//GEN-END:variables
 }

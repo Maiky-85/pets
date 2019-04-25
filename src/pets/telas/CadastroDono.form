@@ -46,11 +46,13 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="instagram" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="twitter" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="whatsapp" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="campoInstagram" max="32767" attributes="0"/>
                                   <Component id="campoTwitter" max="32767" attributes="0"/>
+                                  <Component id="jFormattedTextField1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -96,9 +98,14 @@
                   <Component id="twitter" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="campoTwitter" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="whatsapp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Component id="botaoFinaizar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -167,6 +174,18 @@
     <Component class="javax.swing.JButton" name="botaoFinaizar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="whatsapp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="WhatsApp"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="(##)#####-####" subtype="-1" type="5"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>
