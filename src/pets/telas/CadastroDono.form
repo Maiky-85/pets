@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,13 +16,156 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="574" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="dadosDono" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="numTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numCelular" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="email" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="facebook" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="campoNumTelefone" max="32767" attributes="0"/>
+                                  <Component id="campoNumCelular" pref="267" max="32767" attributes="0"/>
+                                  <Component id="campoEmail" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="campoFacebook" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="instagram" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="twitter" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="campoTwitter" min="-2" pref="266" max="-2" attributes="0"/>
+                                  <Component id="campoInstagram" min="-2" pref="268" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                      <Component id="botaoFinaizar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="506" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="dadosDono" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="numTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoNumTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="numCelular" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoNumCelular" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="email" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="facebook" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoFacebook" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="instagram" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoInstagram" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="twitter" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoTwitter" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="botaoFinaizar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="dadosDono">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="15" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Contato"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="numTelefone">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Telefone"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="email">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="E-mail"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="numCelular">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Celular"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="facebook">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Facebook"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="instagram">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Instagram"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="twitter">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Twitter"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="campoNumTelefone">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="(##)####-####" subtype="-1" type="5"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="campoNumCelular">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="(##)#####-####" subtype="-1" type="5"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoEmail">
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoFacebook">
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoInstagram">
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoTwitter">
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoFinaizar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Finalizar"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>
