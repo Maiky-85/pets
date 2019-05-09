@@ -5,6 +5,9 @@
  */
 package pets.telas;
 
+import pets.modelo.Animal;
+import pets.persistenciaArquivo.PersistenciaArquivo;
+
 /**
  *
  * @author rafae
@@ -47,7 +50,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         campoTipo = new javax.swing.JTextPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        campoCor = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
         campoIdade = new javax.swing.JTextPane();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -100,7 +103,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(campoTipo);
 
-        jScrollPane4.setViewportView(jTextPane2);
+        jScrollPane4.setViewportView(campoCor);
 
         jScrollPane5.setViewportView(campoIdade);
 
@@ -118,6 +121,11 @@ public class CadastroAnimal extends javax.swing.JFrame {
         botaoFinalizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botaoFinalizarMouseClicked(evt);
+            }
+        });
+        botaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoFinalizarActionPerformed(evt);
             }
         });
 
@@ -292,6 +300,20 @@ public class CadastroAnimal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoFinalizarMouseClicked
 
+    private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
+         
+//cria um objeto do tipo animal
+        Animal novoAnimal = new Animal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), this.campoRaca.getSelectedItem(),
+                this.campoSexo.getSelectedItem(), this.campoPorte.getSelectedItem(), this.campoIdade.getText(), this.campoAntirrabica.getText(),
+                this.campoV10.getText(), this.campoVermifug.getText(), this.campoUltLocalizacao.getText(), this.campoInfAdicional.getText());
+        
+        // vai salvar os dados do formulário do animal na persistencia de arquivo
+        PersistenciaArquivo persistencia = new PersistenciaArquivo();
+        
+        persistencia.salvarDadosAnimal(novoAnimal);
+        
+    }//GEN-LAST:event_botaoFinalizarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -331,6 +353,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
     private javax.swing.JButton botaoFinalizar;
     private javax.swing.JFormattedTextField campoAntirrabica;
     private javax.swing.JComboBox<String> campoCastracao;
+    private javax.swing.JTextPane campoCor;
     private javax.swing.JTextPane campoIdade;
     private javax.swing.JTextArea campoInfAdicional;
     private javax.swing.JTextField campoNome;
@@ -355,7 +378,6 @@ public class CadastroAnimal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextPane jTextPane2;
     private javax.swing.JLabel nome;
     private javax.swing.JLabel porte;
     private javax.swing.JLabel raca;

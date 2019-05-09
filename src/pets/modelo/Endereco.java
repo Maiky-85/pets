@@ -1,5 +1,5 @@
 
-package pets;
+package pets.modelo;
 
 public class Endereco {
   
@@ -9,6 +9,7 @@ public class Endereco {
     private String bairro;
     private String cidade;
     private String estado;
+    private String cep;
 
 
     public Endereco(String rua, String numero, String bairro, String cidade, String estado){
@@ -17,6 +18,8 @@ public class Endereco {
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
+        this.cep = cep;
+        
     }
     
     
@@ -65,6 +68,15 @@ public class Endereco {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+    
+    //cep
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
     
     

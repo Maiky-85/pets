@@ -1,5 +1,5 @@
 
-package pets;
+package pets.modelo;
 
 public class Clinica {
     

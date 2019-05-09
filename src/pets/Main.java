@@ -1,6 +1,9 @@
 
 package pets;
 
+import pets.modelo.Endereco;
+import pets.modelo.Dono;
+import pets.modelo.Clinica;
 import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import javax.swing.JOptionPane;

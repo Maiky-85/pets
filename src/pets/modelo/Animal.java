@@ -30,6 +30,10 @@ public class Animal {
         this.vermifug = vermifug;
         this.obs = obs;
     }
+
+    public Animal(String text, String text0, String text1, Object selectedItem, Object selectedItem0, Object selectedItem1, String text2, String text3, String text4, String text5, String text6, String text7) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public String getNome() {
         return nome;
