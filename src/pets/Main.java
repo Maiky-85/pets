@@ -27,8 +27,8 @@ public class Main {
             String vermifug = JOptionPane.showInputDialog("Vermifugado (S) ou (N)");
             String obs = JOptionPane.showInputDialog("Observações");
             
-            Animal novoAnimal = new Animal(nome, tipo, cor, raca,sexo,porte,
-            idade,castrado,vacinas,vermifug,obs);
+            Animal novoAnimal = new Animal(nome, tipo, cor, raca, sexo, porte,
+            idade, castrado, vacinas, vermifug, obs);
             
             PersistenciaArquivo salvar = new PersistenciaArquivo();
             salvar.salvarDadosAnimal(novoAnimal);
@@ -40,8 +40,9 @@ public class Main {
             String bairro = JOptionPane.showInputDialog("Bairro");	
             String cidade = JOptionPane.showInputDialog("Cidade");
             String estado = JOptionPane.showInputDialog("Estado");
+            String cep = JOptionPane.showInputDialog("CEP");
 
-            Endereco enderecoDono = new Endereco(rua, numero, bairro, cidade, estado);
+            Endereco enderecoDono = new Endereco(rua, numero, bairro, cidade, estado, cep);
 
             String nome = JOptionPane.showInputDialog("Nome");
             String telefone = JOptionPane.showInputDialog("Telefone");
@@ -58,8 +59,9 @@ public class Main {
             String bairro = JOptionPane.showInputDialog("Bairro");	
             String cidade = JOptionPane.showInputDialog("Cidade");
             String estado = JOptionPane.showInputDialog("Estado");
+            String cep = JOptionPane.showInputDialog("CEP");
 
-            Endereco enderecoClinica = new Endereco(rua, numero, bairro, cidade, estado);
+            Endereco enderecoClinica = new Endereco(rua, numero, bairro, cidade, estado, cep);
 
             String nome = JOptionPane.showInputDialog("Nome");
             String telefone = JOptionPane.showInputDialog("Telefone");
