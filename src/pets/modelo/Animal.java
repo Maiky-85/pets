@@ -17,6 +17,7 @@ public class Animal {
     private String obs;
     
     
+    
     public Animal(String nome, String tipo, String cor, String raca, String sexo,
     String porte, String idade, String castrado, String vacinaV10, String vacinaAntirrabica, String vermifug,
     String obs){
