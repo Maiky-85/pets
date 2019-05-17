@@ -12,7 +12,7 @@ public class Endereco {
     private String cep;
 
 
-    public Endereco(String rua, String numero, String bairro, String cidade, String estado){
+    public Endereco(String rua, String numero, String bairro, String cidade, String estado, String cep){
         this.rua = rua;
         this.numero = Integer.parseInt(numero);
         this.bairro = bairro;
@@ -21,9 +21,6 @@ public class Endereco {
         this.cep = cep;
         
     }
-    
-    
-    
     
     //rua
     public String getRua() {
