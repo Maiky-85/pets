@@ -7,11 +7,26 @@ import pets.modelo.Clinica;
 import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import javax.swing.JOptionPane;
+import pets.telas.CadastroAnimal;
+import pets.telas.CadastroClinica;
+import pets.telas.CadastroDono;
 
 public class Main {
 
     public static void main(String[] args) {
-        String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
+        
+        
+        
+//        CadastroClinica cadastroClinica = new CadastroClinica();
+//        cadastroClinica.setVisible(true);
+        
+//        CadastroDono cadastroDono = new CadastroDono();
+//        cadastroDono.setVisible(true);
+        
+      CadastroAnimal cadastroAnimal = new CadastroAnimal();
+      cadastroAnimal.setVisible(true);
+        
+        /*String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
                 + "\n (1) Animal  \n (2) Dono \n (3) Clínica");
         
         if (Integer.parseInt(opcao) == 1){
@@ -73,10 +88,9 @@ public class Main {
         
         else{
             System.out.println("Opção Inválida");
-        }
+        }*/
         //comentario
-        
-        
+                
     }
     
 }

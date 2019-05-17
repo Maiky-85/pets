@@ -11,12 +11,13 @@ public class Animal {
     private String porte;
     private int idade;
     private String castrado;
-    private String vacinas;
+    private String vacinaV10;
+    private String vacinaAntirrabica;
     private String vermifug;
     private String obs;
     
     public Animal(String nome, String tipo, String cor, String raca, String sexo,
-    String porte, String idade, String castrado, String vacinas, String vermifug,
+    String porte, String idade, String castrado, String vacinaV10, String vacinaAntirrabica, String vermifug,
     String obs){
         this.nome = nome;
 	this.tipo = tipo;
@@ -26,14 +27,15 @@ public class Animal {
         this.porte = porte;
         this.idade = Integer.parseInt(idade);
         this.castrado = castrado;
-        this.vacinas = vacinas;
+        this.vacinaV10 = vacinaV10;
+        this.vacinaAntirrabica = vacinaAntirrabica;
         this.vermifug = vermifug;
         this.obs = obs;
     }
 
-    public Animal(String text, String text0, String text1, Object selectedItem, Object selectedItem0, Object selectedItem1, String text2, String text3, String text4, String text5, String text6, String text7) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
+
+    
     
     public String getNome() {
         return nome;
@@ -106,13 +108,22 @@ public class Animal {
         this.castrado = castrado;
     }
     
-     //vacinas
-    public String getVacinas() {
-        return vacinas;
+     //vacinaV10
+    public String getVacinaV10() {
+        return vacinaV10;
     }
 
-    public void setVacinas(String vacinas) {
-        this.vacinas = vacinas;
+    public void setVacinaV10(String vacinaV10) {
+        this.vacinaV10 = vacinaV10;
+    }
+    
+     //vacinaAntirrabica
+    public String getVacinaAntirrabica() {
+        return vacinaAntirrabica;
+    }
+
+    public void setVacinaAntirrabica(String vacinas) {
+        this.vacinaAntirrabica = vacinaAntirrabica;
     }
     
      //vermifugacao

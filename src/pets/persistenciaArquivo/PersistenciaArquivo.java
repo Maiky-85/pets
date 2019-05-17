@@ -78,7 +78,8 @@ public class PersistenciaArquivo {
                 " | Porte:  " + animal.getPorte() +
                 " | Idade " + animal.getIdade() + "anos" +
                 " | Castrado: " + animal.getCastrado() + 
-                " | Vacinas: " + animal.getVacinas() + 
+                " | VacinaV10: " + animal.getVacinaV10() + 
+                " | VacinaAntirrabica: " + animal.getVacinaAntirrabica() + 
                 " | Vermifugado: " + animal.getVermifug()+     
                 " | Observações: " + animal.getObs() + "\r\n");   
             

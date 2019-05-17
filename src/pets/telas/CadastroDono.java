@@ -7,12 +7,12 @@ package pets.telas;
 
 /**
  *
- * @author rafae
+ * @author 20162bsi0490
  */
-public class CadastroDono extends javax.swing.JPanel {
+public class CadastroDono extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroDono
+     * Creates new form CadastroDono2
      */
     public CadastroDono() {
         initComponents();
@@ -27,37 +27,42 @@ public class CadastroDono extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dadosDono = new javax.swing.JLabel();
-        numTelefone = new javax.swing.JLabel();
-        email = new javax.swing.JLabel();
-        numCelular = new javax.swing.JLabel();
-        facebook = new javax.swing.JLabel();
-        instagram = new javax.swing.JLabel();
-        twitter = new javax.swing.JLabel();
-        campoNumTelefone = new javax.swing.JFormattedTextField();
-        campoNumCelular = new javax.swing.JFormattedTextField();
-        campoEmail = new javax.swing.JTextField();
-        campoFacebook = new javax.swing.JTextField();
-        campoInstagram = new javax.swing.JTextField();
-        campoTwitter = new javax.swing.JTextField();
-        botaoFinaizar = new javax.swing.JButton();
         whatsapp = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        twitter = new javax.swing.JLabel();
+        campoTwitter = new javax.swing.JTextField();
+        instagram = new javax.swing.JLabel();
+        campoInstagram = new javax.swing.JTextField();
+        facebook = new javax.swing.JLabel();
+        campoFacebook = new javax.swing.JTextField();
+        email = new javax.swing.JLabel();
+        campoEmail = new javax.swing.JTextField();
+        numTelefone = new javax.swing.JLabel();
+        campoNumTelefone = new javax.swing.JFormattedTextField();
+        campoNumCelular = new javax.swing.JFormattedTextField();
+        numCelular = new javax.swing.JLabel();
+        dadosDono = new javax.swing.JLabel();
+        botaoFinalizar = new javax.swing.JButton();
 
-        dadosDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        dadosDono.setText("Contato");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        numTelefone.setText("Telefone");
+        whatsapp.setText("WhatsApp");
 
-        email.setText("E-mail");
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
-        numCelular.setText("Celular");
-
-        facebook.setText("Facebook");
+        twitter.setText("Twitter");
 
         instagram.setText("Instagram");
 
-        twitter.setText("Twitter");
+        facebook.setText("Facebook");
+
+        email.setText("E-mail");
+
+        numTelefone.setText("Telefone");
 
         try {
             campoNumTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
@@ -71,24 +76,26 @@ public class CadastroDono extends javax.swing.JPanel {
             ex.printStackTrace();
         }
 
-        botaoFinaizar.setText("Finalizar");
+        numCelular.setText("Celular");
 
-        whatsapp.setText("WhatsApp");
+        dadosDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        dadosDono.setText("Contato");
 
-        try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        botaoFinalizar.setText("Finalizar");
+        botaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoFinalizarActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(dadosDono)
                             .addGroup(layout.createSequentialGroup()
@@ -116,16 +123,16 @@ public class CadastroDono extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoInstagram)
                                     .addComponent(campoTwitter)
-                                    .addComponent(jFormattedTextField1)))))
+                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(botaoFinaizar)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGap(162, 162, 162)
+                        .addComponent(botaoFinalizar)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addComponent(dadosDono)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -153,15 +160,56 @@ public class CadastroDono extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(whatsapp)
                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
-                .addComponent(botaoFinaizar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(botaoFinalizar)
+                .addGap(28, 28, 28))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoFinalizarActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CadastroDono().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoFinaizar;
+    private javax.swing.JButton botaoFinalizar;
     private javax.swing.JTextField campoEmail;
     private javax.swing.JTextField campoFacebook;
     private javax.swing.JTextField campoInstagram;
