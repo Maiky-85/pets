@@ -1,12 +1,12 @@
 
 package pets;
 
-import pets.modelo.Endereco;
-import pets.modelo.Dono;
-import pets.modelo.Clinica;
-import pets.modelo.Animal;
-import pets.persistenciaArquivo.PersistenciaArquivo;
-import javax.swing.JOptionPane;
+//import pets.modelo.Endereco;
+//import pets.modelo.Dono;
+//import pets.modelo.Clinica;
+//import pets.modelo.Animal;
+//import pets.persistenciaArquivo.PersistenciaArquivo;
+//import javax.swing.JOptionPane;
 import pets.telas.CadastroAnimal;
 import pets.telas.CadastroClinica;
 import pets.telas.CadastroDono;
@@ -17,14 +17,14 @@ public class Main {
         
         
         
-//        CadastroClinica cadastroClinica = new CadastroClinica();
-//        cadastroClinica.setVisible(true);
+//      CadastroClinica cadastroClinica = new CadastroClinica();
+//      cadastroClinica.setVisible(true);
         
-//        CadastroDono cadastroDono = new CadastroDono();
-//        cadastroDono.setVisible(true);
+//      CadastroDono cadastroDono = new CadastroDono();
+//      cadastroDono.setVisible(true);
         
-      CadastroAnimal cadastroAnimal = new CadastroAnimal();
-      cadastroAnimal.setVisible(true);
+        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+        cadastroAnimal.setVisible(true);
         
         /*String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
                 + "\n (1) Animal  \n (2) Dono \n (3) Clínica");

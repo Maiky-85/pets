@@ -1,6 +1,9 @@
 
 package pets.persistenciaArquivo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,16 +15,17 @@ import pets.modelo.Dono;
 
 public class PersistenciaArquivo {
 
+    // salvar dados da clínica
     public void salvarDadosClinica(Clinica clinica) {
 
-        
         FileWriter arq;
+        
         try {
             arq = new FileWriter("clinicas.txt", true);  
-            
+                              
             PrintWriter gravarArq = new PrintWriter(arq);
             
-            gravarArq.append("\r\nClinica Veterinaria " + clinica.getNome() + 
+            gravarArq.append("\r\nClinica Veterinaria: " + clinica.getNome() + 
                 " | Endereco: Rua " + clinica.getEndereco().getRua() + 
                 ", " + clinica.getEndereco().getNumero() +
                 ", " + clinica.getEndereco().getBairro() +
@@ -30,23 +34,25 @@ public class PersistenciaArquivo {
                 " | Telefone: " + clinica.getTelefone() + 
                 " | Email: " + clinica.getEmail() + "\r\n");   
             
-            arq.close();
-            
-        } catch (IOException ex) {
+            arq.close();         
+        }
+        
+        catch (IOException ex) {
             Logger.getLogger(PersistenciaArquivo.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }
     
+    // salvar dados do dono do animal
     public void salvarDadosDono(Dono dono) {
-
         
         FileWriter arq;
+        
         try {
             arq = new FileWriter("dono.txt", true);  
             
             PrintWriter gravarArq = new PrintWriter(arq);
             
-            gravarArq.append("\r\nDono Animal " + dono.getNome() + 
+            gravarArq.append("\r\nNome: " + dono.getNome() + 
                 " | Endereco: Rua " + dono.getEndereco().getRua() + 
                 ", " + dono.getEndereco().getNumero() +
                 ", " + dono.getEndereco().getBairro() +
@@ -56,36 +62,42 @@ public class PersistenciaArquivo {
                 " | Email: " + dono.getEmail() + "\r\n");   
             
             arq.close();
-            
-        } catch (IOException ex) {
+        } 
+        
+        catch (IOException ex) {
             Logger.getLogger(PersistenciaArquivo.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }
     
+    // salvar dados do animal
     public void salvarDadosAnimal(Animal animal) {
-
         
         FileWriter arq;
+        
         try {
             arq = new FileWriter("animal.txt", true);  
             
             PrintWriter gravarArq = new PrintWriter(arq);
             
-            gravarArq.append("\r\n" + animal.getTipo() + " " + animal.getNome() + 
-                " | Cor " + animal.getCor() + 
-                " | Raça " + animal.getRaca() +
+            gravarArq.append("\r\nTipo: " + animal.getTipo() + " | Nome: " + animal.getNome() + 
+                " | Cor: " + animal.getCor() + 
+                " | Raça: " + animal.getRaca() +
                 " | Sexo: " + animal.getSexo()+
                 " | Porte:  " + animal.getPorte() +
-                " | Idade " + animal.getIdade() + "anos" +
-                " | Castrado: " + animal.getCastrado() + 
-                " | VacinaV10: " + animal.getVacinaV10() + 
-                " | VacinaAntirrabica: " + animal.getVacinaAntirrabica() + 
-                " | Vermifugado: " + animal.getVermifug()+     
-                " | Observações: " + animal.getObs() + "\r\n");   
+                " | Idade: " + animal.getIdade() + "anos" +
+                " | Castrado: " + animal.getCastracao() + 
+                " | Vacina V10: " + animal.getVacinaV10() + 
+                " | Vacina Antirrábica: " + animal.getVacinaAntirrabica() + 
+                " | Vermifugação: " + animal.getVermifugacao()+
+                " | Último local visto: " + animal.getUltimaLocalizacao()+  
+                " | Informações Adicionais: " + animal.getObservacao() + "\r\n");   
             
             arq.close();
             
-        } catch (IOException ex) {
+            
+        } 
+        
+        catch (IOException ex) {
             Logger.getLogger(PersistenciaArquivo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

@@ -368,7 +368,7 @@ public class CadastroClinica extends javax.swing.JFrame {
     }//GEN-LAST:event_campoFacebookActionPerformed
 
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_botaoFinalizarActionPerformed
 
     /**

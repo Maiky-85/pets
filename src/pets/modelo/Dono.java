@@ -1,31 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pets.modelo;
 
-/**
- *
- * @author Maiky
- */
 public class Dono {
-    //atributos
+    
+    // atributos da classe Dono
     private String nome;
     private Endereco endereco;
     private long telefone;
     private String email;
 
-    public Dono(String nome, Endereco endereco , String telefone, String email){
+    public Dono(String nome, Endereco endereco, String telefone, String email){
+        
         this.nome = nome;
 	this.endereco = endereco;
-	this.telefone = Long.parseLong(telefone);
+	this.telefone = Long.parseLong(telefone);                               // conversão do dado de String para Long
 	this.email = email;
     }
-
     
-    
-    //nome
+    // nome do dono
     public String getNome() {
         return nome;
     }
@@ -34,7 +26,7 @@ public class Dono {
         this.nome = nome;
     }
     
-    //endereco
+    // endeço do dono
     public Endereco getEndereco() {
         return endereco;
     }
@@ -43,7 +35,7 @@ public class Dono {
         this.endereco = endereco;
     }
     
-    //telefone
+    // telefone do dono
     public long getTelefone() {
         return telefone;
     }
@@ -52,7 +44,7 @@ public class Dono {
         this.telefone = telefone;
     }
     
-    //email
+    // email do dono
     public String getEmail() {
         return email;
     }
@@ -60,4 +52,5 @@ public class Dono {
     public void setEmail(String email) {
         this.email = email;
     }
+    
 }

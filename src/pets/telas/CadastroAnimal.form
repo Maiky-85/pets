@@ -34,26 +34,23 @@
                                   <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="tipo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
                                   <Component id="cor" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="dataV10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dataVermifug" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dataAntirrabica" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vacinaV10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vermifugacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vacinaAntirrabica" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="idade" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="castracao" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="dadosAnimal" min="-2" max="-2" attributes="0"/>
                                   <Component id="porte" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="nome" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="raca" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ultLocalizacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ultimaLocalizacao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tipo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -61,7 +58,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="infAdicional" min="-2" max="-2" attributes="0"/>
+                      <Component id="observacao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -81,7 +78,7 @@
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="campoAntirrabica" alignment="0" pref="73" max="32767" attributes="0"/>
                       <Component id="campoV10" alignment="0" max="32767" attributes="0"/>
-                      <Component id="campoVermifug" alignment="0" max="32767" attributes="0"/>
+                      <Component id="campoVermifugacao" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -109,9 +106,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="nome" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="tipo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="cor" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -132,7 +129,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="campoV10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="campoVermifug" min="-2" max="-2" attributes="0"/>
+                      <Component id="campoVermifugacao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -146,22 +143,22 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="castracao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="dataAntirrabica" min="-2" max="-2" attributes="0"/>
+                      <Component id="vacinaAntirrabica" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="dataV10" min="-2" max="-2" attributes="0"/>
+                      <Component id="vacinaV10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="dataVermifug" min="-2" max="-2" attributes="0"/>
+                      <Component id="vermifugacao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ultLocalizacao" min="-2" max="-2" attributes="0"/>
+                  <Component id="ultimaLocalizacao" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <Component id="infAdicional" min="-2" max="-2" attributes="0"/>
+                  <Component id="observacao" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="botaoFinalizar" min="-2" max="-2" attributes="0"/>
@@ -219,27 +216,27 @@
         <Property name="text" type="java.lang.String" value="O animal &#xe9; castrado?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="dataAntirrabica">
+    <Component class="javax.swing.JLabel" name="vacinaAntirrabica">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vacina antirr&#xe1;bica"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="dataV10">
+    <Component class="javax.swing.JLabel" name="vacinaV10">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vacina V8 ou V10"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="dataVermifug">
+    <Component class="javax.swing.JLabel" name="vermifugacao">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vermifuga&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="ultLocalizacao">
+    <Component class="javax.swing.JLabel" name="ultimaLocalizacao">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xda;ltimo local visto"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="infAdicional">
+    <Component class="javax.swing.JLabel" name="observacao">
       <Properties>
         <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es adicionais"/>
       </Properties>
@@ -251,7 +248,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="campoInfAdicional">
+        <Component class="javax.swing.JTextArea" name="campoObservacao">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -304,7 +301,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextPane" name="campoUltLocalizacao">
+        <Component class="javax.swing.JTextPane" name="campoUltimaLocalizacao">
         </Component>
       </SubComponents>
     </Container>
@@ -420,7 +417,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="campoVermifug">
+    <Component class="javax.swing.JFormattedTextField" name="campoVermifugacao">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
           <Format format="##/##/####" subtype="-1" type="5"/>

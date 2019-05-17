@@ -1,8 +1,20 @@
-    
+/*
+ * PetSOS
+ * Aplicativo para localicação de animais domésticos perdidos
+ * Projeto de Programação Orientada a Objetos I
+ */
+
+/**
+ * @author Brunna Dalzini
+ * @author Maikysuel Braga
+ * @author Rafaela Pessin
+*/   
+
 package pets.modelo;
 
 public class Animal {
     
+    // atributos da classe Animal
     private String nome;
     private String tipo;
     private String cor;
@@ -10,36 +22,31 @@ public class Animal {
     private String sexo;
     private String porte;
     private int idade;
-    private String castrado;
-    private String vacinaV10;
+    private String castracao;
     private String vacinaAntirrabica;
-    private String vermifug;
-    private String obs;
+    private String vacinaV10;
+    private String vermifugacao;
+    private String ultimaLocalizacao;
+    private String observacao;
     
-    
-    
-    
-    public Animal(String nome, String tipo, String cor, String raca, String sexo,
-    String porte, String idade, String castrado, String vacinaV10, String vacinaAntirrabica, String vermifug,
-    String obs){
+    public Animal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
+    String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao){
+        
         this.nome = nome;
 	this.tipo = tipo;
 	this.cor = cor;
 	this.raca = raca;
         this.sexo = sexo;
         this.porte = porte;
-        this.idade = Integer.parseInt(idade);
-        this.castrado = castrado;
-        this.vacinaV10 = vacinaV10;
+        this.idade = Integer.parseInt(idade);                                   // conversão do dado de String para inteiro
+        this.castracao = castracao;
         this.vacinaAntirrabica = vacinaAntirrabica;
-        this.vermifug = vermifug;
-        this.obs = obs;
+        this.vacinaV10 = vacinaV10;
+        this.vermifugacao = vermifugacao;
+        this.ultimaLocalizacao = ultimaLocalizacao;
+        this.observacao = observacao;
     }
 
-  
-
-    
-    
     public String getNome() {
         return nome;
     }
@@ -48,7 +55,7 @@ public class Animal {
         this.nome = nome;
     }
     
-    //tipo
+    // tipo de animal
     public String getTipo() {
         return tipo;
     }
@@ -57,7 +64,7 @@ public class Animal {
         this.tipo = tipo;
     }
     
-    //cor
+    // cor do animal
     public String getCor() {
         return cor;
     }
@@ -66,7 +73,7 @@ public class Animal {
         this.cor = cor;
     }
     
-    //raca
+    // raça do animal
     public String getRaca() {
         return raca;
     }
@@ -75,7 +82,7 @@ public class Animal {
         this.raca = raca;
     }
     
-     //sexo
+    // sexo do animal
     public String getSexo() {
         return sexo;
     }
@@ -84,7 +91,7 @@ public class Animal {
         this.sexo = sexo;
     }
     
-     //porte
+    // porte do animal
     public String getPorte() {
         return porte;
     }
@@ -93,7 +100,7 @@ public class Animal {
         this.porte = porte;
     }
     
-     //idade
+    // idade do animal
     public int getIdade() {
         return idade;
     }
@@ -102,16 +109,25 @@ public class Animal {
         this.idade = idade;
     }
     
-     //castrado
-    public String getCastrado() {
-        return castrado;
+    // informação sobre castração
+    public String getCastracao() {
+        return castracao;
     }
 
-    public void setCastrado(String castrado) {
-        this.castrado = castrado;
+    public void setCastracao(String castracao) {
+        this.castracao = castracao;
     }
     
-     //vacinaV10
+    // informação sobre data da última vacina antirrábica
+    public String getVacinaAntirrabica() {
+        return vacinaAntirrabica;
+    }
+
+    public void setVacinaAntirrabica(String vacinaAntirrabica) {
+        this.vacinaAntirrabica = vacinaAntirrabica;
+    }
+    
+    // informação sobre data da última vacina V10
     public String getVacinaV10() {
         return vacinaV10;
     }
@@ -120,30 +136,31 @@ public class Animal {
         this.vacinaV10 = vacinaV10;
     }
     
-     //vacinaAntirrabica
-    public String getVacinaAntirrabica() {
-        return vacinaAntirrabica;
+    // informação sobre data da última vermifugação
+    public String getVermifugacao() {
+        return vermifugacao;
     }
 
-    public void setVacinaAntirrabica(String vacinas) {
-        this.vacinaAntirrabica = vacinaAntirrabica;
+    public void setVermifugacao(String vermifugacao) {
+        this.vermifugacao = vermifugacao;
     }
     
-     //vermifugacao
-    public String getVermifug() {
-        return vermifug;
-    }
-
-    public void setVermifug(String vermifug) {
-        this.vermifug = vermifug;
+    // informação sobre o último local onde estev ou foi visto o animal
+    public String getUltimaLocalizacao() {
+        return ultimaLocalizacao;
     }
     
-     //raca
-    public String getObs() {
-        return obs;
+    public void setUltimaLocalizacao(String ultimaLocalizacao) {
+        this.ultimaLocalizacao = ultimaLocalizacao;
+    }
+    
+    // informações adicionais sobre o animal
+    public String getObservacao() {
+        return observacao;
     }
 
-    public void setObs(String obs) {
-        this.obs = obs;
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
+    
 }

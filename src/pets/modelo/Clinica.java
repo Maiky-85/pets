@@ -3,22 +3,21 @@ package pets.modelo;
 
 public class Clinica {
     
-    //atributos
+    // atributos da classe Clinica
     private String nome;
     private Endereco endereco;
     private long telefone;
     private String email;
 
-    public Clinica(String nome, Endereco endereco , String telefone, String email){
+    public Clinica(String nome, Endereco endereco, String telefone, String email){
+        
         this.nome = nome;
 	this.endereco = endereco;
-	this.telefone = Long.parseLong(telefone);
+	this.telefone = Long.parseLong(telefone);                               // conversão do dado de String para Long
 	this.email = email;
     }
 
-    
-    
-    //nome
+    // nome da clínica
     public String getNome() {
         return nome;
     }
@@ -27,7 +26,7 @@ public class Clinica {
         this.nome = nome;
     }
     
-    //endereco
+    // endereço da clínica
     public Endereco getEndereco() {
         return endereco;
     }
@@ -36,7 +35,7 @@ public class Clinica {
         this.endereco = endereco;
     }
     
-    //telefone
+    // telefone da clínica
     public long getTelefone() {
         return telefone;
     }
@@ -45,7 +44,7 @@ public class Clinica {
         this.telefone = telefone;
     }
     
-    //email
+    // email da clínica
     public String getEmail() {
         return email;
     }
@@ -53,6 +52,5 @@ public class Clinica {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
+        
 }
