@@ -1,9 +1,20 @@
+/*
+ * PetSOS
+ * Aplicativo para localicação de animais domésticos perdidos
+ * Projeto de Programação Orientada a Objetos I
+ */
+
+/**
+ * @author Brunna Dalzini
+ * @author Maikysuel Braga
+ * @author Rafaela Pessin
+*/ 
 
 package pets.modelo;
 
 public class Endereco {
   
-    //tributos
+    // atributos
     private String rua;
     private int numero;
     private String bairro;

@@ -1,3 +1,14 @@
+/*
+ * PetSOS
+ * Aplicativo para localicação de animais domésticos perdidos
+ * Projeto de Programação Orientada a Objetos I
+ */
+
+/**
+ * @author Brunna Dalzini
+ * @author Maikysuel Braga
+ * @author Rafaela Pessin
+*/ 
 
 package pets.modelo;
 
@@ -6,15 +17,15 @@ public class Clinica {
     // atributos da classe Clinica
     private String nome;
     private Endereco endereco;
-    private long telefone;
-    private String email;
+    private Contato contato;
+    private RedeSocial redeSocial;
 
-    public Clinica(String nome, Endereco endereco, String telefone, String email){
+    public Clinica(String nome, Endereco endereco, Contato contato, RedeSocial redeSocial) {
         
         this.nome = nome;
 	this.endereco = endereco;
-	this.telefone = Long.parseLong(telefone);                               // conversão do dado de String para Long
-	this.email = email;
+	this.contato = contato;
+        this.redeSocial = redeSocial;
     }
 
     // nome da clínica
@@ -35,22 +46,21 @@ public class Clinica {
         this.endereco = endereco;
     }
     
-    // telefone da clínica
-    public long getTelefone() {
-        return telefone;
+    // contato da clínica
+    public Contato getContato() {
+        return contato;
     }
 
-    public void setTelefone(long telefone) {
-        this.telefone = telefone;
+    public void setContato(Contato contato) {
+        this.contato = contato;
     }
     
-    // email da clínica
-    public String getEmail() {
-        return email;
+    // redes sociais da clínica
+    public RedeSocial getRedeSocial() {
+        return redeSocial;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRedeSocial(RedeSocial redeSocial) {
+        this.redeSocial = redeSocial;
     }
-        
 }

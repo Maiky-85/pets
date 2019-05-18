@@ -30,7 +30,7 @@ public class Animal {
     private String observacao;
     
     public Animal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
-    String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao){
+    String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao) {
         
         this.nome = nome;
 	this.tipo = tipo;

@@ -1,17 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * PetSOS
+ * Aplicativo para localicação de animais domésticos perdidos
+ * Projeto de Programação Orientada a Objetos I
  */
+
+/**
+ * @author Brunna Dalzini
+ * @author Maikysuel Braga
+ * @author Rafaela Pessin
+*/ 
+
 package pets.telas;
 
 import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 
-/**
- *
- * @author rafae
- */
 public class CadastroAnimal extends javax.swing.JFrame {
 
     /**
@@ -278,7 +281,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
          
-        //cria um objeto do tipo animal
+        //cria um objeto do tipo Animal
         Animal novoAnimal = new Animal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
                 (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
                 this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());

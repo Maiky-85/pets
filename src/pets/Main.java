@@ -1,12 +1,14 @@
 
 package pets;
 
-//import pets.modelo.Endereco;
+import pets.modelo.Endereco;
 //import pets.modelo.Dono;
-//import pets.modelo.Clinica;
+import pets.modelo.Clinica;
 //import pets.modelo.Animal;
-//import pets.persistenciaArquivo.PersistenciaArquivo;
-//import javax.swing.JOptionPane;
+import pets.persistenciaArquivo.PersistenciaArquivo;
+import javax.swing.JOptionPane;
+import pets.modelo.Contato;
+import pets.modelo.RedeSocial;
 import pets.telas.CadastroAnimal;
 import pets.telas.CadastroClinica;
 import pets.telas.CadastroDono;
@@ -26,7 +28,9 @@ public class Main {
         CadastroAnimal cadastroAnimal = new CadastroAnimal();
         cadastroAnimal.setVisible(true);
         
-        /*String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
+        /*
+        
+        String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
                 + "\n (1) Animal  \n (2) Dono \n (3) Clínica");
         
         if (Integer.parseInt(opcao) == 1){
@@ -69,25 +73,39 @@ public class Main {
             salvar.salvarDadosDono(donoAnimal);
         }
         else if (Integer.parseInt(opcao) == 3){
+        
+        */
             String rua = JOptionPane.showInputDialog("Rua");
             String numero = JOptionPane.showInputDialog("Numero");
             String bairro = JOptionPane.showInputDialog("Bairro");	
             String cidade = JOptionPane.showInputDialog("Cidade");
             String estado = JOptionPane.showInputDialog("Estado");
             String cep = JOptionPane.showInputDialog("CEP");
-
+        
+        
             Endereco enderecoClinica = new Endereco(rua, numero, bairro, cidade, estado, cep);
 
             String nome = JOptionPane.showInputDialog("Nome");
-            String telefone = JOptionPane.showInputDialog("Telefone");
+            
+            String numTelefone = JOptionPane.showInputDialog("Telefone");
+            String numCelular = JOptionPane.showInputDialog("Celular");
             String email = JOptionPane.showInputDialog("Email");
-
-            Clinica clinicaVet = new Clinica(nome, enderecoClinica, telefone, email);
+            Contato contato = new Contato(numTelefone, numCelular, email);
+            
+            String facebook = JOptionPane.showInputDialog("Facebook");
+            String twitter = JOptionPane.showInputDialog("Twitter");
+            String instagram = JOptionPane.showInputDialog("Instagram");
+            String whatsapp = JOptionPane.showInputDialog("Whatsapp");
+            
+            RedeSocial redeSocial = new RedeSocial(facebook, twitter, instagram, whatsapp);
+            
+            Clinica clinicaVet = new Clinica(nome, enderecoClinica, contato, redeSocial);
         
             PersistenciaArquivo salvar = new PersistenciaArquivo();
             salvar.salvarDadosClinica(clinicaVet);
         }
         
+        /*
         else{
             System.out.println("Opção Inválida");
         }*/
@@ -95,4 +113,3 @@ public class Main {
                 
     }
     
-}

@@ -1,3 +1,14 @@
+/*
+ * PetSOS
+ * Aplicativo para localicação de animais domésticos perdidos
+ * Projeto de Programação Orientada a Objetos I
+ */
+
+/**
+ * @author Brunna Dalzini
+ * @author Maikysuel Braga
+ * @author Rafaela Pessin
+*/ 
 
 package pets.persistenciaArquivo;
 
@@ -31,8 +42,13 @@ public class PersistenciaArquivo {
                 ", " + clinica.getEndereco().getBairro() +
                 ", " + clinica.getEndereco().getCidade() +
                 " - " + clinica.getEndereco().getEstado() +
-                " | Telefone: " + clinica.getTelefone() + 
-                " | Email: " + clinica.getEmail() + "\r\n");   
+                " | Telefone: " + clinica.getContato().getTelefone() + 
+                " | Celular: " + clinica.getContato().getCelular() + 
+                " | Email: " + clinica.getContato().getEmail() + 
+                " | Facebook: " + clinica.getRedeSocial().getFacebook() + 
+                " | Twitter: " + clinica.getRedeSocial().getTwitter() + 
+                " | Instagram: " + clinica.getRedeSocial().getInstagram() + 
+                " | WhatsApp: " + clinica.getRedeSocial().getWhatsapp() + "\r\n");   
             
             arq.close();         
         }

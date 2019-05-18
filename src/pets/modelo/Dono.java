@@ -1,3 +1,14 @@
+/*
+ * PetSOS
+ * Aplicativo para localicação de animais domésticos perdidos
+ * Projeto de Programação Orientada a Objetos I
+ */
+
+/**
+ * @author Brunna Dalzini
+ * @author Maikysuel Braga
+ * @author Rafaela Pessin
+*/ 
 
 package pets.modelo;
 
@@ -9,7 +20,7 @@ public class Dono {
     private long telefone;
     private String email;
 
-    public Dono(String nome, Endereco endereco, String telefone, String email){
+    public Dono(String nome, Endereco endereco, String telefone, String email) {
         
         this.nome = nome;
 	this.endereco = endereco;
