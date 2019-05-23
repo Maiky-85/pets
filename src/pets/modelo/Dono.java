@@ -15,21 +15,22 @@ package pets.modelo;
 public class Dono {
     
     // atributos da classe Dono
-    private String nome;
-    private Endereco endereco;
-    private long telefone;
-    private String email;
-
-    public Dono(String nome, Endereco endereco, String telefone, String email) {
+   // private String nome;
+    //private Endereco endereco;
+    private Contato contato;
+    private RedeSocial redeSocial;
+    //String nome, Endereco endereco,
+    
+    public Dono(Contato contato, RedeSocial redeSocial) {
         
-        this.nome = nome;
-	this.endereco = endereco;
-	this.telefone = Long.parseLong(telefone);                               // conversão do dado de String para Long
-	this.email = email;
+        //this.nome = nome;
+	//this.endereco = endereco;
+	this.contato = contato;
+        this.redeSocial = redeSocial;
     }
     
     // nome do dono
-    public String getNome() {
+   /* public String getNome() {
         return nome;
     }
 
@@ -45,23 +46,23 @@ public class Dono {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
-    // telefone do dono
-    public long getTelefone() {
-        return telefone;
+    */
+    // contato do dono
+    public Contato getContato() {
+        return contato;
     }
 
-    public void setTelefone(long telefone) {
-        this.telefone = telefone;
+    public void setContato(Contato contato) {
+        this.contato = contato;
     }
     
-    // email do dono
-    public String getEmail() {
-        return email;
+    // redes sociais da clínica
+    public RedeSocial getRedeSocial() {
+        return redeSocial;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRedeSocial(RedeSocial redeSocial) {
+        this.redeSocial = redeSocial;
     }
     
 }

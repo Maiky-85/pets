@@ -12,6 +12,11 @@
 
 package pets.telas;
 
+import pets.modelo.Contato;
+import pets.modelo.Dono;
+import pets.modelo.RedeSocial;
+import pets.persistenciaArquivo.PersistenciaArquivo;
+
 /**
  *
  * @author 20162bsi0490
@@ -35,7 +40,7 @@ public class CadastroDono extends javax.swing.JFrame {
     private void initComponents() {
 
         whatsapp = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        campoWhatsapp = new javax.swing.JFormattedTextField();
         twitter = new javax.swing.JLabel();
         campoTwitter = new javax.swing.JTextField();
         instagram = new javax.swing.JLabel();
@@ -56,7 +61,7 @@ public class CadastroDono extends javax.swing.JFrame {
         whatsapp.setText("WhatsApp");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+            campoWhatsapp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -130,7 +135,7 @@ public class CadastroDono extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoInstagram)
                                     .addComponent(campoTwitter)
-                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(botaoFinalizar)))
@@ -166,17 +171,35 @@ public class CadastroDono extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(whatsapp)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(botaoFinalizar)
                 .addGap(28, 28, 28))
         );
 
+        campoNumTelefone.getAccessibleContext().setAccessibleDescription("");
+        campoNumTelefone.getAccessibleContext().setAccessibleParent(null);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
-        // TODO add your handling code here:
+        
+        Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
+        RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
+        
+        Dono novoDono = new Dono(contatoDono, redeSocial);
+        
+        //Dono novoDono = new Dono(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText(), this.campoFacebook.getText(), this.campoTwitter.getText(), this.instagram.getText(), this.campoWhatsapp.getText());
+        
+        /*Dono novoDono = new Dono(this.campoNome.getText(), this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), this.campoCep.getText(), this.campoCep.getText(),
+        this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText(), 
+        this.campoFacebook.getText(), this.campoTwitter.getText(), this.instagram.getText(), this.campoWhatsapp.getText());*/
+
+        // vai salvar os dados do formulário do animal na persistencia de arquivo
+        PersistenciaArquivo persistencia = new PersistenciaArquivo();
+        
+        persistencia.salvarDadosDono(novoDono);
     }//GEN-LAST:event_botaoFinalizarActionPerformed
 
     /**
@@ -184,27 +207,7 @@ public class CadastroDono extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroDono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+              
         //</editor-fold>
 
         /* Create and display the form */
@@ -223,11 +226,11 @@ public class CadastroDono extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField campoNumCelular;
     private javax.swing.JFormattedTextField campoNumTelefone;
     private javax.swing.JTextField campoTwitter;
+    private javax.swing.JFormattedTextField campoWhatsapp;
     private javax.swing.JLabel dadosDono;
     private javax.swing.JLabel email;
     private javax.swing.JLabel facebook;
     private javax.swing.JLabel instagram;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel numCelular;
     private javax.swing.JLabel numTelefone;
     private javax.swing.JLabel twitter;

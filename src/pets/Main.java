@@ -2,9 +2,9 @@
 package pets;
 
 import pets.modelo.Endereco;
-//import pets.modelo.Dono;
+import pets.modelo.Dono;
 import pets.modelo.Clinica;
-//import pets.modelo.Animal;
+import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import javax.swing.JOptionPane;
 import pets.modelo.Contato;
@@ -19,17 +19,18 @@ public class Main {
         
         
         
-//      CadastroClinica cadastroClinica = new CadastroClinica();
-//      cadastroClinica.setVisible(true);
+      CadastroClinica cadastroClinica = new CadastroClinica();
+      cadastroClinica.setVisible(true);
         
-//      CadastroDono cadastroDono = new CadastroDono();
-//      cadastroDono.setVisible(true);
+     //CadastroDono cadastroDono = new CadastroDono();
+     //cadastroDono.setVisible(true);
         
-        CadastroAnimal cadastroAnimal = new CadastroAnimal();
-        cadastroAnimal.setVisible(true);
+ //       CadastroAnimal cadastroAnimal = new CadastroAnimal();
+//        cadastroAnimal.setVisible(true);
         
-        /*
         
+    /*   
+
         String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
                 + "\n (1) Animal  \n (2) Dono \n (3) Clínica");
         
@@ -41,49 +42,64 @@ public class Main {
             String sexo = JOptionPane.showInputDialog("Sexo (M) ou (F)");
             String porte = JOptionPane.showInputDialog("Porte (P) (M) (G) (GG)");
             String idade = JOptionPane.showInputDialog("Idade");
-            String castrado = JOptionPane.showInputDialog("Castrado (S) ou (N)");
-            String vacinas = JOptionPane.showInputDialog("Vacinas");
-            String vermifug = JOptionPane.showInputDialog("Vermifugado (S) ou (N)");
-            String obs = JOptionPane.showInputDialog("Observações");
-            
-            Animal novoAnimal = new Animal(nome, tipo, cor, raca, sexo, porte,
-            idade, castrado, vacinas, vermifug, obs);
+            String castracao = JOptionPane.showInputDialog("Castrado (S) ou (N)");
+            String vacinaV10 = JOptionPane.showInputDialog("Vacina V10");
+            String vacinaAntirrabica = JOptionPane.showInputDialog("Vacina Antirrabica");
+            String vermifugacao = JOptionPane.showInputDialog("Vermifugação");
+            String ultimaLocalizacao = JOptionPane.showInputDialog("Última Localização");
+            String observacao = JOptionPane.showInputDialog("Observações");
+                
+            Animal novoAnimal = new Animal(nome, tipo, cor, raca, sexo, porte, idade, castracao, vacinaV10, vacinaAntirrabica, vermifugacao, ultimaLocalizacao, observacao);
             
             PersistenciaArquivo salvar = new PersistenciaArquivo();
             salvar.salvarDadosAnimal(novoAnimal);
         }
         
-        else if (Integer.parseInt(opcao) == 2){
-            String rua = JOptionPane.showInputDialog("Rua");
+        else if (Integer.parseInt(opcao) == 2){*/
+            
+            /*String rua = JOptionPane.showInputDialog("Rua");
             String numero = JOptionPane.showInputDialog("Numero");
             String bairro = JOptionPane.showInputDialog("Bairro");	
-            String cidade = JOptionPane.showInputDialog("Cidade");
+            String municipio = JOptionPane.showInputDialog("Cidade");
             String estado = JOptionPane.showInputDialog("Estado");
             String cep = JOptionPane.showInputDialog("CEP");
+            String complemento = JOptionPane.showInputDialog("Complemento");
 
-            Endereco enderecoDono = new Endereco(rua, numero, bairro, cidade, estado, cep);
+            Endereco enderecoDono = new Endereco(rua, numero, bairro, municipio, estado, cep, complemento);*/
 
-            String nome = JOptionPane.showInputDialog("Nome");
-            String telefone = JOptionPane.showInputDialog("Telefone");
-            String email = JOptionPane.showInputDialog("Email");
-
-            Dono donoAnimal = new Dono(nome, enderecoDono, telefone, email);
+           /* String telefone = JOptionPane.showInputDialog("Telefone");
+            String celular = JOptionPane.showInputDialog("Celular");
+            String email = JOptionPane.showInputDialog("E-mail");
+            
+            Contato contato = new Contato(telefone, celular, email);
+            
+            String facebook = JOptionPane.showInputDialog("Facebook");
+            String instagram = JOptionPane.showInputDialog("Instagram");
+            String twitter = JOptionPane.showInputDialog("Twitter");
+            String whatsapp = JOptionPane.showInputDialog("WhatsApp");
+            
+            RedeSocial redeSocial = new RedeSocial(facebook, instagram, twitter, whatsapp);
+            
+            //String nome = JOptionPane.showInputDialog("Nome");
+            
+            Dono donoAnimal = new Dono(contato, redeSocial);           
         
             PersistenciaArquivo salvar = new PersistenciaArquivo();
             salvar.salvarDadosDono(donoAnimal);
         }
         else if (Integer.parseInt(opcao) == 3){
         
-        */
+        
             String rua = JOptionPane.showInputDialog("Rua");
             String numero = JOptionPane.showInputDialog("Numero");
             String bairro = JOptionPane.showInputDialog("Bairro");	
-            String cidade = JOptionPane.showInputDialog("Cidade");
+            String municipio = JOptionPane.showInputDialog("Cidade");
             String estado = JOptionPane.showInputDialog("Estado");
             String cep = JOptionPane.showInputDialog("CEP");
+            String complemento = JOptionPane.showInputDialog("Complemento");
         
         
-            Endereco enderecoClinica = new Endereco(rua, numero, bairro, cidade, estado, cep);
+            Endereco enderecoClinica = new Endereco(rua, numero, bairro, municipio, estado, cep, complemento);
 
             String nome = JOptionPane.showInputDialog("Nome");
             
@@ -105,11 +121,14 @@ public class Main {
             salvar.salvarDadosClinica(clinicaVet);
         }
         
-        /*
+        
         else{
             System.out.println("Opção Inválida");
-        }*/
-        //comentario
+        }
+        
+      */  
                 
     }
     
+}
+

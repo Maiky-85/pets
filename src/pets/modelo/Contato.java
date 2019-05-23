@@ -12,6 +12,8 @@
 
 package pets.modelo;
 
+import pets.TratamentoMascara;
+
 public class Contato {
     
     // atributos da classe Contato
@@ -21,8 +23,16 @@ public class Contato {
     
     public Contato(String numTelefone, String numCelular, String email) {
         
+        //TratamentoMascara telefoneTratado = new TratamentoMascara(numTelefone);
+        //TratamentoMascara celularTratado = new TratamentoMascara(numTelefone);
+        numTelefone = numTelefone.replace("(", "");
+        numTelefone = numTelefone.replace(")", "");
+        numTelefone = numTelefone.replace("-", "");
         this.numTelefone = Long.parseLong(numTelefone);                         // conversão do dado de String para Long
-	this.numCelular = Long.parseLong(numCelular);                           // conversão do dado de String para Long
+	numCelular = numCelular.replace("(", "");
+        numCelular = numCelular.replace(")", "");
+        numCelular = numCelular.replace("-", "");
+        this.numCelular = Long.parseLong(numCelular);                           // conversão do dado de String para Long
         this.email = email;
     }
     

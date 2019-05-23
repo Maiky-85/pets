@@ -24,6 +24,9 @@ public class RedeSocial {
         this.facebook = facebook;
         this.twitter = twitter;
         this.instagram = instagram;
+        whatsapp = whatsapp.replace("(", "");
+        whatsapp = whatsapp.replace(")", "");
+        whatsapp = whatsapp.replace("-", "");
         this.whatsapp = Long.parseLong(whatsapp);                               // conversão do dado de String para Long
     }
     

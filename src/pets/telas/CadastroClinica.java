@@ -12,6 +12,12 @@
 
 package pets.telas;
 
+import pets.modelo.Clinica;
+import pets.modelo.Contato;
+import pets.modelo.Endereco;
+import pets.modelo.RedeSocial;
+import pets.persistenciaArquivo.PersistenciaArquivo;
+
 public class CadastroClinica extends javax.swing.JFrame {
 
     /**
@@ -79,7 +85,7 @@ public class CadastroClinica extends javax.swing.JFrame {
 
         campoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeActionPerformed(evt);
+                nenhum(evt);
             }
         });
 
@@ -358,9 +364,9 @@ public class CadastroClinica extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
+    private void nenhum(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nenhum
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeActionPerformed
+    }//GEN-LAST:event_nenhum
 
     private void campoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumeroActionPerformed
         // TODO add your handling code here:
@@ -371,16 +377,24 @@ public class CadastroClinica extends javax.swing.JFrame {
     }//GEN-LAST:event_campoFacebookActionPerformed
 
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
-       
+         
         //cria um objeto do tipo Clinica
-        /*Clinica novaClinica = new Clinica(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
-                (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
-                this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
+    
+        Endereco enderecoClinica = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), 
+                this.campoEstado.getText(), this.campoCep.getText(), this.campoComplemento.getText());
+        Contato contatoClinica = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
+        RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
         
+        Clinica novaClinica = new Clinica(this.campoNome.getText(), enderecoClinica, contatoClinica, redeSocial);
+              
+       /* Clinica novaClinica = new Clinica(this.campoNome.getText(), this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), this.campoCep.getText(), this.campoCep.getText(),
+        this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText(), 
+        this.campoFacebook.getText(), this.campoTwitter.getText(), this.instagram.getText(), this.campoWhatsapp.getText());*/
+
         // vai salvar os dados do formulário do animal na persistencia de arquivo
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
         
-        persistencia.salvarDadosClinica(novaClinica);*/
+        persistencia.salvarDadosClinica(novaClinica);
     }//GEN-LAST:event_botaoFinalizarActionPerformed
 
     /**

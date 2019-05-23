@@ -18,22 +18,25 @@ public class Endereco {
     private String rua;
     private int numero;
     private String bairro;
-    private String cidade;
+    private String municipio;
     private String estado;
     private String cep;
+    private String complemento;
 
 
-    public Endereco(String rua, String numero, String bairro, String cidade, String estado, String cep){
+    public Endereco(String rua, String numero, String bairro, String municipio, String estado, String cep, String complemento) {
+        
         this.rua = rua;
         this.numero = Integer.parseInt(numero);
         this.bairro = bairro;
-        this.cidade = cidade;
+        this.municipio = municipio;
         this.estado = estado;
         this.cep = cep;
-        
+        this.complemento = complemento;
+
     }
     
-    //rua
+    // rua
     public String getRua() {
         return rua;
     }
@@ -42,7 +45,7 @@ public class Endereco {
         this.rua = rua;
     }
     
-    //numero
+    // numero
     public int getNumero() {
         return numero;
     }
@@ -51,7 +54,7 @@ public class Endereco {
         this.numero = numero;
     }
     
-    //bairro
+    // bairro
     public String getBairro() {
         return bairro;
     }
@@ -60,16 +63,16 @@ public class Endereco {
         this.bairro = bairro;
     }
     
-    //cidade
-    public String getCidade() {
-        return cidade;
+    // cidade
+    public String getMunicipio() {
+        return municipio;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
     
-    //estado
+    // estado
     public String getEstado() {
         return estado;
     }
@@ -78,7 +81,7 @@ public class Endereco {
         this.estado = estado;
     }
     
-    //cep
+    // cep
     public String getCep() {
         return cep;
     }
@@ -87,6 +90,13 @@ public class Endereco {
         this.cep = cep;
     }
     
-    
+    // complemento
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
 
 }

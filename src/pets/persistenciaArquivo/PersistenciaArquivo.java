@@ -40,8 +40,10 @@ public class PersistenciaArquivo {
                 " | Endereco: Rua " + clinica.getEndereco().getRua() + 
                 ", " + clinica.getEndereco().getNumero() +
                 ", " + clinica.getEndereco().getBairro() +
-                ", " + clinica.getEndereco().getCidade() +
+                ", " + clinica.getEndereco().getMunicipio() +
                 " - " + clinica.getEndereco().getEstado() +
+                " - " + clinica.getEndereco().getCep() +
+                " - " + clinica.getEndereco().getComplemento() +
                 " | Telefone: " + clinica.getContato().getTelefone() + 
                 " | Celular: " + clinica.getContato().getCelular() + 
                 " | Email: " + clinica.getContato().getEmail() + 
@@ -67,15 +69,21 @@ public class PersistenciaArquivo {
             arq = new FileWriter("dono.txt", true);  
             
             PrintWriter gravarArq = new PrintWriter(arq);
-            
-            gravarArq.append("\r\nNome: " + dono.getNome() + 
+             /*Nome: " + dono.getNome() + 
                 " | Endereco: Rua " + dono.getEndereco().getRua() + 
                 ", " + dono.getEndereco().getNumero() +
                 ", " + dono.getEndereco().getBairro() +
-                ", " + dono.getEndereco().getCidade() +
+                ", " + dono.getEndereco().getMunicipio() +
                 " - " + dono.getEndereco().getEstado() +
-                " | Telefone: " + dono.getTelefone() + 
-                " | Email: " + dono.getEmail() + "\r\n");   
+                " - " + dono.getEndereco().getCep() +
+                " - " + dono.getEndereco().getComplemento() +*/
+            gravarArq.append("\r\nTelefone: " + dono.getContato().getTelefone() + 
+                " | Celular: " + dono.getContato().getCelular() + 
+                " | Email: " + dono.getContato().getEmail() + 
+                " | Facebook: " + dono.getRedeSocial().getFacebook() + 
+                " | Twitter: " + dono.getRedeSocial().getTwitter() + 
+                " | Instagram: " + dono.getRedeSocial().getInstagram() + 
+                " | WhatsApp: " + dono.getRedeSocial().getWhatsapp() + "\r\n");
             
             arq.close();
         } 
@@ -95,7 +103,8 @@ public class PersistenciaArquivo {
             
             PrintWriter gravarArq = new PrintWriter(arq);
             
-            gravarArq.append("\r\nTipo: " + animal.getTipo() + " | Nome: " + animal.getNome() + 
+            gravarArq.append("\r\nTipo: " + animal.getTipo() + 
+                " | Nome: " + animal.getNome() + 
                 " | Cor: " + animal.getCor() + 
                 " | Raça: " + animal.getRaca() +
                 " | Sexo: " + animal.getSexo()+
