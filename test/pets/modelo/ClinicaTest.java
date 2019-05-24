@@ -45,8 +45,8 @@ public class ClinicaTest {
         System.out.println("getNome");
        
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
         String expResult = "Clínica Vida Animal";
@@ -66,8 +66,8 @@ public class ClinicaTest {
         String nome = "Clínica Vida Animal";
        
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica(nome, endereco, contato, redeSocial);
         instance.setNome(nome);
@@ -83,11 +83,11 @@ public class ClinicaTest {
         System.out.println("getEndereco");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
-        Endereco expResult = null; // FALTA COLOCAR AQUI
+        Endereco expResult = endereco;
         
         Endereco result = instance.getEndereco();
         assertEquals(expResult, result);
@@ -103,8 +103,8 @@ public class ClinicaTest {
         System.out.println("setEndereco");
                 
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
         
@@ -121,11 +121,11 @@ public class ClinicaTest {
         System.out.println("getContato");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
-        Contato expResult = null; // FALTA COLOCAR AQUI
+        Contato expResult = contato;
         Contato result = instance.getContato();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -140,8 +140,8 @@ public class ClinicaTest {
         System.out.println("setContato");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
         
@@ -158,11 +158,11 @@ public class ClinicaTest {
         System.out.println("getRedeSocial");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
-        RedeSocial expResult = null;    // FALTA COLOCAR AQUI
+        RedeSocial expResult = redeSocial;
         RedeSocial result = instance.getRedeSocial();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -177,8 +177,8 @@ public class ClinicaTest {
         System.out.println("setRedeSocial");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
-        Contato contato = new Contato("(27) 32265454", "(27) 998970066", "vidaanimal@gmail.com");
-        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "(027) 996343201");
+        Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
+        RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
         Clinica instance = new Clinica("Clínica Vida Animal", endereco, contato, redeSocial);
         
