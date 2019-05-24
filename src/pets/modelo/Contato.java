@@ -12,8 +12,6 @@
 
 package pets.modelo;
 
-import pets.TratamentoMascara;
-
 public class Contato {
     
     // atributos da classe Contato

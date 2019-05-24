@@ -1,14 +1,14 @@
 
 package pets;
 
-import pets.modelo.Endereco;
-import pets.modelo.Dono;
-import pets.modelo.Clinica;
-import pets.modelo.Animal;
-import pets.persistenciaArquivo.PersistenciaArquivo;
+//import pets.modelo.Endereco;
+//import pets.modelo.Dono;
+//import pets.modelo.Clinica;
+//import pets.modelo.Animal;
+//import pets.persistenciaArquivo.PersistenciaArquivo;
 import javax.swing.JOptionPane;
-import pets.modelo.Contato;
-import pets.modelo.RedeSocial;
+//import pets.modelo.Contato;
+//import pets.modelo.RedeSocial;
 import pets.telas.CadastroAnimal;
 import pets.telas.CadastroClinica;
 import pets.telas.CadastroDono;
@@ -17,16 +17,25 @@ public class Main {
 
     public static void main(String[] args) {
         
+        String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
+                + "\n (1) Clínica  \n (2) Dono \n (3) Animal");
         
+        if (Integer.parseInt(opcao) == 1){
         
-      //CadastroClinica cadastroClinica = new CadastroClinica();
-      //cadastroClinica.setVisible(true);
+            CadastroClinica cadastroClinica = new CadastroClinica();
+            cadastroClinica.setVisible(true);
+        }
         
-     CadastroDono cadastroDono = new CadastroDono();
-     cadastroDono.setVisible(true);
+        else if (Integer.parseInt(opcao) == 2){
+            CadastroDono cadastroDono = new CadastroDono();
+            cadastroDono.setVisible(true);
+        }
         
- //       CadastroAnimal cadastroAnimal = new CadastroAnimal();
-//        cadastroAnimal.setVisible(true);
+        if (Integer.parseInt(opcao) == 3){
+        
+            CadastroAnimal cadastroAnimal = new CadastroAnimal();
+            cadastroAnimal.setVisible(true);
+        }
         
         
     /*   
