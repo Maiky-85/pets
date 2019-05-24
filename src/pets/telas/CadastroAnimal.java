@@ -279,6 +279,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoFinalizarMouseClicked
 
+    // ação do botão finalizar (quando clica, salva os dados digitados)
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
          
         //cria um objeto do tipo Animal
@@ -286,9 +287,8 @@ public class CadastroAnimal extends javax.swing.JFrame {
                 (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
                 this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
         
-        // vai salvar os dados do formulário do animal na persistencia de arquivo
+        // vai salvar os dados do formulário do animal na persistência de arquivo
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
-        
         persistencia.salvarDadosAnimal(novoAnimal);
         
     }//GEN-LAST:event_botaoFinalizarActionPerformed

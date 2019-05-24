@@ -335,25 +335,19 @@ public class CadastroDono extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // ação do botão finalizar (quando clica, salva os dados digitados)
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
         
+        //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
         Endereco endereco = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), 
                 this.campoEstado.getText(), this.campoCep.getText(), this.campoComplemento.getText());
-        
         Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
         RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
         
         Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial);
         
-        //Dono novoDono = new Dono(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText(), this.campoFacebook.getText(), this.campoTwitter.getText(), this.instagram.getText(), this.campoWhatsapp.getText());
-        
-        /*Dono novoDono = new Dono(this.campoNome.getText(), this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), this.campoCep.getText(), this.campoCep.getText(),
-        this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText(), 
-        this.campoFacebook.getText(), this.campoTwitter.getText(), this.instagram.getText(), this.campoWhatsapp.getText());*/
-
         // vai salvar os dados do formulário do animal na persistencia de arquivo
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
-        
         persistencia.salvarDadosDono(novoDono);
     }//GEN-LAST:event_botaoFinalizarActionPerformed
 
