@@ -15,6 +15,7 @@ package pets.telas;
 import pets.modelo.Contato;
 import pets.modelo.Dono;
 import pets.modelo.RedeSocial;
+import pets.modelo.Endereco;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 
 /**
@@ -53,8 +54,27 @@ public class CadastroDono extends javax.swing.JFrame {
         campoNumTelefone = new javax.swing.JFormattedTextField();
         campoNumCelular = new javax.swing.JFormattedTextField();
         numCelular = new javax.swing.JLabel();
-        dadosDono = new javax.swing.JLabel();
+        contatoDono = new javax.swing.JLabel();
         botaoFinalizar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        enderecoDono = new javax.swing.JLabel();
+        rua = new javax.swing.JLabel();
+        campoRua = new javax.swing.JTextField();
+        numero = new javax.swing.JLabel();
+        campoNumero = new javax.swing.JTextField();
+        campoBairro = new javax.swing.JTextField();
+        bairro = new javax.swing.JLabel();
+        municipio = new javax.swing.JLabel();
+        campoMunicipio = new javax.swing.JTextField();
+        estado = new javax.swing.JLabel();
+        campoEstado = new javax.swing.JTextField();
+        complemento = new javax.swing.JLabel();
+        campoComplemento = new javax.swing.JTextField();
+        cep = new javax.swing.JLabel();
+        campoCep = new javax.swing.JFormattedTextField();
+        campoNome = new javax.swing.JTextField();
+        nome = new javax.swing.JLabel();
+        nomeDono = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,8 +110,8 @@ public class CadastroDono extends javax.swing.JFrame {
 
         numCelular.setText("Celular");
 
-        dadosDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        dadosDono.setText("Contato");
+        contatoDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        contatoDono.setText("Contato");
 
         botaoFinalizar.setText("Finalizar");
         botaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +120,121 @@ public class CadastroDono extends javax.swing.JFrame {
             }
         });
 
+        enderecoDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        enderecoDono.setText("Endereço");
+
+        rua.setText("Logradouro");
+
+        numero.setText("Número");
+
+        campoNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNumeroActionPerformed(evt);
+            }
+        });
+
+        bairro.setText("Bairro");
+
+        municipio.setText("Município");
+
+        estado.setText("Estado");
+
+        complemento.setText("Complemento");
+
+        cep.setText("CEP");
+
+        try {
+            campoCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        nome.setText("Nome");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(municipio)
+                    .addComponent(rua)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(nome)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bairro)
+                                .addComponent(cep))
+                            .addGap(57, 57, 57)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(campoCep)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(complemento)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(campoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(campoMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(estado)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(campoBairro, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(enderecoDono, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGap(91, 91, 91)
+                                    .addComponent(campoRua, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(numero)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nome))
+                .addGap(36, 36, 36)
+                .addComponent(enderecoDono)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rua)
+                    .addComponent(campoRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bairro)
+                    .addComponent(campoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(municipio)
+                    .addComponent(campoMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(estado)
+                    .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(campoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(complemento)
+                        .addComponent(campoCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cep))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        nomeDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        nomeDono.setText("Informações Pessoais");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,46 +242,64 @@ public class CadastroDono extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dadosDono)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(numTelefone)
-                                .addGap(27, 27, 27)
-                                .addComponent(campoNumTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(numCelular)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoNumCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(162, 162, 162)
+                                .addComponent(botaoFinalizar))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(email)
-                                    .addComponent(facebook))
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoEmail)
-                                    .addComponent(campoFacebook)))
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(numTelefone)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(campoNumTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(numCelular)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(campoNumCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(email)
+                                            .addComponent(facebook))
+                                        .addGap(23, 23, 23)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(campoEmail)
+                                            .addComponent(campoFacebook)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(instagram)
+                                            .addComponent(twitter)
+                                            .addComponent(whatsapp))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(campoInstagram)
+                                            .addComponent(campoTwitter)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(instagram)
-                                    .addComponent(twitter)
-                                    .addComponent(whatsapp))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoInstagram)
-                                    .addComponent(campoTwitter)
-                                    .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(botaoFinalizar)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addComponent(nomeDono))
+                                    .addComponent(contatoDono))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 39, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(dadosDono)
+                .addGap(60, 60, 60)
+                .addComponent(nomeDono)
                 .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(contatoDono)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numTelefone)
                     .addComponent(campoNumTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,23 +325,25 @@ public class CadastroDono extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(whatsapp)
                     .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addComponent(botaoFinalizar)
                 .addGap(28, 28, 28))
         );
 
         campoNumTelefone.getAccessibleContext().setAccessibleDescription("");
-        campoNumTelefone.getAccessibleContext().setAccessibleParent(null);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
         
+        Endereco endereco = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), 
+                this.campoEstado.getText(), this.campoCep.getText(), this.campoComplemento.getText());
+        
         Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
         RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
         
-        Dono novoDono = new Dono(contatoDono, redeSocial);
+        Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial);
         
         //Dono novoDono = new Dono(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText(), this.campoFacebook.getText(), this.campoTwitter.getText(), this.instagram.getText(), this.campoWhatsapp.getText());
         
@@ -201,6 +356,10 @@ public class CadastroDono extends javax.swing.JFrame {
         
         persistencia.salvarDadosDono(novoDono);
     }//GEN-LAST:event_botaoFinalizarActionPerformed
+
+    private void campoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNumeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,20 +378,39 @@ public class CadastroDono extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bairro;
     private javax.swing.JButton botaoFinalizar;
+    private javax.swing.JTextField campoBairro;
+    private javax.swing.JFormattedTextField campoCep;
+    private javax.swing.JTextField campoComplemento;
     private javax.swing.JTextField campoEmail;
+    private javax.swing.JTextField campoEstado;
     private javax.swing.JTextField campoFacebook;
     private javax.swing.JTextField campoInstagram;
+    private javax.swing.JTextField campoMunicipio;
+    private javax.swing.JTextField campoNome;
     private javax.swing.JFormattedTextField campoNumCelular;
     private javax.swing.JFormattedTextField campoNumTelefone;
+    private javax.swing.JTextField campoNumero;
+    private javax.swing.JTextField campoRua;
     private javax.swing.JTextField campoTwitter;
     private javax.swing.JFormattedTextField campoWhatsapp;
-    private javax.swing.JLabel dadosDono;
+    private javax.swing.JLabel cep;
+    private javax.swing.JLabel complemento;
+    private javax.swing.JLabel contatoDono;
     private javax.swing.JLabel email;
+    private javax.swing.JLabel enderecoDono;
+    private javax.swing.JLabel estado;
     private javax.swing.JLabel facebook;
     private javax.swing.JLabel instagram;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel municipio;
+    private javax.swing.JLabel nome;
+    private javax.swing.JLabel nomeDono;
     private javax.swing.JLabel numCelular;
     private javax.swing.JLabel numTelefone;
+    private javax.swing.JLabel numero;
+    private javax.swing.JLabel rua;
     private javax.swing.JLabel twitter;
     private javax.swing.JLabel whatsapp;
     // End of variables declaration//GEN-END:variables

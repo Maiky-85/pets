@@ -69,15 +69,16 @@ public class PersistenciaArquivo {
             arq = new FileWriter("dono.txt", true);  
             
             PrintWriter gravarArq = new PrintWriter(arq);
-             /*Nome: " + dono.getNome() + 
+                
+            gravarArq.append("\r\nNome: " + dono.getNome() + 
                 " | Endereco: Rua " + dono.getEndereco().getRua() + 
                 ", " + dono.getEndereco().getNumero() +
                 ", " + dono.getEndereco().getBairro() +
                 ", " + dono.getEndereco().getMunicipio() +
                 " - " + dono.getEndereco().getEstado() +
                 " - " + dono.getEndereco().getCep() +
-                " - " + dono.getEndereco().getComplemento() +*/
-            gravarArq.append("\r\nTelefone: " + dono.getContato().getTelefone() + 
+                " - " + dono.getEndereco().getComplemento() +
+                " | Telefone: " + dono.getContato().getTelefone() + 
                 " | Celular: " + dono.getContato().getCelular() + 
                 " | Email: " + dono.getContato().getEmail() + 
                 " | Facebook: " + dono.getRedeSocial().getFacebook() + 

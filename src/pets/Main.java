@@ -19,11 +19,11 @@ public class Main {
         
         
         
-      CadastroClinica cadastroClinica = new CadastroClinica();
-      cadastroClinica.setVisible(true);
+      //CadastroClinica cadastroClinica = new CadastroClinica();
+      //cadastroClinica.setVisible(true);
         
-     //CadastroDono cadastroDono = new CadastroDono();
-     //cadastroDono.setVisible(true);
+     CadastroDono cadastroDono = new CadastroDono();
+     cadastroDono.setVisible(true);
         
  //       CadastroAnimal cadastroAnimal = new CadastroAnimal();
 //        cadastroAnimal.setVisible(true);
