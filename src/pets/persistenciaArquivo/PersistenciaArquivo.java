@@ -20,6 +20,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 //import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import javax.swing.JOptionPane;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 import pets.modelo.Animal;
@@ -28,7 +29,7 @@ import pets.modelo.Dono;
 
 public class PersistenciaArquivo {
 
-    public void salvarDadosClinica(Clinica clinica) {
+    public void salvarDadosClinica(Clinica clinica) throws Exception {
 
         File arq = new File("clinica.csv");       
         if (arq.exists()){
@@ -60,6 +61,7 @@ public class PersistenciaArquivo {
                 
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new Exception ("Não foi possível salvar Clínica.");
             }
         }
         else{
@@ -93,11 +95,12 @@ public class PersistenciaArquivo {
 
         } catch (IOException e) {
             e.printStackTrace();
+            throw new Exception ("Não foi possível salvar Clínica.");
         }
         }        
     }    
 
-    public void salvarDadosDono(Dono dono) {
+    public void salvarDadosDono(Dono dono) throws Exception {
         
         File arq = new File("dono.csv");
         
@@ -130,6 +133,7 @@ public class PersistenciaArquivo {
 
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new Exception ("Não foi possível salvar Dono.");
             }
         }
         else{
@@ -164,11 +168,12 @@ public class PersistenciaArquivo {
 
         } catch (IOException e) {
             e.printStackTrace();
+            throw new Exception ("Não foi possível salvar Dono.");
         }
         }
     }
      
-    public void salvarDadosAnimal(Animal animal){
+    public void salvarDadosAnimal(Animal animal) throws Exception {
         File arq = new File("animal.csv");
         
         if (arq.exists()){
@@ -198,6 +203,7 @@ public class PersistenciaArquivo {
 
             } catch (IOException e) {
                 e.printStackTrace();
+                throw new Exception ("Não foi possível salvar Animal.");
             }
         } 
         else{
@@ -230,11 +236,12 @@ public class PersistenciaArquivo {
 
         } catch (IOException e) {
             e.printStackTrace();
+            throw new Exception ("Não foi possível salvar Animal.");
         }
         }
     }
     
-    public void deletarDados(String remover, String arquivo) {
+    public void deletarDados(String remover, String arquivo) throws Exception {
         File arq = new File(arquivo);
         File newArq = new File("tempArquivo.csv");
 
@@ -251,6 +258,7 @@ public class PersistenciaArquivo {
 
         //Fazemos um loop linha a linha no arquivo, enquanto ele seja diferente de null.
         //O método readLine() devolve a linha na posicao do loop para a variavel linha.
+        boolean verificador = false;
         while ( ( linha = bufferedReader.readLine() ) != null) {
             //Aqui imprimimos a linha
             //System.out.println(linha);
@@ -261,13 +269,20 @@ public class PersistenciaArquivo {
                 nome = nome + linha.charAt(i);
                 i=i+1;
             }
-            //System.out.println(nome);
             
             //escreve linhas em novo arquivo enquanto nome diferente de removeClinica
             if (!nome.equals(remover)){
-                fileWriter.write(linha + "\r\n");
+                fileWriter.write(linha + "\r\n");          
             }
+            else{
+                JOptionPane.showMessageDialog(null, remover + " removido.");
+                //System.out.println(remover + " removido.");
+                verificador = true;
+            }        
         }
+        if (!verificador)
+            JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
+            //System.out.println("Não cadastrado.");
 	//liberamos o fluxo dos objetos ou fechamos o arquivo
         
                 
@@ -281,6 +296,7 @@ public class PersistenciaArquivo {
         
 	} catch (IOException e) {
     	e.printStackTrace();
+        throw new Exception ("Não foi possível deletar nome.");
         }
     }
 }

@@ -12,6 +12,8 @@
 
 package pets.telas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pets.modelo.Contato;
 import pets.modelo.Dono;
 import pets.modelo.RedeSocial;
@@ -55,7 +57,7 @@ public class CadastroDono extends javax.swing.JFrame {
         campoNumCelular = new javax.swing.JFormattedTextField();
         numCelular = new javax.swing.JLabel();
         contatoDono = new javax.swing.JLabel();
-        botaoFinalizar = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         enderecoDono = new javax.swing.JLabel();
         rua = new javax.swing.JLabel();
@@ -113,10 +115,10 @@ public class CadastroDono extends javax.swing.JFrame {
         contatoDono.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         contatoDono.setText("Contato");
 
-        botaoFinalizar.setText("Finalizar");
-        botaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoFinalizarActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -245,7 +247,7 @@ public class CadastroDono extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(162, 162, 162)
-                                .addComponent(botaoFinalizar))
+                                .addComponent(botaoSalvar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(44, 44, 44)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -326,7 +328,7 @@ public class CadastroDono extends javax.swing.JFrame {
                     .addComponent(whatsapp)
                     .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(botaoFinalizar)
+                .addComponent(botaoSalvar)
                 .addGap(28, 28, 28))
         );
 
@@ -336,7 +338,7 @@ public class CadastroDono extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // ação do botão finalizar (quando clica, salva os dados digitados)
-    private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         
         
         if (campoNome.getText().trim().equals("") ){
@@ -356,12 +358,16 @@ public class CadastroDono extends javax.swing.JFrame {
 
             // vai salvar os dados do formulário do animal na persistencia de arquivo
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            persistencia.salvarDadosDono(novoDono);
+            try {
+                persistencia.salvarDadosDono(novoDono);
+            } catch (Exception ex) {
+                Logger.getLogger(CadastroDono.class.getName()).log(Level.SEVERE, null, ex);
+            }
             this.dispose();
             Principal principal = new Principal();
             principal.setVisible(true);
         }
-    }//GEN-LAST:event_botaoFinalizarActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void campoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumeroActionPerformed
         // TODO add your handling code here:
@@ -385,7 +391,7 @@ public class CadastroDono extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bairro;
-    private javax.swing.JButton botaoFinalizar;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JTextField campoBairro;
     private javax.swing.JFormattedTextField campoCep;
     private javax.swing.JTextField campoComplemento;

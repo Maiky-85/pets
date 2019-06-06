@@ -12,6 +12,8 @@
 
 package pets.telas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 
@@ -62,7 +64,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
         campoSexo = new javax.swing.JComboBox<>();
         campoPorte = new javax.swing.JComboBox<>();
         campoCastracao = new javax.swing.JComboBox<>();
-        botaoFinalizar = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         campoAntirrabica = new javax.swing.JFormattedTextField();
         campoV10 = new javax.swing.JFormattedTextField();
         campoVermifugacao = new javax.swing.JFormattedTextField();
@@ -119,15 +121,15 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
         campoCastracao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a informação sobre castração", "Sim", "Não", "Não se aplica" }));
 
-        botaoFinalizar.setText("Finalizar");
-        botaoFinalizar.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botaoFinalizarMouseClicked(evt);
+                botaoSalvarMouseClicked(evt);
             }
         });
-        botaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoFinalizarActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -201,7 +203,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
                         .addComponent(campoVermifugacao, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(botaoFinalizar)))
+                        .addComponent(botaoSalvar)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -268,19 +270,19 @@ public class CadastroAnimal extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(observacao))
                 .addGap(27, 27, 27)
-                .addComponent(botaoFinalizar)
+                .addComponent(botaoSalvar)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoFinalizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoFinalizarMouseClicked
+    private void botaoSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoSalvarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoFinalizarMouseClicked
+    }//GEN-LAST:event_botaoSalvarMouseClicked
 
     // ação do botão finalizar (quando clica, salva os dados digitados)
-    private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         
         
         if (campoNome.getText().trim().equals("") ){
@@ -296,12 +298,16 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
             // vai salvar os dados do formulário do animal na persistência de arquivo
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            persistencia.salvarDadosAnimal(novoAnimal);
+            try {
+                persistencia.salvarDadosAnimal(novoAnimal);
+            } catch (Exception ex) {
+                Logger.getLogger(CadastroAnimal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             this.dispose();
             Principal principal = new Principal();
             principal.setVisible(true);
         }
-    }//GEN-LAST:event_botaoFinalizarActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,7 +346,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoFinalizar;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JFormattedTextField campoAntirrabica;
     private javax.swing.JComboBox<String> campoCastracao;
     private javax.swing.JTextPane campoCor;

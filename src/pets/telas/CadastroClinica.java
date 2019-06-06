@@ -12,6 +12,8 @@
 
 package pets.telas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pets.modelo.Clinica;
 import pets.modelo.Contato;
 import pets.modelo.Endereco;
@@ -72,7 +74,7 @@ public class CadastroClinica extends javax.swing.JFrame {
         campoFacebook = new javax.swing.JTextField();
         campoTwitter = new javax.swing.JTextField();
         campoInstagram = new javax.swing.JTextField();
-        botaoFinalizar = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -324,10 +326,10 @@ public class CadastroClinica extends javax.swing.JFrame {
                 .addGap(0, 32, Short.MAX_VALUE))
         );
 
-        botaoFinalizar.setText("Finalizar");
-        botaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoFinalizarActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -344,7 +346,7 @@ public class CadastroClinica extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
             .addGroup(layout.createSequentialGroup()
                 .addGap(247, 247, 247)
-                .addComponent(botaoFinalizar)
+                .addComponent(botaoSalvar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -357,7 +359,7 @@ public class CadastroClinica extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botaoFinalizar)
+                .addComponent(botaoSalvar)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -377,7 +379,7 @@ public class CadastroClinica extends javax.swing.JFrame {
     }//GEN-LAST:event_campoFacebookActionPerformed
 
     // ação do botão finalizar (quando clica, salva os dados digitados)
-    private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
          
        
         
@@ -397,13 +399,17 @@ public class CadastroClinica extends javax.swing.JFrame {
             
             // vai salvar os dados do formulário do animal na persistencia de arquivo
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            persistencia.salvarDadosClinica(novaClinica);
+            try {
+                persistencia.salvarDadosClinica(novaClinica);
+            } catch (Exception ex) {
+                Logger.getLogger(CadastroClinica.class.getName()).log(Level.SEVERE, null, ex);
+            }
             this.dispose();
             Principal principal = new Principal();
             principal.setVisible(true);
             
         }
-    }//GEN-LAST:event_botaoFinalizarActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -443,7 +449,7 @@ public class CadastroClinica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bairro;
-    private javax.swing.JButton botaoFinalizar;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JTextField campoBairro;
     private javax.swing.JFormattedTextField campoCep;
     private javax.swing.JTextField campoComplemento;

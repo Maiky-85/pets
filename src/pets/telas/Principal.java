@@ -5,6 +5,8 @@
  */
 package pets.telas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 
@@ -184,20 +186,32 @@ public class Principal extends javax.swing.JFrame {
     private void botaoDelAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDelAnimalActionPerformed
         String nome = JOptionPane.showInputDialog("Nome do animal");
         PersistenciaArquivo deletar = new PersistenciaArquivo();
-        deletar.deletarDados(nome,"animal.csv"); //Deletar animal do parâmetro nome
+        try {
+            deletar.deletarDados(nome,"animal.csv"); //Deletar animal do parâmetro nome
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botaoDelAnimalActionPerformed
 
     private void botaoDelDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDelDonoActionPerformed
         String nome = JOptionPane.showInputDialog("Nome do dono");
         PersistenciaArquivo deletar = new PersistenciaArquivo();
-        deletar.deletarDados(nome,"dono.csv"); //Deletar clínica do parâmetro nome
+        try {
+            deletar.deletarDados(nome,"dono.csv"); //Deletar clínica do parâmetro nome
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_botaoDelDonoActionPerformed
 
     private void botaoDelClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDelClinicaActionPerformed
         String nome = JOptionPane.showInputDialog("Nome da clínica");
         PersistenciaArquivo deletar = new PersistenciaArquivo();
-        deletar.deletarDados(nome,"clinica.csv"); //Deletar clínica do parâmetro nome
+        try {
+            deletar.deletarDados(nome,"clinica.csv"); //Deletar clínica do parâmetro nome
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botaoDelClinicaActionPerformed
 
     /**
