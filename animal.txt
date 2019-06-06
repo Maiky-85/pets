@@ -1,0 +1,8 @@
+
+Tipo: aaa | Nome: aaaa | Cor: aaaaa | Raça: Akita | Sexo: Macho | Porte:  Micro Toy | Idade: 11anos | Castrado: Sim | Vacina V10: 11/11/1111 | Vacina Antirrábica: 11/11/1111 | Vermifugação: 22/22/2222 | Último local visto: qwdasd | Informações Adicionais: asdfgdsafg
+
+Tipo: aaa | Nome: aaaa | Cor: aaaaa | Raça: Akita | Sexo: Macho | Porte:  Micro Toy | Idade: 11anos | Castrado: Sim | Vacina V10: 11/11/1111 | Vacina Antirrábica: 11/11/1111 | Vermifugação: 22/22/2222 | Último local visto: qwdasd | Informações Adicionais: asdfgdsafg
+
+Tipo: bbbb | Nome: bbbb | Cor: bbb | Raça: Basset Hound | Sexo: Macho | Porte:  Micro Toy | Idade: 222anos | Castrado: Sim | Vacina V10: 22/22/2222 | Vacina Antirrábica: 11/11/1111 | Vermifugação: 33/33/3333 | Último local visto: asdasd | Informações Adicionais: asdasdasd
+
+Tipo: wwwwww | Nome: wwww | Cor: wwww | Raça: Akita | Sexo: Macho | Porte:  Pequeno | Idade: 11anos | Castrado: Não | Vacina V10: 11/11/1111 | Vacina Antirrábica: 11/11/1111 | Vermifugação: 12/22/2222 | Último local visto: asdfasdf | Informações Adicionais: asdfasdf

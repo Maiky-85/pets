@@ -17,17 +17,22 @@ package pets;
 //import pets.modelo.Clinica;
 //import pets.modelo.Animal;
 //import pets.persistenciaArquivo.PersistenciaArquivo;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 //import pets.modelo.Contato;
 //import pets.modelo.RedeSocial;
-import pets.telas.CadastroAnimal;
-import pets.telas.CadastroClinica;
-import pets.telas.CadastroDono;
+//import pets.telas.CadastroAnimal;
+//import pets.telas.CadastroClinica;
+//import pets.telas.CadastroDono;
+import pets.telas.Principal;
 
 public class Main {
 
     public static void main(String[] args) {
         
+        Principal principal = new Principal();
+        principal.setVisible(true);
+        
+        /*
         String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
                 + "\n (1) Clínica  \n (2) Dono \n (3) Animal");
         
@@ -46,8 +51,9 @@ public class Main {
         
             CadastroAnimal cadastroAnimal = new CadastroAnimal();
             cadastroAnimal.setVisible(true);
+           
         }
-        
+        */
         
     /*   
 

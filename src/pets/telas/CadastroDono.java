@@ -338,17 +338,29 @@ public class CadastroDono extends javax.swing.JFrame {
     // ação do botão finalizar (quando clica, salva os dados digitados)
     private void botaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFinalizarActionPerformed
         
-        //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
-        Endereco endereco = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), 
-                this.campoEstado.getText(), this.campoCep.getText(), this.campoComplemento.getText());
-        Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
-        RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
         
-        Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial);
+        if (campoNome.getText().trim().equals("") ){
+            this.dispose();
+            Principal principal = new Principal();
+            principal.setVisible(true);
+        }
+        else{
         
-        // vai salvar os dados do formulário do animal na persistencia de arquivo
-        PersistenciaArquivo persistencia = new PersistenciaArquivo();
-        persistencia.salvarDadosDono(novoDono);
+            //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
+            Endereco endereco = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), 
+                    this.campoEstado.getText(), this.campoCep.getText(), this.campoComplemento.getText());
+            Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
+            RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
+
+            Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial);
+
+            // vai salvar os dados do formulário do animal na persistencia de arquivo
+            PersistenciaArquivo persistencia = new PersistenciaArquivo();
+            persistencia.salvarDadosDono(novoDono);
+            this.dispose();
+            Principal principal = new Principal();
+            principal.setVisible(true);
+        }
     }//GEN-LAST:event_botaoFinalizarActionPerformed
 
     private void campoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumeroActionPerformed
