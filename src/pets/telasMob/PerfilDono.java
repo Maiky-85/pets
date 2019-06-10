@@ -274,9 +274,10 @@ public class PerfilDono extends javax.swing.JFrame {
 
         botaoFoto.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         botaoFoto.setForeground(new java.awt.Color(102, 102, 102));
-        botaoFoto.setText("Adicionar uma foto");
+        botaoFoto.setText("Adicionar foto");
         botaoFoto.setBorderPainted(false);
         botaoFoto.setContentAreaFilled(false);
+        botaoFoto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
