@@ -168,7 +168,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 204, 153));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\fundo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/fundo.png"))); // NOI18N
         jLabel1.setToolTipText("");
 
         campoNome.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
