@@ -22,15 +22,15 @@ public class Localizacao {
     
     /* Construtor padrão */
     public Localizacao(String latitude, String longitude){
-        this.latitude = Double.parseDouble(latitude);
-        this.longitude = Double.parseDouble(longitude);
+        this.setLatitude(Double.parseDouble(latitude));
+        this.setLongitude(Double.parseDouble(longitude));
     }
     
     public double getLatitude() {
         return latitude;
     }
 
-    public void getLatitude(double latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
     
@@ -38,7 +38,7 @@ public class Localizacao {
         return longitude;
     }
 
-    public void getLongitude(double longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
     

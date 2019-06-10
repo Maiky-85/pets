@@ -19,15 +19,15 @@ public class RedeSocial {
     private String instagram;
     private long whatsapp;
     
-    public RedeSocial(String facebook, String twitter, String instagram, String whatsapp){
+    public RedeSocial(String facebook, String twitter, String instagram, String whatsapp) throws Exception{
         
-        this.facebook = facebook;
-        this.twitter = twitter;
-        this.instagram = instagram;
+        this.setFacebook(facebook);
+        this.setTwitter(twitter);
+        this.setInstagram(instagram);
         whatsapp = whatsapp.replace("(", "");
         whatsapp = whatsapp.replace(")", "");
         whatsapp = whatsapp.replace("-", "");
-        this.whatsapp = Long.parseLong(whatsapp);                               // conversão do dado de String para Long
+        this.setWhatsapp(Long.parseLong(whatsapp));                               // conversão do dado de String para Long
     }
     
     // facebook

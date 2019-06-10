@@ -44,7 +44,7 @@ public class ClinicaTest {
      * Test of getNome method, of class Clinica.
      */
     @Test
-    public void testGetNome() {
+    public void testGetNome() throws Exception {
         System.out.println("getNome");
        
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
@@ -64,7 +64,7 @@ public class ClinicaTest {
      * Test of setNome method, of class Clinica.
      */
     @Test
-    public void testSetNome() {
+    public void testSetNome() throws Exception {
         System.out.println("setNome");
         String nome = "Clínica Vida Animal";
        
@@ -82,7 +82,7 @@ public class ClinicaTest {
      * Test of getEndereco method, of class Clinica.
      */
     @Test
-    public void testGetEndereco() {
+    public void testGetEndereco() throws Exception {
         System.out.println("getEndereco");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
@@ -102,7 +102,7 @@ public class ClinicaTest {
      * Test of setEndereco method, of class Clinica.
      */
     @Test
-    public void testSetEndereco() {
+    public void testSetEndereco() throws Exception {
         System.out.println("setEndereco");
                 
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
@@ -120,7 +120,7 @@ public class ClinicaTest {
      * Test of getContato method, of class Clinica.
      */
     @Test
-    public void testGetContato() {
+    public void testGetContato() throws Exception {
         System.out.println("getContato");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
@@ -139,7 +139,7 @@ public class ClinicaTest {
      * Test of setContato method, of class Clinica.
      */
     @Test
-    public void testSetContato() {
+    public void testSetContato() throws Exception {
         System.out.println("setContato");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
@@ -157,7 +157,7 @@ public class ClinicaTest {
      * Test of getRedeSocial method, of class Clinica.
      */
     @Test
-    public void testGetRedeSocial() {
+    public void testGetRedeSocial() throws Exception {
         System.out.println("getRedeSocial");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
@@ -176,7 +176,7 @@ public class ClinicaTest {
      * Test of setRedeSocial method, of class Clinica.
      */
     @Test
-    public void testSetRedeSocial() {
+    public void testSetRedeSocial() throws Exception {
         System.out.println("setRedeSocial");
         
         Endereco endereco = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");

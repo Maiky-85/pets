@@ -19,19 +19,19 @@ public class Contato {
     private long numCelular;
     private String email;
     
-    public Contato(String numTelefone, String numCelular, String email) {
+    public Contato(String numTelefone, String numCelular, String email) throws Exception {
         
         //TratamentoMascara telefoneTratado = new TratamentoMascara(numTelefone);
         //TratamentoMascara celularTratado = new TratamentoMascara(numTelefone);
         numTelefone = numTelefone.replace("(", "");
         numTelefone = numTelefone.replace(")", "");
         numTelefone = numTelefone.replace("-", "");
-        this.numTelefone = Long.parseLong(numTelefone);                         // conversão do dado de String para Long
+        this.setTelefone(Long.parseLong(numTelefone));                          // conversão do dado de String para Long
 	numCelular = numCelular.replace("(", "");
         numCelular = numCelular.replace(")", "");
         numCelular = numCelular.replace("-", "");
-        this.numCelular = Long.parseLong(numCelular);                           // conversão do dado de String para Long
-        this.email = email;
+        this.setCelular(Long.parseLong(numCelular));                           // conversão do dado de String para Long
+        this.setEmail(email);
     }
     
     // telefone da clínica
@@ -48,7 +48,7 @@ public class Contato {
         return numCelular;
     }
 
-    public void setCelular(long numCelular) {
+    public void setCelular(long numCelular){
         this.numCelular = numCelular;
     }
     
@@ -57,7 +57,10 @@ public class Contato {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws Exception {
+        if (!email.contains("@") || !email.contains(".com")){
+            throw new Exception ("E-mail com formato inválido");
+        }
         this.email = email;
     }
     

@@ -22,10 +22,10 @@ public class Clinica {
 
     public Clinica(String nome, Endereco endereco, Contato contato, RedeSocial redeSocial) {
         
-        this.nome = nome;
-	this.endereco = endereco;
-	this.contato = contato;
-        this.redeSocial = redeSocial;
+        this.setNome(nome);
+	this.setEndereco(endereco);
+	this.setContato(contato);
+        this.setRedeSocial(redeSocial);
     }
 
     // nome da clínica

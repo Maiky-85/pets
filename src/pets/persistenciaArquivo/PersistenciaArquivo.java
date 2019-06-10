@@ -40,17 +40,17 @@ public class PersistenciaArquivo {
 
                 PrintWriter escreveArq = new PrintWriter(arqWriter);
                 
-                escreveArq.println(clinica.getNome() + 
+                escreveArq.println(clinica.getContato().getEmail() + 
+                ";" + clinica.getNome() + 
                 ";Rua " + clinica.getEndereco().getRua() + 
                 ", " + clinica.getEndereco().getNumero() +
                 ", " + clinica.getEndereco().getBairro() +
-                ", " + clinica.getEndereco().getMunicipio() +
+                ", " + clinica.getEndereco().getCidade() +
                 " - " + clinica.getEndereco().getEstado() +
                 " - " + clinica.getEndereco().getCep() +
                 " - " + clinica.getEndereco().getComplemento() +        
                 ";" + clinica.getContato().getTelefone() + 
                 ";" + clinica.getContato().getCelular() +
-                ";" + clinica.getContato().getEmail()  +
                 ";" + clinica.getRedeSocial().getFacebook() + 
                 ";" + clinica.getRedeSocial().getTwitter() + 
                 ";" + clinica.getRedeSocial().getInstagram() + 
@@ -71,20 +71,20 @@ public class PersistenciaArquivo {
             arqWriter = new FileWriter(arq, true);
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
-            escreveArq.println("Clínica;Endereço;Telefone;Celular;Email;"
+            escreveArq.println("Email;Clínica;Endereço;Telefone;Celular;"
                     + "Facebook;Twitter;Instagram;Whatsapp");
             
-            escreveArq.println(clinica.getNome() + 
+            escreveArq.println(clinica.getContato().getEmail() + 
+                ";" + clinica.getNome() + 
                 ";Rua " + clinica.getEndereco().getRua() + 
                 ", " + clinica.getEndereco().getNumero() +
                 ", " + clinica.getEndereco().getBairro() +
-                ", " + clinica.getEndereco().getMunicipio() +
+                ", " + clinica.getEndereco().getCidade() +
                 " - " + clinica.getEndereco().getEstado() +
                 " - " + clinica.getEndereco().getCep() +
                 " - " + clinica.getEndereco().getComplemento() +        
                 ";" + clinica.getContato().getTelefone() + 
                 ";" + clinica.getContato().getCelular() +
-                ";" + clinica.getContato().getEmail()  +
                 ";" + clinica.getRedeSocial().getFacebook() + 
                 ";" + clinica.getRedeSocial().getTwitter() + 
                 ";" + clinica.getRedeSocial().getInstagram() + 
@@ -112,21 +112,22 @@ public class PersistenciaArquivo {
 
                 PrintWriter escreveArq = new PrintWriter(arqWriter);
                 
-                escreveArq.println(dono.getNome() + 
+                escreveArq.println(dono.getContato().getEmail() + ";"  +  
+                dono.getNome() +
                 ";Rua " + dono.getEndereco().getRua() + 
                 ", " + dono.getEndereco().getNumero() +
                 ", " + dono.getEndereco().getBairro() +
-                ", " + dono.getEndereco().getMunicipio() +
+                ", " + dono.getEndereco().getCidade() +
                 " - " + dono.getEndereco().getEstado() +
                 " - " + dono.getEndereco().getCep() +
                 " - " + dono.getEndereco().getComplemento() +        
                 ";" + dono.getContato().getTelefone() + 
                 ";" + dono.getContato().getCelular() +
-                ";" + dono.getContato().getEmail()  +
                 ";" + dono.getRedeSocial().getFacebook() + 
                 ";" + dono.getRedeSocial().getTwitter() + 
                 ";" + dono.getRedeSocial().getInstagram() + 
-                ";" + dono.getRedeSocial().getWhatsapp());
+                ";" + dono.getRedeSocial().getWhatsapp() +
+                ";" + dono.getSenha() + ";");
 
                 escreveArq.flush();
                 escreveArq.close();
@@ -144,24 +145,26 @@ public class PersistenciaArquivo {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
-            escreveArq.println("Dono do Animal;Endereço;Telefone;Celular;Email;"
-                    + "Facebook;Twitter;Instagram;Whatsapp");
+            escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
+                    + "Facebook;Twitter;Instagram;Whatsapp;Senha");
             
-            escreveArq.println(dono.getNome() + 
+            escreveArq.println(dono.getContato().getEmail() + ";"  +  
+                dono.getNome() +
                 ";Rua " + dono.getEndereco().getRua() + 
                 ", " + dono.getEndereco().getNumero() +
                 ", " + dono.getEndereco().getBairro() +
-                ", " + dono.getEndereco().getMunicipio() +
+                ", " + dono.getEndereco().getCidade() +
                 " - " + dono.getEndereco().getEstado() +
                 " - " + dono.getEndereco().getCep() +
                 " - " + dono.getEndereco().getComplemento() +        
                 ";" + dono.getContato().getTelefone() + 
                 ";" + dono.getContato().getCelular() +
-                ";" + dono.getContato().getEmail()  +
                 ";" + dono.getRedeSocial().getFacebook() + 
                 ";" + dono.getRedeSocial().getTwitter() + 
                 ";" + dono.getRedeSocial().getInstagram() + 
-                ";" + dono.getRedeSocial().getWhatsapp());
+                ";" + dono.getRedeSocial().getWhatsapp() +
+                ";" + dono.getSenha() + ";");
+
              
             escreveArq.flush();
             escreveArq.close();
@@ -241,7 +244,28 @@ public class PersistenciaArquivo {
         }
     }
     
-    public void deletarDados(String remover, String arquivo) throws Exception {
+     public void contaLogada(String email) throws IOException, Exception{
+        File arq = new File("contaOn.txt");
+        
+        try{
+            arq.createNewFile();
+            FileWriter arqWriter;
+            arqWriter = new FileWriter(arq, false);
+
+            PrintWriter escreveArq = new PrintWriter(arqWriter);
+
+            escreveArq.println(email);
+
+            escreveArq.flush();
+            escreveArq.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new Exception ("Não foi possível salvar Animal.");
+        }
+     }    
+        
+    public void deletarDadosAnimal(String remover, String arquivo) throws Exception {
         File arq = new File(arquivo);
         File newArq = new File("tempArquivo.csv");
 
@@ -259,7 +283,7 @@ public class PersistenciaArquivo {
         //Fazemos um loop linha a linha no arquivo, enquanto ele seja diferente de null.
         //O método readLine() devolve a linha na posicao do loop para a variavel linha.
         boolean verificador = false;
-        while ( ( linha = bufferedReader.readLine() ) != null) {
+        while ((linha = bufferedReader.readLine()) != null) {
             //Aqui imprimimos a linha
             //System.out.println(linha);
             int i=0;
@@ -283,7 +307,7 @@ public class PersistenciaArquivo {
         if (!verificador)
             JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
             //System.out.println("Não cadastrado.");
-	//liberamos o fluxo dos objetos ou fechamos o arquivo
+            //liberamos o fluxo dos objetos ou fechamos o arquivo
         
                 
         fileWriter.close();

@@ -117,34 +117,34 @@ public class EnderecoTest {
         System.out.println("setBairo");
         String bairro = "";
         Endereco instance = new Endereco("Rua das Orquídeas", "23", bairro, "Vitória", "ES", "29140567", "-");
-        instance.setBairo(bairro);
+        instance.setBairro(bairro);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getMunicipio method, of class Endereco.
+     * Test of getCidade method, of class Endereco.
      */
     @Test
-    public void testGetMunicipio() {
-        System.out.println("getMunicipio");
+    public void testgetCidade() {
+        System.out.println("getCidade");
         Endereco instance = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", "Vitória", "ES", "29140567", "-");
         String expResult = "Vitória";
-        String result = instance.getMunicipio();
+        String result = instance.getCidade();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setMunicipio method, of class Endereco.
+     * Test of setCidade method, of class Endereco.
      */
     @Test
-    public void testSetMunicipio() {
-        System.out.println("setMunicipio");
-        String municipio = "Vitória";
-       Endereco instance = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", municipio, "ES", "29140567", "-");
-        instance.setMunicipio(municipio);
+    public void testSetCidade() {
+        System.out.println("setCidade");
+        String cidade = "Vitória";
+       Endereco instance = new Endereco("Rua das Orquídeas", "23", "Bairro Jardins", cidade, "ES", "29140567", "-");
+        instance.setCidade(cidade);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

@@ -14,6 +14,7 @@ package pets.telas;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 
@@ -114,6 +115,11 @@ public class CadastroAnimal extends javax.swing.JFrame {
         jScrollPane6.setViewportView(campoUltimaLocalizacao);
 
         campoRaca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a raça", "Akita", "Basset Hound", "Beagle", "Boxer", "Buldogue", "Bull Terrier", "Chihuahua", "Chow Chow", "Cocker", "Collie", "Dachshund", "Dálmata", "Doberman", "Dogo Argentino", "Fila Brasileiro", "Fox Terrier", "Golden Retriever", "Husky Siberiano", "Labrador", "Lhasa Apso", "Lulu da Pomerânia", "Maltês", "Pastor Alemão", "Pinscher", "Poodle", "Pug", "Rottweiler", "Sem Raça Definida (SRD)", "ShihTzu", "Yorkshire Terrier", "Outra Raça" }));
+        campoRaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoRacaActionPerformed(evt);
+            }
+        });
 
         campoSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o sexo", "Macho", "Fêmea" }));
 
@@ -195,7 +201,6 @@ public class CadastroAnimal extends javax.swing.JFrame {
                         .addComponent(jScrollPane4)
                         .addComponent(campoRaca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane5)
-                        .addComponent(campoCastracao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(campoAntirrabica, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
@@ -203,7 +208,8 @@ public class CadastroAnimal extends javax.swing.JFrame {
                         .addComponent(campoVermifugacao, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(botaoSalvar)))
+                        .addComponent(botaoSalvar))
+                    .addComponent(campoCastracao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -234,11 +240,9 @@ public class CadastroAnimal extends javax.swing.JFrame {
                         .addComponent(campoSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoCastracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(campoAntirrabica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(campoV10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -254,7 +258,9 @@ public class CadastroAnimal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(idade)
                         .addGap(18, 18, 18)
-                        .addComponent(castracao)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(castracao)
+                            .addComponent(campoCastracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(vacinaAntirrabica)
                         .addGap(18, 18, 18)
@@ -271,7 +277,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
                     .addComponent(observacao))
                 .addGap(27, 27, 27)
                 .addComponent(botaoSalvar)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -291,6 +297,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
             principal.setVisible(true);
         }
         else{
+            try {
             //cria um objeto do tipo Animal
             Animal novoAnimal = new Animal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
                     (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
@@ -298,16 +305,20 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
             // vai salvar os dados do formulário do animal na persistência de arquivo
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            try {
+            
                 persistencia.salvarDadosAnimal(novoAnimal);
             } catch (Exception ex) {
-                Logger.getLogger(CadastroAnimal.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
             this.dispose();
             Principal principal = new Principal();
             principal.setVisible(true);
         }
     }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    private void campoRacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoRacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoRacaActionPerformed
 
     /**
      * @param args the command line arguments

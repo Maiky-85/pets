@@ -14,6 +14,7 @@ package pets.telas;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import pets.modelo.Clinica;
 import pets.modelo.Contato;
 import pets.modelo.Endereco;
@@ -389,7 +390,8 @@ public class CadastroClinica extends javax.swing.JFrame {
             principal.setVisible(true);
         }
         else{
-             //cria um objeto do tipo Clinica após criar Endereco, Contato e RedeSocial
+            try {
+            //cria um objeto do tipo Clinica após criar Endereco, Contato e RedeSocial
             Endereco enderecoClinica = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoMunicipio.getText(), 
                 this.campoEstado.getText(), this.campoCep.getText(), this.campoComplemento.getText());
             Contato contatoClinica = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
@@ -399,10 +401,10 @@ public class CadastroClinica extends javax.swing.JFrame {
             
             // vai salvar os dados do formulário do animal na persistencia de arquivo
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            try {
+            
                 persistencia.salvarDadosClinica(novaClinica);
             } catch (Exception ex) {
-                Logger.getLogger(CadastroClinica.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
             this.dispose();
             Principal principal = new Principal();

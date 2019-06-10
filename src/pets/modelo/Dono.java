@@ -12,6 +12,11 @@
 
 package pets.modelo;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class Dono {
     
     // atributos da classe Dono
@@ -19,18 +24,20 @@ public class Dono {
     private Endereco endereco;
     private Contato contato;
     private RedeSocial redeSocial;
+    private String senha;
     
     
-    public Dono(String nome, Endereco endereco, Contato contato, RedeSocial redeSocial) {
+    public Dono(String nome, Endereco endereco, Contato contato, RedeSocial redeSocial, String senha) {
         
-        this.nome = nome;
-	this.endereco = endereco;
-	this.contato = contato;
-        this.redeSocial = redeSocial;
+        this.setNome(nome);
+	this.setEndereco(endereco);
+	this.setContato(contato);
+        this.setRedeSocial(redeSocial);
+        this.setSenha(senha);
     }
     
     // nome do dono
-    public String getNome() {
+    public String getNome() throws FileNotFoundException {
         return nome;
     }
 
@@ -63,6 +70,15 @@ public class Dono {
 
     public void setRedeSocial(RedeSocial redeSocial) {
         this.redeSocial = redeSocial;
+    }
+
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
     
 }

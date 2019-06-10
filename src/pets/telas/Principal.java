@@ -14,6 +14,7 @@ import pets.persistenciaArquivo.PersistenciaArquivo;
  *
  * @author Maiky
  */
+
 public class Principal extends javax.swing.JFrame {
 
     /**
@@ -33,6 +34,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        jColorChooser1 = new javax.swing.JColorChooser();
         nomeDono = new javax.swing.JLabel();
         botaoClinica = new javax.swing.JButton();
         botaoDono = new javax.swing.JButton();
@@ -187,31 +189,18 @@ public class Principal extends javax.swing.JFrame {
         String nome = JOptionPane.showInputDialog("Nome do animal");
         PersistenciaArquivo deletar = new PersistenciaArquivo();
         try {
-            deletar.deletarDados(nome,"animal.csv"); //Deletar animal do parâmetro nome
+            deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
         } catch (Exception ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botaoDelAnimalActionPerformed
 
     private void botaoDelDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDelDonoActionPerformed
-        String nome = JOptionPane.showInputDialog("Nome do dono");
-        PersistenciaArquivo deletar = new PersistenciaArquivo();
-        try {
-            deletar.deletarDados(nome,"dono.csv"); //Deletar clínica do parâmetro nome
-        } catch (Exception ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+
     }//GEN-LAST:event_botaoDelDonoActionPerformed
 
     private void botaoDelClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDelClinicaActionPerformed
-        String nome = JOptionPane.showInputDialog("Nome da clínica");
-        PersistenciaArquivo deletar = new PersistenciaArquivo();
-        try {
-            deletar.deletarDados(nome,"clinica.csv"); //Deletar clínica do parâmetro nome
-        } catch (Exception ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
     }//GEN-LAST:event_botaoDelClinicaActionPerformed
 
     /**
@@ -256,6 +245,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton botaoDelClinica;
     private javax.swing.JButton botaoDelDono;
     private javax.swing.JButton botaoDono;
+    private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;

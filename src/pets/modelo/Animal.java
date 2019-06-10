@@ -32,19 +32,19 @@ public class Animal {
     public Animal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
     String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao) {
         
-        this.nome = nome;
-	this.tipo = tipo;
-	this.cor = cor;
-	this.raca = raca;
-        this.sexo = sexo;
-        this.porte = porte;
-        this.idade = Integer.parseInt(idade);                                   // conversão do dado de String para inteiro
-        this.castracao = castracao;
-        this.vacinaAntirrabica = vacinaAntirrabica;
-        this.vacinaV10 = vacinaV10;
-        this.vermifugacao = vermifugacao;
-        this.ultimaLocalizacao = ultimaLocalizacao;
-        this.observacao = observacao;
+        this.setNome(nome);
+	this.setTipo(tipo);
+	this.setCor(cor);
+	this.setRaca(raca);
+        this.setSexo(sexo);
+        this.setPorte(porte);
+        this.setIdade(Integer.parseInt(idade));                                   // conversão do dado de String para inteiro
+        this.setCastracao(castracao);
+        this.setVacinaAntirrabica(vacinaAntirrabica);
+        this.setVacinaV10(vacinaV10);
+        this.setVermifugacao(vermifugacao);
+        this.setUltimaLocalizacao(ultimaLocalizacao);
+        this.setObservacao(observacao);
     }
 
     public String getNome() {

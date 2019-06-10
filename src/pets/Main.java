@@ -24,13 +24,21 @@ package pets;
 //import pets.telas.CadastroClinica;
 //import pets.telas.CadastroDono;
 import pets.telas.Principal;
+import pets.telasMob.Inicial;
+import pets.telasMob.TelaLogin;
 
 public class Main {
 
     public static void main(String[] args) {
         
-        Principal principal = new Principal();
-        principal.setVisible(true);
+        TelaLogin login = new TelaLogin();
+        login.setVisible(true);
+        
+
+        
+        
+//        Principal principal = new Principal();
+//        principal.setVisible(true);
         
         /*
         String opcao = JOptionPane.showInputDialog("Selecione opção para entrada de dados."
