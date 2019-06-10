@@ -49,7 +49,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(242, 167, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\logoTrans.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/logoTrans.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

@@ -36,7 +36,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        botaoMenu = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -95,13 +95,13 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/logo2.png"))); // NOI18N
 
-        botaoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/voltar.png"))); // NOI18N
-        botaoMenu.setBorder(null);
-        botaoMenu.setContentAreaFilled(false);
-        botaoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoMenu.addActionListener(new java.awt.event.ActionListener() {
+        botaoVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/voltar.png"))); // NOI18N
+        botaoVoltar.setBorder(null);
+        botaoVoltar.setContentAreaFilled(false);
+        botaoVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoMenuActionPerformed(evt);
+                botaoVoltarActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botaoMenu)
+                .addComponent(botaoVoltar)
                 .addGap(69, 69, 69)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -123,7 +123,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoMenu)
+                .addComponent(botaoVoltar)
                 .addContainerGap())
         );
 
@@ -476,11 +476,11 @@ public class CadastroAnimal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoRacaActionPerformed
 
-    private void botaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMenuActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         this.dispose();
         Inicial inicial = new Inicial();
         inicial.setVisible(true);
-    }//GEN-LAST:event_botaoMenuActionPerformed
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         if (campoNome.getText().trim().equals("") ){
@@ -544,8 +544,8 @@ public class CadastroAnimal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoFoto;
-    private javax.swing.JButton botaoMenu;
     private javax.swing.JButton botaoSalvar;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JFormattedTextField campoAntirrabica;
     private javax.swing.JComboBox<String> campoCastracao;
     private javax.swing.JTextField campoCor;

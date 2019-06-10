@@ -68,7 +68,6 @@ public class Inicial extends javax.swing.JFrame {
         setLocation(new java.awt.Point(500, 200));
         setMaximumSize(new java.awt.Dimension(300, 533));
         setMinimumSize(new java.awt.Dimension(300, 533));
-        setPreferredSize(new java.awt.Dimension(300, 533));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,7 +161,7 @@ public class Inicial extends javax.swing.JFrame {
                 .addComponent(botaoPets, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
         );
 
-        mapa.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\mapa.png")); // NOI18N
+        mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
         mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -262,7 +261,7 @@ public class Inicial extends javax.swing.JFrame {
         campoPorte.setForeground(new java.awt.Color(153, 153, 153));
         campoPorte.setText("?");
 
-        menuInf.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\menuInf.png")); // NOI18N
+        menuInf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/menuInf.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

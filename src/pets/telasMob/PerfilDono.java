@@ -115,9 +115,9 @@ public class PerfilDono extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\logo2.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/logo2.png"))); // NOI18N
 
-        botaoMenu.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\voltar.png")); // NOI18N
+        botaoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/voltar.png"))); // NOI18N
         botaoMenu.setBorder(null);
         botaoMenu.setContentAreaFilled(false);
         botaoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -174,16 +174,16 @@ public class PerfilDono extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addGap(108, 108, 108)
                 .addComponent(botaoSalvar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         nome.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
@@ -412,7 +412,6 @@ public class PerfilDono extends javax.swing.JFrame {
                                     .addComponent(jLabel1))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(12, 12, 12))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,6 +459,7 @@ public class PerfilDono extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(campoSenha)))
                 .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

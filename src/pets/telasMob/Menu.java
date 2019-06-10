@@ -205,15 +205,15 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoPerfil.png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoAle.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoAlt.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\icoAle.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoAle.png"))); // NOI18N
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\iconAmi.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/iconAmi.png"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\icoConf.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoConf.png"))); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\icoPerg.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoPerg.png"))); // NOI18N
 
         botaoPerfil.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         botaoPerfil.setText("Meu perfil");
@@ -299,7 +299,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("E:\\IFES\\4 semestre\\POO1\\icoClin.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/icoClin.png"))); // NOI18N
 
         botaoClinicas.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         botaoClinicas.setText("Clínicas");
