@@ -7,8 +7,10 @@ package pets.modelo;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 
@@ -20,6 +22,10 @@ public class Conta {
     
     private String email;
     private String senha;
+    
+    public Conta(){
+        
+    }
     
     public Conta(String email, String senha) throws Exception{
         this.email = email;
@@ -91,5 +97,49 @@ public class Conta {
     bufferedReader.close();
     }
     
+    public boolean VerificarConta(String email) throws FileNotFoundException, IOException{
+        boolean emailCadastrado = false;
+        
+        File arq = new File("dono.csv");
+        
+        FileReader fileReader = new FileReader(arq);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String linha = "";
+        String emailVerificar="";
 
+        while ((linha = bufferedReader.readLine()) != null && !emailCadastrado) {   //laço para buscar e-mail
+            int i=0;
+            int j=0;          
+            //Concatena as strings do nome
+            while (linha.charAt(i) != ';'){
+                emailVerificar = emailVerificar + linha.charAt(i);  
+                if (linha.charAt(i)==';'){
+                   j=j+1;
+                }               
+                i=i+1; 
+            }
+            if (emailVerificar.equals(email)){
+                emailCadastrado = true;                
+            }
+            else{
+                emailVerificar="";
+            }
+        }
+        fileReader.close();
+        bufferedReader.close();
+        if (emailCadastrado){
+            fileReader.close();
+            bufferedReader.close();
+            return true;       
+        }
+        else{
+            fileReader.close();
+            bufferedReader.close();
+            return false;
+        }
+        //return true;
+    
+    }
+        
+        
 }       

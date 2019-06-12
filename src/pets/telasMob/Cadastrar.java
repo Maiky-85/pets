@@ -180,21 +180,29 @@ public class Cadastrar extends javax.swing.JFrame {
         }
         else if (senha.equals(senha2)){
            try {
+               //verifica se e-mail já existe
+               Conta cadastro = new Conta();
+               boolean verificarEmail = cadastro.VerificarConta(this.campoEmail.getText());
+               
                 //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
                 
-                
-                Endereco endereco = new Endereco("","0","","","AC","00000000","");
-                Contato contatoDono = new Contato("00000000000","00000000000", this.campoEmail.getText());                                  
-                RedeSocial redeSocial = new RedeSocial("","","","00000000000");
-                Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial,senha);
-    
-                // vai salvar os dados parciais do dono na persistencia de arquivo
-                PersistenciaArquivo persistencia = new PersistenciaArquivo();
+                if (!verificarEmail){
+                    Endereco endereco = new Endereco("","0","","","AC","00000000","");
+                    Contato contatoDono = new Contato("00000000000","00000000000", this.campoEmail.getText());                                  
+                    RedeSocial redeSocial = new RedeSocial("","","","00000000000");
+                    Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial,senha);
 
-                persistencia.salvarDadosDono(novoDono);
-                this.dispose();
-                TelaLogin inicio = new TelaLogin();
-                inicio.setVisible(true);
+                    // vai salvar os dados parciais do dono na persistencia de arquivo
+                    PersistenciaArquivo persistencia = new PersistenciaArquivo();
+
+                    persistencia.salvarDadosDono(novoDono);
+                    this.dispose();
+                    TelaLogin inicio = new TelaLogin();
+                    inicio.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "e-mail já possui cadastro", "Atenção", JOptionPane.WARNING_MESSAGE);  
+                }
                 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
