@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 //import java.util.logging.Logger;
 import pets.modelo.Animal;
 import pets.modelo.Clinica;
+import pets.modelo.ContaLogada;
 import pets.modelo.Dono;
 
 public class PersistenciaArquivo {
@@ -42,18 +43,18 @@ public class PersistenciaArquivo {
                 
                 escreveArq.println(clinica.getContato().getEmail() + 
                 ";" + clinica.getNome() + 
-                ";Rua " + clinica.getEndereco().getRua() + 
-                ", " + clinica.getEndereco().getNumero() +
-                ", " + clinica.getEndereco().getBairro() +
-                ", " + clinica.getEndereco().getCidade() +
-                " - " + clinica.getEndereco().getEstado() +
-                " - " + clinica.getEndereco().getCep() +
-                " - " + clinica.getEndereco().getComplemento() +        
-                ";" + clinica.getContato().getTelefone() + 
+                ";" + clinica.getEndereco().getRua() + 
+                "," + clinica.getEndereco().getNumero() +
+                "," + clinica.getEndereco().getBairro() +
+                "," + clinica.getEndereco().getCidade() +
+                "," + clinica.getEndereco().getEstado() +
+                "," + clinica.getEndereco().getCep() +
+                "," + clinica.getEndereco().getComplemento() +        
+                ",;" + clinica.getContato().getTelefone() + 
                 ";" + clinica.getContato().getCelular() +
                 ";" + clinica.getRedeSocial().getFacebook() + 
-                ";" + clinica.getRedeSocial().getTwitter() + 
                 ";" + clinica.getRedeSocial().getInstagram() + 
+                ";" + clinica.getRedeSocial().getTwitter() + 
                 ";" + clinica.getRedeSocial().getWhatsapp());
                    
                 escreveArq.flush();
@@ -72,22 +73,22 @@ public class PersistenciaArquivo {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             escreveArq.println("Email;Clínica;Endereço;Telefone;Celular;"
-                    + "Facebook;Twitter;Instagram;Whatsapp");
+                    + "Facebook;Instagram;Twitter;Whatsapp");
             
             escreveArq.println(clinica.getContato().getEmail() + 
                 ";" + clinica.getNome() + 
-                ";Rua " + clinica.getEndereco().getRua() + 
-                ", " + clinica.getEndereco().getNumero() +
-                ", " + clinica.getEndereco().getBairro() +
-                ", " + clinica.getEndereco().getCidade() +
-                " - " + clinica.getEndereco().getEstado() +
-                " - " + clinica.getEndereco().getCep() +
-                " - " + clinica.getEndereco().getComplemento() +        
-                ";" + clinica.getContato().getTelefone() + 
+                ";" + clinica.getEndereco().getRua() + 
+                "," + clinica.getEndereco().getNumero() +
+                "," + clinica.getEndereco().getBairro() +
+                "," + clinica.getEndereco().getCidade() +
+                "," + clinica.getEndereco().getEstado() +
+                "," + clinica.getEndereco().getCep() +
+                "," + clinica.getEndereco().getComplemento() +        
+                ",;" + clinica.getContato().getTelefone() + 
                 ";" + clinica.getContato().getCelular() +
                 ";" + clinica.getRedeSocial().getFacebook() + 
-                ";" + clinica.getRedeSocial().getTwitter() + 
                 ";" + clinica.getRedeSocial().getInstagram() + 
+                ";" + clinica.getRedeSocial().getTwitter()+ 
                 ";" + clinica.getRedeSocial().getWhatsapp());
              
             escreveArq.flush();
@@ -99,8 +100,7 @@ public class PersistenciaArquivo {
         }
         }        
     }    
-
-    public void salvarDadosDono(Dono dono) throws Exception {
+public void salvarDadosDono(Dono dono) throws Exception {
         
         File arq = new File("dono.csv");
         
@@ -114,18 +114,18 @@ public class PersistenciaArquivo {
                 
                 escreveArq.println(dono.getContato().getEmail() + ";"  +  
                 dono.getNome() +
-                ";Rua " + dono.getEndereco().getRua() + 
-                ", " + dono.getEndereco().getNumero() +
-                ", " + dono.getEndereco().getBairro() +
-                ", " + dono.getEndereco().getCidade() +
-                " - " + dono.getEndereco().getEstado() +
-                " - " + dono.getEndereco().getCep() +
-                " - " + dono.getEndereco().getComplemento() +        
-                ";" + dono.getContato().getTelefone() + 
+                ";" + dono.getEndereco().getRua() + 
+                "," + dono.getEndereco().getNumero() +
+                "," + dono.getEndereco().getBairro() +
+                "," + dono.getEndereco().getCidade() +
+                "," + dono.getEndereco().getEstado() +
+                "," + dono.getEndereco().getCep() +
+                "," + dono.getEndereco().getComplemento() +        
+                ",;" + dono.getContato().getTelefone() + 
                 ";" + dono.getContato().getCelular() +
                 ";" + dono.getRedeSocial().getFacebook() + 
-                ";" + dono.getRedeSocial().getTwitter() + 
                 ";" + dono.getRedeSocial().getInstagram() + 
+                ";" + dono.getRedeSocial().getTwitter()+ 
                 ";" + dono.getRedeSocial().getWhatsapp() +
                 ";" + dono.getSenha() + ";");
 
@@ -146,22 +146,22 @@ public class PersistenciaArquivo {
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
             escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
-                    + "Facebook;Twitter;Instagram;Whatsapp;Senha");
+                    + "Facebook;Instagram;Twitter;Whatsapp;Senha");
             
             escreveArq.println(dono.getContato().getEmail() + ";"  +  
                 dono.getNome() +
-                ";Rua " + dono.getEndereco().getRua() + 
-                ", " + dono.getEndereco().getNumero() +
-                ", " + dono.getEndereco().getBairro() +
-                ", " + dono.getEndereco().getCidade() +
-                " - " + dono.getEndereco().getEstado() +
-                " - " + dono.getEndereco().getCep() +
-                " - " + dono.getEndereco().getComplemento() +        
-                ";" + dono.getContato().getTelefone() + 
+                ";" + dono.getEndereco().getRua() + 
+                "," + dono.getEndereco().getNumero() +
+                "," + dono.getEndereco().getBairro() +
+                "," + dono.getEndereco().getCidade() +
+                "," + dono.getEndereco().getEstado() +
+                "," + dono.getEndereco().getCep() +
+                "," + dono.getEndereco().getComplemento() +        
+                ",;" + dono.getContato().getTelefone() + 
                 ";" + dono.getContato().getCelular() +
                 ";" + dono.getRedeSocial().getFacebook() + 
-                ";" + dono.getRedeSocial().getTwitter() + 
                 ";" + dono.getRedeSocial().getInstagram() + 
+                ";" + dono.getRedeSocial().getTwitter()+ 
                 ";" + dono.getRedeSocial().getWhatsapp() +
                 ";" + dono.getSenha() + ";");
 
@@ -173,6 +173,83 @@ public class PersistenciaArquivo {
             e.printStackTrace();
             throw new Exception ("Não foi possível salvar Dono.");
         }
+        }
+    }
+    public void AtualizarDadosDono(Dono dono, String arquivo) throws Exception {
+        
+        File arq = new File(arquivo);
+        File newArq = new File("tempArquivo.csv");
+        
+        ContaLogada contaLogada = new ContaLogada();
+        String contaOn = contaLogada.getEmailLogado();
+
+    try {
+        //Indicamos o arquivo que será lido
+        FileReader fileReader = new FileReader(arq);
+        //Criamos o objeto bufferReader que nos oferece o 
+        FileWriter escreveArq = new FileWriter(newArq);
+        //Criamos o objeto bufferReader que nos oferece o método de leitura readLine()
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        //String que irá receber cada linha do arquivo
+        String linha = "";
+
+        //Fazemos um loop linha a linha no arquivo, enquanto ele seja diferente de null.
+        //O método readLine() devolve a linha na posicao do loop para a variavel linha.
+        boolean verificador = false;
+        while ((linha = bufferedReader.readLine()) != null) {
+            //Aqui imprimimos a linha
+            int i=0;
+            String email="";
+            //Concatena as strings do nome
+            while (linha.charAt(i) != ';'){
+                email = email + linha.charAt(i);
+                i=i+1;
+            }
+            
+            //escreve linhas em novo arquivo enquanto nome diferente de removeClinica
+            if (!email.equals(contaOn)){
+                escreveArq.write(linha + "\r\n");          
+            }
+            else{
+                JOptionPane.showMessageDialog(null, contaOn + " atualizado.");
+                verificador = true;
+                escreveArq.write(dono.getContato().getEmail() + ";"  +  
+                dono.getNome() +
+                ";" + dono.getEndereco().getRua() + 
+                "," + dono.getEndereco().getNumero() +
+                "," + dono.getEndereco().getBairro() +
+                "," + dono.getEndereco().getCidade() +
+                "," + dono.getEndereco().getEstado() +
+                "," + dono.getEndereco().getCep() +
+                "," + dono.getEndereco().getComplemento() +        
+                ",;" + dono.getContato().getTelefone() + 
+                ";" + dono.getContato().getCelular() +
+                ";" + dono.getRedeSocial().getFacebook() + 
+                ";" + dono.getRedeSocial().getInstagram() + 
+                ";" + dono.getRedeSocial().getTwitter()+ 
+                ";" + dono.getRedeSocial().getWhatsapp() +
+                ";" + dono.getSenha() + ";" + "\r\n");
+                
+            }        
+        }
+        if (!verificador)
+            JOptionPane.showMessageDialog(null, contaOn + " não cadastrado.");
+            //System.out.println("Não cadastrado.");
+            //liberamos o fluxo dos objetos ou fechamos o arquivo
+        
+        escreveArq.flush();      
+        escreveArq.close();
+        fileReader.close();     
+        bufferedReader.close();
+        
+        arq.delete();
+        newArq.renameTo(new File(arquivo));
+
+        
+	} catch (IOException e) {
+    	e.printStackTrace();
+        throw new Exception ("Não foi possível deletar nome.");
         }
     }
      

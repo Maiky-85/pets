@@ -70,20 +70,25 @@ public class Conta {
                     i=i+1;
                 }
                 if (senhaVerificar.equals(senha)){
+                    
                     senhaOk = true;                    
                     ContaLogada contaOn = new ContaLogada();
-                    contaOn.setEmailLogado(email);       
+                    contaOn.setEmailLogado(email); 
+                    
                 }
             }
             else{
                 emailVerificar="";
             }
-        }  
+        }
+        fileReader.close();
+        bufferedReader.close();
         if (!emailOk || !senhaOk){
             throw new Exception ("E-mail ou senha inválidos");        
         }        
         //return true;
-
+    fileReader.close();
+    bufferedReader.close();
     }
     
 

@@ -25,7 +25,8 @@ public class Menu extends javax.swing.JFrame {
     public Menu() throws IOException {
         initComponents();
         ContaLogada contaLogada = new ContaLogada();
-        campoNome.setText(contaLogada.getNome());
+        campoNome.setText(contaLogada.getCampo(1));
+        campoCelular.setText(contaLogada.getCampo(4));
     }
 
     /**
@@ -46,7 +47,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         campoNome = new javax.swing.JLabel();
-        labelTelefone = new javax.swing.JLabel();
+        campoCelular = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -174,8 +175,8 @@ public class Menu extends javax.swing.JFrame {
         campoNome.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         campoNome.setText("Nome");
 
-        labelTelefone.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
-        labelTelefone.setText("Telefone");
+        campoCelular.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        campoCelular.setText("Telefone");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -186,7 +187,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoNome)
-                    .addComponent(labelTelefone))
+                    .addComponent(campoCelular))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -197,7 +198,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(campoNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelTelefone)
+                .addComponent(campoCelular)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -554,6 +555,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton botaoConta;
     private javax.swing.JButton botaoPerfil;
     private javax.swing.JButton botaoPerguntas;
+    private javax.swing.JLabel campoCelular;
     private javax.swing.JLabel campoNome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -570,7 +572,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel labelTelefone;
     private javax.swing.JLabel mapa;
     // End of variables declaration//GEN-END:variables
 }

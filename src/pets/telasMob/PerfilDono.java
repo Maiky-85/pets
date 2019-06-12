@@ -31,8 +31,43 @@ public class PerfilDono extends javax.swing.JFrame {
     public PerfilDono() throws IOException{
         initComponents();
         ContaLogada contaLogada = new ContaLogada();
-        campoNome.setText(contaLogada.getNome());
+        //Pega o nome e mostra no perfil
+        campoNome.setText(contaLogada.getCampo(1));     
+        //Pega a rua e mostra no perfil
+        campoRua.setText(contaLogada.getEndereco("rua"));        
+        //Pega o número e mostra no perfil
+        campoNumero.setText(contaLogada.getEndereco("numero"));       
+        //Pega o número e mostra no perfil
+        campoBairro.setText(contaLogada.getEndereco("bairro"));       
+        //Pega o número e mostra no perfil
+        campoCidade.setText(contaLogada.getEndereco("cidade"));       
+        //Pega o número e mostra no perfil
+        campoEstado.setSelectedIndex(Integer.parseInt((contaLogada.getEndereco("estado"))));       
+        //Pega o número e mostra no perfil
+        campoCep.setText(contaLogada.getEndereco("cep"));      
+        //Pega o número e mostra no perfil
+        campoComplemento.setText(contaLogada.getEndereco("complemento"));      
+        //Pega o e-mail e mostra no perfil (não editável)
         campoEmail.setText(contaLogada.getEmailLogado());
+        //Pega o telefone e mostra no perfil
+        campoNumTelefone.setText(contaLogada.getCampo(3));
+        //Pega o celular e mostra no perfil
+        campoNumCelular.setText(contaLogada.getCampo(4));
+        //Pega o facebook e mostra no perfil
+        campoFacebook.setText(contaLogada.getCampo(5));
+        //Pega o Instagram e mostra no perfil
+        campoInstagram.setText(contaLogada.getCampo(6));
+        //Pega o Twitter e mostra no perfil
+        campoTwitter.setText(contaLogada.getCampo(7));
+        //Pega o Whatsapp e mostra no perfil
+        campoWhatsapp.setText(contaLogada.getCampo(8));
+        
+       
+        
+        //Pega o senha e mostra no perfil
+        //campoSenha.setText(contaLogada.getCampo(9));
+        
+        
 
     }
 
@@ -73,7 +108,6 @@ public class PerfilDono extends javax.swing.JFrame {
         nome10 = new javax.swing.JLabel();
         nome11 = new javax.swing.JLabel();
         nome12 = new javax.swing.JLabel();
-        campoCep = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         botaoFoto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -93,7 +127,13 @@ public class PerfilDono extends javax.swing.JFrame {
         campoInstagram = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         nome15 = new javax.swing.JLabel();
-        campoSenha = new javax.swing.JTextField();
+        campoCep = new javax.swing.JFormattedTextField();
+        nome16 = new javax.swing.JLabel();
+        nome17 = new javax.swing.JLabel();
+        novaSenha = new javax.swing.JPasswordField();
+        novaSenha2 = new javax.swing.JPasswordField();
+        campoSenhaAtual = new javax.swing.JPasswordField();
+        nome18 = new javax.swing.JLabel();
 
         jButton1.setText("Adicionar uma foto");
 
@@ -269,9 +309,6 @@ public class PerfilDono extends javax.swing.JFrame {
         nome12.setForeground(new java.awt.Color(134, 134, 134));
         nome12.setText("Twitter:");
 
-        campoCep.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        campoCep.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         botaoFoto.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         botaoFoto.setForeground(new java.awt.Color(102, 102, 102));
         botaoFoto.setText("Adicionar foto");
@@ -325,6 +362,11 @@ public class PerfilDono extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        campoNumTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNumTelefoneActionPerformed(evt);
+            }
+        });
 
         campoNumCelular.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         try {
@@ -340,6 +382,7 @@ public class PerfilDono extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        campoEmail.setEditable(false);
         campoEmail.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         campoEmail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -358,9 +401,32 @@ public class PerfilDono extends javax.swing.JFrame {
 
         nome15.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
         nome15.setForeground(new java.awt.Color(134, 134, 134));
-        nome15.setText("Senha:");
+        nome15.setText("Alterar senha: ");
 
-        campoSenha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        campoCep.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        try {
+            campoCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        nome16.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        nome16.setForeground(new java.awt.Color(134, 134, 134));
+        nome16.setText("Confirmar senha:");
+
+        nome17.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
+        nome17.setForeground(new java.awt.Color(134, 134, 134));
+        nome17.setText("Senha atual:");
+
+        novaSenha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        novaSenha2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        campoSenhaAtual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        nome18.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
+        nome18.setForeground(new java.awt.Color(134, 134, 134));
+        nome18.setText("Deixe em branco para não alterar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -392,11 +458,11 @@ public class PerfilDono extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(nome8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoNumCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(campoNumCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(nome14)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(campoWhatsapp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,15 +470,16 @@ public class PerfilDono extends javax.swing.JFrame {
                                 .addGap(20, 20, 20)
                                 .addComponent(jLabel2))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel1))))
+                                    .addComponent(jLabel1)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel3)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(12, 12, 12))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,14 +500,6 @@ public class PerfilDono extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoCidade))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(nome5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nome6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoCep))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(nome1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoRua))
@@ -451,16 +510,35 @@ public class PerfilDono extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(campoNome))
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(nome5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nome6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoCep))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(nome15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(novaSenha))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(nome16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(novaSenha2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(nome17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoSenhaAtual))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(nome7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoNumTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(nome15)
-                        .addGap(5, 5, 5)
-                        .addComponent(campoSenha)))
+                        .addComponent(campoNumTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(nome18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,11 +555,21 @@ public class PerfilDono extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nome)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nome17)
+                    .addComponent(campoSenhaAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(nome18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nome15)
-                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(novaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nome16)
+                    .addComponent(novaSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -507,9 +595,9 @@ public class PerfilDono extends javax.swing.JFrame {
                     .addComponent(nome5)
                     .addComponent(nome6)
                     .addComponent(campoCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 27, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nome7)
                     .addComponent(campoNumTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -569,6 +657,8 @@ public class PerfilDono extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMenuActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        
+        
         if (campoNome.getText().trim().equals("") ){
             this.dispose();
             Inicial inicial = new Inicial();
@@ -576,22 +666,59 @@ public class PerfilDono extends javax.swing.JFrame {
         }
         else{
             try {
+                ContaLogada contaLogada = new ContaLogada();
+                String senhaSalva = contaLogada.getCampo(9);
+                String senha = new String(novaSenha.getPassword());
+                String senha2 = new String(novaSenha2.getPassword());
+                String senhaAtual = new String(campoSenhaAtual.getPassword());
                 //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
                 Endereco endereco = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoCidade.getText(), 
                                     (String)this.campoEstado.getSelectedItem(), this.campoCep.getText(), this.campoComplemento.getText());
                 Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
                 RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
 
-                Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, this.campoSenha.getText());
-
-                // vai salvar os dados do formulário do animal na persistencia de arquivo
-
-                PersistenciaArquivo persistencia = new PersistenciaArquivo();
-
-                persistencia.salvarDadosDono(novoDono);
-                this.dispose();
-                Inicial inicial = new Inicial();
-                inicial.setVisible(true);
+                if (senha.equals("") && senha2.equals("")){
+                    if (senhaAtual.equals(senhaSalva)){
+                        System.out.println("aqui");
+                        Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, senhaSalva);                    
+                        PersistenciaArquivo persistencia = new PersistenciaArquivo();     
+                        persistencia.AtualizarDadosDono(novoDono,"dono.csv");
+                        this.dispose();
+                        Inicial inicial = new Inicial();
+                        inicial.setVisible(true);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Senha atual incorreta", "Atenção", JOptionPane.WARNING_MESSAGE);
+                        novaSenha.setText("");
+                        novaSenha2.setText("");
+                        campoSenhaAtual.setText("");
+                    }
+                }
+                else{
+                    if ((senha.equals(senha2))){
+                        if (senhaAtual.equals(senhaSalva)){
+                            Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, senha);
+                            PersistenciaArquivo persistencia = new PersistenciaArquivo();     
+                            persistencia.AtualizarDadosDono(novoDono,"dono.csv");
+                            this.dispose();
+                            Inicial inicial = new Inicial();
+                            inicial.setVisible(true);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Senha atual esta incorreta", "Atenção", JOptionPane.WARNING_MESSAGE);
+                            novaSenha.setText("");
+                            novaSenha2.setText("");
+                            campoSenhaAtual.setText("");
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Novas senhas devem ser iguais", "Atenção", JOptionPane.WARNING_MESSAGE);
+                        novaSenha.setText("");
+                        novaSenha2.setText("");
+                        campoSenhaAtual.setText("");
+                    }
+                }
+                    
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
             }
@@ -601,6 +728,10 @@ public class PerfilDono extends javax.swing.JFrame {
     private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
+
+    private void campoNumTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNumTelefoneActionPerformed
     
     /**
      * @param args the command line arguments
@@ -649,7 +780,7 @@ public class PerfilDono extends javax.swing.JFrame {
     private javax.swing.JButton botaoMenu;
     private javax.swing.JButton botaoSalvar;
     private javax.swing.JTextField campoBairro;
-    private javax.swing.JTextField campoCep;
+    private javax.swing.JFormattedTextField campoCep;
     private javax.swing.JTextField campoCidade;
     private javax.swing.JTextField campoComplemento;
     private javax.swing.JTextField campoEmail;
@@ -661,7 +792,7 @@ public class PerfilDono extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField campoNumTelefone;
     private javax.swing.JTextField campoNumero;
     private javax.swing.JTextField campoRua;
-    private javax.swing.JTextField campoSenha;
+    private javax.swing.JPasswordField campoSenhaAtual;
     private javax.swing.JTextField campoTwitter;
     private javax.swing.JFormattedTextField campoWhatsapp;
     private javax.swing.JButton jButton1;
@@ -685,6 +816,9 @@ public class PerfilDono extends javax.swing.JFrame {
     private javax.swing.JLabel nome13;
     private javax.swing.JLabel nome14;
     private javax.swing.JLabel nome15;
+    private javax.swing.JLabel nome16;
+    private javax.swing.JLabel nome17;
+    private javax.swing.JLabel nome18;
     private javax.swing.JLabel nome2;
     private javax.swing.JLabel nome3;
     private javax.swing.JLabel nome4;
@@ -693,5 +827,7 @@ public class PerfilDono extends javax.swing.JFrame {
     private javax.swing.JLabel nome7;
     private javax.swing.JLabel nome8;
     private javax.swing.JLabel nome9;
+    private javax.swing.JPasswordField novaSenha;
+    private javax.swing.JPasswordField novaSenha2;
     // End of variables declaration//GEN-END:variables
 }

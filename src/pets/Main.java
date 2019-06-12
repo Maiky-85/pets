@@ -119,7 +119,7 @@ public class Main {
             Dono donoAnimal = new Dono(contato, redeSocial);           
         
             PersistenciaArquivo salvar = new PersistenciaArquivo();
-            salvar.salvarDadosDono(donoAnimal);
+
         }
         else if (Integer.parseInt(opcao) == 3){
         

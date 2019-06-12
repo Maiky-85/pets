@@ -183,7 +183,7 @@ public class Cadastrar extends javax.swing.JFrame {
                 //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
                 
                 
-                Endereco endereco = new Endereco("","0","","","","","");
+                Endereco endereco = new Endereco("","0","","","AC","00000000","");
                 Contato contatoDono = new Contato("00000000000","00000000000", this.campoEmail.getText());                                  
                 RedeSocial redeSocial = new RedeSocial("","","","00000000000");
                 Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial,senha);
