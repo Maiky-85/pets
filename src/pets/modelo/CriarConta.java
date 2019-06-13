@@ -18,16 +18,16 @@ import java.io.PrintWriter;
  *
  * @author Maiky
  */
-public class Conta {
+public class CriarConta {
     
     private String email;
     private String senha;
     
-    public Conta(){
+    public CriarConta(){
         
     }
     
-    public Conta(String email, String senha) throws Exception{
+    public CriarConta(String email, String senha) throws Exception{
         this.email = email;
         this.senha = senha;
         boolean emailOk = false;
@@ -97,7 +97,7 @@ public class Conta {
     bufferedReader.close();
     }
     
-    public boolean VerificarConta(String email) throws FileNotFoundException, IOException{
+    public boolean VerificarContaExistente(String email) throws FileNotFoundException, IOException{
         boolean emailCadastrado = false;
         
         File arq = new File("dono.csv");

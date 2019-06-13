@@ -5,8 +5,11 @@
  */
 package pets.telasMob;
 
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import pets.modelo.Conta;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import pets.modelo.CriarConta;
 
 /**
  *
@@ -21,6 +24,19 @@ public class TelaLogin extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void setCampoEmail(String campoEmail) {
+        this.campoEmail.setText(campoEmail);
+    }
+
+    public void setCampoSenha(String campoSenha) {
+        this.campoSenha.setText(campoSenha);
+    }
+
+    public JButton getBotaoEntrar() {
+        return botaoEntrar;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -195,7 +211,7 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = new String(campoSenha.getPassword());
 
         try{
-            Conta login = new Conta(email,senha);
+            CriarConta login = new CriarConta(email,senha);
             Inicial principal = new Inicial();
             principal.setVisible(true);
             this.dispose(); 
@@ -205,7 +221,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
-        Cadastrar cadastro = new Cadastrar();
+        CadastrarConta cadastro = new CadastrarConta();
         cadastro.setVisible(true);
         this.hide(); 
     }//GEN-LAST:event_botaoCadastrarActionPerformed

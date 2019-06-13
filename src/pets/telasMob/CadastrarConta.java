@@ -5,8 +5,11 @@
  */
 package pets.telasMob;
 
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import pets.modelo.Conta;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import pets.modelo.CriarConta;
 import pets.modelo.Contato;
 import pets.modelo.Dono;
 import pets.modelo.Endereco;
@@ -18,15 +21,36 @@ import pets.telas.Principal;
  *
  * @author Maiky
  */
-public class Cadastrar extends javax.swing.JFrame {
+public class CadastrarConta extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Cadastrar() {
+    public CadastrarConta() {
         initComponents();
     }
 
+    public void setCampoEmail(String campoEmail) {
+        this.campoEmail.setText(campoEmail);
+    }
+
+    public void setCampoNome(String campoNome) {
+        this.campoNome.setText(campoNome);
+    }
+
+    public void setCampoSenha(String campoSenha) {
+        this.campoSenha.setText(campoSenha);
+    }
+
+    public void setCampoSenha2(String campoSenha2) {
+        this.campoSenha2.setText(campoSenha2);
+    }
+
+    public JButton getBotaoCadastrar() {
+        return botaoCadastrar;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +71,7 @@ public class Cadastrar extends javax.swing.JFrame {
         campoSenha2 = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         campoEmail = new javax.swing.JTextField();
+        botaoVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 200));
@@ -98,16 +123,27 @@ public class Cadastrar extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Confirme senha");
 
+        botaoVoltar.setBackground(new java.awt.Color(242, 167, 30));
+        botaoVoltar.setFont(new java.awt.Font("Gadugi", 1, 12)); // NOI18N
+        botaoVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        botaoVoltar.setText("Voltar");
+        botaoVoltar.setBorder(null);
+        botaoVoltar.setBorderPainted(false);
+        botaoVoltar.setContentAreaFilled(false);
+        botaoVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
+                .addGap(0, 7, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -120,11 +156,19 @@ public class Cadastrar extends javax.swing.JFrame {
                             .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(73, 73, 73))))
+                        .addGap(73, 73, 73))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(99, 99, 99))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(botaoVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(118, 118, 118))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +193,9 @@ public class Cadastrar extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addGap(27, 27, 27)
                 .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoVoltar)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,8 +227,8 @@ public class Cadastrar extends javax.swing.JFrame {
         else if (senha.equals(senha2)){
            try {
                //verifica se e-mail já existe
-               Conta cadastro = new Conta();
-               boolean verificarEmail = cadastro.VerificarConta(this.campoEmail.getText());
+               CriarConta cadastro = new CriarConta();
+               boolean verificarEmail = cadastro.VerificarContaExistente(this.campoEmail.getText());
                
                 //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
                 
@@ -217,6 +263,12 @@ public class Cadastrar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoSenha2ActionPerformed
 
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
+        this.dispose();
+        TelaLogin inicio = new TelaLogin();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_botaoVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -234,14 +286,22 @@ public class Cadastrar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarConta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarConta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarConta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarConta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -254,13 +314,14 @@ public class Cadastrar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastrar().setVisible(true);
+                new CadastrarConta().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrar;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JTextField campoEmail;
     private javax.swing.JTextField campoNome;
     private javax.swing.JPasswordField campoSenha;
