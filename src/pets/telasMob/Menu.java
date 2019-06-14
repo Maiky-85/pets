@@ -10,6 +10,7 @@ package pets.telasMob;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import pets.modelo.ContaLogada;
 
 
@@ -21,6 +22,7 @@ public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
+     * @throws java.io.IOException
      */
     public Menu() throws IOException {
         initComponents();
@@ -440,7 +442,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoPerfilActionPerformed
 
     private void botaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContaActionPerformed
-        // TODO add your handling code here:
+        int nome = JOptionPane.showConfirmDialog(null, "Deseja sair?");
+        if (nome==0){
+            TelaLogin login = new TelaLogin();
+            login.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_botaoContaActionPerformed
 
     private void botaoAlertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlertasActionPerformed

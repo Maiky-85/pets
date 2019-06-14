@@ -395,9 +395,12 @@ public class Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMenuActionPerformed
 
     private void botaoPontosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPontosActionPerformed
-        TelaLogin login = new TelaLogin();
-        login.setVisible(true);
-        this.dispose();
+        int nome = JOptionPane.showConfirmDialog(null, "Deseja sair?");
+        if (nome==0){
+            TelaLogin login = new TelaLogin();
+            login.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_botaoPontosActionPerformed
 
     private void botaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeletarActionPerformed

@@ -19,9 +19,6 @@ import pets.persistenciaArquivo.PersistenciaArquivo;
 public class ContaLogada {
     public String emailLogado;
     
-//    public ContaLogada(String emailLogado){
-//        this.setEmailLogado(emailLogado);
-//    }
 
     public String getEmailLogado() throws FileNotFoundException, IOException {
         File arqConta = new File("contaOn.txt");
@@ -37,14 +34,9 @@ public class ContaLogada {
     public void setEmailLogado(String emailLogado) throws Exception {
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
         persistencia.contaLogada(emailLogado);
-        
-        //this.emailLogado = emailLogado;
-        //System.out.println(emailLogado);
     }
     
     public String getCampo(int k) throws FileNotFoundException, IOException{
-        
-        
         File arq = new File("dono.csv");
         FileReader fileReader = new FileReader(arq);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -67,7 +59,6 @@ public class ContaLogada {
                 i=i+1; 
             }            
             if (email.equals(contaOn)){
-
                 campoOk = true;
                 while (linha.charAt(i) != ';' || j<k){  //laço para concatenar o nome
                     if (j==k){
@@ -89,7 +80,6 @@ public class ContaLogada {
     }
 
 public String getEndereco(String parte) throws FileNotFoundException, IOException{
-
         File arq = new File("dono.csv");
         FileReader fileReader = new FileReader(arq);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -101,10 +91,8 @@ public String getEndereco(String parte) throws FileNotFoundException, IOExceptio
 
         while ((linha = bufferedReader.readLine()) != null && !nomeOk){ //busca o e-mail
             int i=0;  
-            int j=0;
-            
-            while (linha.charAt(i) != ';'){
-               
+            int j=0;           
+            while (linha.charAt(i) != ';'){               
                 email = email + linha.charAt(i);
                 if (linha.charAt(i)==';'){
                    j=j+1;
@@ -140,6 +128,7 @@ public String getEndereco(String parte) throws FileNotFoundException, IOExceptio
             parteEndereco = parteEndereco + nome.charAt(i);
         return parteEndereco;
     }
+    
     //Loop para concatenar número
     if (parte.equals("numero")){
         for (int i=0;j<=1;i++){
@@ -249,6 +238,7 @@ public String getEndereco(String parte) throws FileNotFoundException, IOExceptio
         }
         return parteEndereco;
     }
+    
     //Loop para concatenar número
     if (parte.equals("complemento")){
         for (int i=0;j<=6;i++){
@@ -258,9 +248,7 @@ public String getEndereco(String parte) throws FileNotFoundException, IOExceptio
                 j+=1;       
         }
         return parteEndereco;
-    }
-    
+    }   
     return "";
     }
-
 }

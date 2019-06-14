@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pets.modelo.Clinica;
-import pets.modelo.ContaLogada;
 import pets.modelo.Contato;
 import pets.modelo.Endereco;
 import pets.modelo.RedeSocial;

@@ -201,8 +201,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
             while (linha.charAt(i) != ';'){
                 email = email + linha.charAt(i);
                 i=i+1;
-            }
-            
+            }         
             //escreve linhas em novo arquivo enquanto nome diferente de removeClinica
             if (!email.equals(contaOn)){
                 escreveArq.write(linha + "\r\n");          
@@ -225,13 +224,11 @@ public void salvarDadosDono(Dono dono) throws Exception {
                 ";" + dono.getRedeSocial().getInstagram() + 
                 ";" + dono.getRedeSocial().getTwitter()+ 
                 ";" + dono.getRedeSocial().getWhatsapp() +
-                ";" + dono.getSenha() + ";" + "\r\n");
-                
+                ";" + dono.getSenha() + ";" + "\r\n");                
             }        
         }
         if (!verificador)
             JOptionPane.showMessageDialog(null, contaOn + " não cadastrado.");
-            //System.out.println("Não cadastrado.");
             //liberamos o fluxo dos objetos ou fechamos o arquivo
         
         escreveArq.flush();      
@@ -373,13 +370,11 @@ public void salvarDadosDono(Dono dono) throws Exception {
             }
             else{
                 JOptionPane.showMessageDialog(null, remover + " removido.");
-                //System.out.println(remover + " removido.");
                 verificador = true;
             }        
         }
         if (!verificador)
             JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
-            //System.out.println("Não cadastrado.");
             //liberamos o fluxo dos objetos ou fechamos o arquivo
         
                 
@@ -389,8 +384,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
         
         arq.delete();
         newArq.renameTo(new File(arquivo)); 
-        
-        
+ 
 	} catch (IOException e) {
     	e.printStackTrace();
         throw new Exception ("Não foi possível deletar nome.");

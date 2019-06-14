@@ -38,7 +38,6 @@ public class Conta {
             
             escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Twitter;Instagram;Whatsapp;Senha");
-            //escreveArq.flush();
             escreveArq.close();
 
         }
@@ -48,12 +47,10 @@ public class Conta {
         if (senha1.equals(senha2)){
            try {
                 //verifica se e-mail já existe
-                //CriarConta cadastro = new Conta();
-                //boolean verificarEmail = cadastro.VerificarContaExistente(email);
                 boolean verificarEmail = VerificarContaExistente(email);
-                //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
                 
                 if (!verificarEmail){
+                    //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
                     Endereco endereco = new Endereco("","0","","","AC","00000000","");
                     Contato contatoDono = new Contato("00000000000","00000000000", email);                                  
                     RedeSocial redeSocial = new RedeSocial("","","","00000000000");
@@ -96,7 +93,6 @@ public class Conta {
             
             escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Twitter;Instagram;Whatsapp;Senha");
-            //escreveArq.flush();
             escreveArq.close();
 
         }
@@ -133,8 +129,7 @@ public class Conta {
                     
                     senhaOk = true;                    
                     ContaLogada contaOn = new ContaLogada();
-                    contaOn.setEmailLogado(email); 
-                    
+                    contaOn.setEmailLogado(email);             
                 }
             }
             else{
@@ -191,9 +186,5 @@ public class Conta {
             bufferedReader.close();
             return false;
         }
-        //return true;
-    
-    }
-        
-        
+    }       
 }       
