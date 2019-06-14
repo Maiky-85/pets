@@ -14,15 +14,11 @@ package pets.persistenciaArquivo;
 
 import java.io.BufferedReader;
 import java.io.File;
-//import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-//import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import pets.modelo.Animal;
 import pets.modelo.Clinica;
 import pets.modelo.ContaLogada;
@@ -55,7 +51,7 @@ public class PersistenciaArquivo {
                 ";" + clinica.getRedeSocial().getFacebook() + 
                 ";" + clinica.getRedeSocial().getInstagram() + 
                 ";" + clinica.getRedeSocial().getTwitter() + 
-                ";" + clinica.getRedeSocial().getWhatsapp());
+                ";" + clinica.getRedeSocial().getWhatsapp() + ";");
                    
                 escreveArq.flush();
                 escreveArq.close();
@@ -89,7 +85,7 @@ public class PersistenciaArquivo {
                 ";" + clinica.getRedeSocial().getFacebook() + 
                 ";" + clinica.getRedeSocial().getInstagram() + 
                 ";" + clinica.getRedeSocial().getTwitter()+ 
-                ";" + clinica.getRedeSocial().getWhatsapp());
+                ";" + clinica.getRedeSocial().getWhatsapp() + ";");
              
             escreveArq.flush();
             escreveArq.close();
@@ -103,7 +99,7 @@ public class PersistenciaArquivo {
 public void salvarDadosDono(Dono dono) throws Exception {
         
         File arq = new File("dono.csv");
-        
+
         if (arq.exists()){
             try {
                 arq.createNewFile();
@@ -129,7 +125,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
                 ";" + dono.getRedeSocial().getWhatsapp() +
                 ";" + dono.getSenha() + ";");
 
-                escreveArq.flush();
+                //escreveArq.flush();
                 escreveArq.close();
 
             } catch (IOException e) {
@@ -143,7 +139,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
             FileWriter arqWriter;
             arqWriter = new FileWriter(arq, true);
             
-            PrintWriter escreveArq = new PrintWriter(arqWriter);
+            PrintWriter escreveArq = new PrintWriter(arqWriter);      
             
             escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Instagram;Twitter;Whatsapp;Senha");
@@ -166,7 +162,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
                 ";" + dono.getSenha() + ";");
 
              
-            escreveArq.flush();
+            //escreveArq.flush();
             escreveArq.close();
 
         } catch (IOException e) {

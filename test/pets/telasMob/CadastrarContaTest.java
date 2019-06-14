@@ -10,7 +10,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -47,7 +46,7 @@ public class CadastrarContaTest {
         cadastro.setCampoNome("Maiky");
         cadastro.setCampoEmail("mm3@.com");
         cadastro.setCampoSenha("mm");
-        cadastro.setCampoSenha2("mm2");
+        cadastro.setCampoSenha2("mm");
         cadastro.getBotaoCadastrar().doClick();
     }
     

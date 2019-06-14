@@ -466,7 +466,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void botaoClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoClinicasActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        CadastroClinica clinica;
+        try {
+            clinica = new CadastroClinica();
+            clinica.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }      
     }//GEN-LAST:event_botaoClinicasActionPerformed
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked

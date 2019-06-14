@@ -167,7 +167,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void botaoClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoClinicaActionPerformed
         
-        CadastroClinica cadastroClinica = new CadastroClinica();
+        CadastroClinicaOld cadastroClinica = new CadastroClinicaOld();
         cadastroClinica.setVisible(true);
         this.hide();
     }//GEN-LAST:event_botaoClinicaActionPerformed

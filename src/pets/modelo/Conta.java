@@ -12,47 +12,101 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.swing.JOptionPane;
+import pets.persistenciaArquivo.PersistenciaArquivo;
 
 
 /**
  *
  * @author Maiky
  */
-public class CriarConta {
+public class Conta {
     
     private String email;
     private String senha;
     
-    public CriarConta(){
-        
+    public Conta() throws IOException{
+        File arq = new File("dono.csv");
+
+        if (!arq.exists()){
+            arq.createNewFile();
+            FileWriter arqWriter;
+            arqWriter = new FileWriter(arq, true);
+            
+            
+            PrintWriter escreveArq = new PrintWriter(arqWriter);
+            
+            escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
+                    + "Facebook;Twitter;Instagram;Whatsapp;Senha");
+            //escreveArq.flush();
+            escreveArq.close();
+
+        }
     }
     
-    public CriarConta(String email, String senha) throws Exception{
+    public boolean CadastrarConta(String email, String nome, String senha1, String senha2 )throws Exception {
+        if (senha1.equals(senha2)){
+           try {
+                //verifica se e-mail já existe
+                //CriarConta cadastro = new Conta();
+                //boolean verificarEmail = cadastro.VerificarContaExistente(email);
+                boolean verificarEmail = VerificarContaExistente(email);
+                //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
+                
+                if (!verificarEmail){
+                    Endereco endereco = new Endereco("","0","","","AC","00000000","");
+                    Contato contatoDono = new Contato("00000000000","00000000000", email);                                  
+                    RedeSocial redeSocial = new RedeSocial("","","","00000000000");
+                    Dono novoDono = new Dono(nome, endereco, contatoDono, redeSocial,senha1);
+
+                    // vai salvar os dados parciais do dono na persistencia de arquivo
+                    PersistenciaArquivo persistencia = new PersistenciaArquivo();
+                    persistencia.salvarDadosDono(novoDono);
+                    return true;
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "e-mail já possui cadastro", "Atenção", JOptionPane.WARNING_MESSAGE);  
+                }
+                
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Senhas devem ser iguais", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
+    return false;
+    }        
+    
+    public void LogarConta(String email, String senha) throws Exception{
         this.email = email;
         this.senha = senha;
         boolean emailOk = false;
         boolean senhaOk = false;
         
         File arq = new File("dono.csv");
-        
+
         if (!arq.exists()){
             arq.createNewFile();
             FileWriter arqWriter;
             arqWriter = new FileWriter(arq, true);
             
+            
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
             escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Twitter;Instagram;Whatsapp;Senha");
-            escreveArq.flush();
+            //escreveArq.flush();
             escreveArq.close();
+
         }
         FileReader fileReader = new FileReader(arq);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String linha = "";
         String emailVerificar="";
         String senhaVerificar="";
-
+        
+        
         while ((linha = bufferedReader.readLine()) != null && !emailOk) {   //laço para buscar e-mail
             int i=0;
             int j=0;          

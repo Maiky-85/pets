@@ -7,9 +7,7 @@ package pets.telasMob;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import pets.modelo.CriarConta;
+import pets.modelo.Conta;
 
 /**
  *
@@ -211,7 +209,8 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = new String(campoSenha.getPassword());
 
         try{
-            CriarConta login = new CriarConta(email,senha);
+            Conta login = new Conta();
+            login.LogarConta(email, senha);
             Inicial principal = new Inicial();
             principal.setVisible(true);
             this.dispose(); 

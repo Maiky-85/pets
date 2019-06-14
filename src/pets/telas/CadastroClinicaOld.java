@@ -21,12 +21,12 @@ import pets.modelo.Endereco;
 import pets.modelo.RedeSocial;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 
-public class CadastroClinica extends javax.swing.JFrame {
+public class CadastroClinicaOld extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroClinica2
      */
-    public CadastroClinica() {
+    public CadastroClinicaOld() {
         initComponents();
     }
 
@@ -430,21 +430,23 @@ public class CadastroClinica extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClinicaOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClinicaOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClinicaOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroClinicaOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroClinica().setVisible(true);
+                new CadastroClinicaOld().setVisible(true);
             }
         });
     }

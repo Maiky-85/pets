@@ -7,15 +7,7 @@ package pets.telasMob;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import pets.modelo.CriarConta;
-import pets.modelo.Contato;
-import pets.modelo.Dono;
-import pets.modelo.Endereco;
-import pets.modelo.RedeSocial;
-import pets.persistenciaArquivo.PersistenciaArquivo;
-import pets.telas.Principal;
+import pets.modelo.Conta;
 
 /**
  *
@@ -219,44 +211,27 @@ public class CadastrarConta extends javax.swing.JFrame {
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         String senha = new String(campoSenha.getPassword());
         String senha2 = new String(campoSenha2.getPassword());
+        boolean verificador;
         if (campoNome.getText().trim().equals("") ){
             TelaLogin inicio = new TelaLogin();
             inicio.setVisible(true);
             this.dispose();
         }
-        else if (senha.equals(senha2)){
-           try {
-               //verifica se e-mail já existe
-               CriarConta cadastro = new CriarConta();
-               boolean verificarEmail = cadastro.VerificarContaExistente(this.campoEmail.getText());
+        else{
+            try{
+               Conta cadastro = new Conta();
+               verificador = cadastro.CadastrarConta(this.campoEmail.getText(), this.campoNome.getText(), senha, senha2);
                
-                //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
-                
-                if (!verificarEmail){
-                    Endereco endereco = new Endereco("","0","","","AC","00000000","");
-                    Contato contatoDono = new Contato("00000000000","00000000000", this.campoEmail.getText());                                  
-                    RedeSocial redeSocial = new RedeSocial("","","","00000000000");
-                    Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial,senha);
-
-                    // vai salvar os dados parciais do dono na persistencia de arquivo
-                    PersistenciaArquivo persistencia = new PersistenciaArquivo();
-
-                    persistencia.salvarDadosDono(novoDono);
-                    this.dispose();
+                if(verificador){
                     TelaLogin inicio = new TelaLogin();
                     inicio.setVisible(true);
+                    this.dispose();
                 }
-                else{
-                    JOptionPane.showMessageDialog(null, "e-mail já possui cadastro", "Atenção", JOptionPane.WARNING_MESSAGE);  
-                }
-                
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Senhas devem ser iguais", "Atenção", JOptionPane.WARNING_MESSAGE);
-        }                
+            
+        }     
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     private void campoSenha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenha2ActionPerformed
