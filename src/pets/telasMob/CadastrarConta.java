@@ -220,7 +220,7 @@ public class CadastrarConta extends javax.swing.JFrame {
         else{
             try{
                Conta cadastro = new Conta();
-               verificador = cadastro.CadastrarConta(this.campoEmail.getText(), this.campoNome.getText(), senha, senha2);
+               verificador = cadastro.cadastrarConta(this.campoEmail.getText(), this.campoNome.getText(), senha, senha2);
                
                 if(verificador){
                     TelaLogin inicio = new TelaLogin();

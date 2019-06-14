@@ -171,7 +171,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
         }
         }
     }
-    public void AtualizarDadosDono(Dono dono, String arquivo) throws Exception {
+    public void atualizarDadosDono(Dono dono, String arquivo) throws Exception {
         
         File arq = new File(arquivo);
         File newArq = new File("tempArquivo.csv");

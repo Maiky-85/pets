@@ -210,7 +210,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         try{
             Conta login = new Conta();
-            login.LogarConta(email, senha);
+            login.logarConta(email, senha);
             Inicial principal = new Inicial();
             principal.setVisible(true);
             this.dispose(); 

@@ -43,11 +43,11 @@ public class Conta {
         }
     }
     
-    public boolean CadastrarConta(String email, String nome, String senha1, String senha2 )throws Exception {
+    public boolean cadastrarConta(String email, String nome, String senha1, String senha2 )throws Exception {
         if (senha1.equals(senha2)){
            try {
                 //verifica se e-mail já existe
-                boolean verificarEmail = VerificarContaExistente(email);
+                boolean verificarEmail = verificarContaExistente(email);
                 
                 if (!verificarEmail){
                     //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
@@ -75,7 +75,7 @@ public class Conta {
     return false;
     }        
     
-    public void LogarConta(String email, String senha) throws Exception{
+    public void logarConta(String email, String senha) throws Exception{
         this.email = email;
         this.senha = senha;
         boolean emailOk = false;
@@ -146,7 +146,7 @@ public class Conta {
     bufferedReader.close();
     }
     
-    public boolean VerificarContaExistente(String email) throws FileNotFoundException, IOException{
+    public boolean verificarContaExistente(String email) throws FileNotFoundException, IOException{
         boolean emailCadastrado = false;
         
         File arq = new File("dono.csv");

@@ -484,23 +484,21 @@ public class CadastroAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        boolean verificador;
         if (campoNome.getText().trim().equals("") ){
             JOptionPane.showMessageDialog(null, "Nome não pode ficar vazio");
         }
         else{
-            try {
-            //cria um objeto do tipo Animal
-            Animal novoAnimal = new Animal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
+            try {                
+                Animal cadastro = new Animal();
+                verificador=cadastro.cadastrarAnimal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
                     (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
                     this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
-
-            // vai salvar os dados do formulário do animal na persistência de arquivo
-            PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            
-                persistencia.salvarDadosAnimal(novoAnimal);
-                this.dispose();
-                Inicial inicial = new Inicial();
-                inicial.setVisible(true);
+                if(verificador){
+                    this.dispose();
+                    Inicial inicial = new Inicial();
+                    inicial.setVisible(true);
+                }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }

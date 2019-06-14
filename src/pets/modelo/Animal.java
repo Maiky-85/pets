@@ -12,6 +12,9 @@
 
 package pets.modelo;
 
+import javax.swing.JOptionPane;
+import pets.persistenciaArquivo.PersistenciaArquivo;
+
 public class Animal {
     
     // atributos da classe Animal
@@ -28,6 +31,10 @@ public class Animal {
     private String vermifugacao;
     private String ultimaLocalizacao;
     private String observacao;
+    
+    public Animal(){
+        
+    }
     
     public Animal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
     String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao) {
@@ -163,4 +170,19 @@ public class Animal {
         this.observacao = observacao;
     }
     
+    public boolean cadastrarAnimal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
+    String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao)throws Exception{
+        try{
+            Animal animal = new Animal(nome, tipo, cor, raca, sexo, porte, idade, castracao, vacinaV10, 
+                            vacinaAntirrabica, vermifugacao, ultimaLocalizacao, observacao);
+            
+            PersistenciaArquivo persistencia = new PersistenciaArquivo();
+            persistencia.salvarDadosAnimal(animal);
+            return true;
+            
+        }catch(Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
+            }
+    return false;
+    }
 }

@@ -507,34 +507,26 @@ public class CadastroClinica extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMenuActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        boolean verificador;
         if (campoNome.getText().trim().equals("") ){
-            this.dispose();
-            Inicial inicial = new Inicial();
-            inicial.setVisible(true);
+            JOptionPane.showMessageDialog(null, "Nome não pode ficar vazio");
         }
         else{
             try {
-                //cria um objeto do tipo Clinica após criar Endereco, Contato e RedeSocial
-                Endereco enderecoClinica = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoCidade.getText(), 
-                    (String)this.campoEstado.getSelectedItem(), this.campoCep.getText(), this.campoComplemento.getText());
-                Contato contatoClinica = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
-                RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
-
-                Clinica novaClinica = new Clinica(this.campoNome.getText(), enderecoClinica, contatoClinica, redeSocial);
-
-                // vai salvar os dados do formulário do animal na persistencia de arquivo
-                PersistenciaArquivo persistencia = new PersistenciaArquivo();
-                persistencia.salvarDadosClinica(novaClinica);
-                
-                this.dispose();
-                Inicial inicial = new Inicial();
-                inicial.setVisible(true);
-                
+                Clinica novaClinica = new Clinica();
+                verificador=novaClinica.cadastrarClinica(this.campoNome.getText(), this.campoRua.getText(), this.campoNumero.getText(),
+                        this.campoBairro.getText(), this.campoCidade.getText(), (String)this.campoEstado.getSelectedItem(), 
+                        this.campoCep.getText(), this.campoComplemento.getText(), this.campoNumTelefone.getText(), 
+                        this.campoNumCelular.getText(), this.campoEmail.getText(), this.campoFacebook.getText(), 
+                        this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());                
+                if(verificador){    
+                    this.dispose();
+                    Inicial inicial = new Inicial();
+                    inicial.setVisible(true);
+                }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
-            }
-            
-            
+            } 
         }            
     }//GEN-LAST:event_botaoSalvarActionPerformed
 
