@@ -682,7 +682,7 @@ public class PerfilDono extends javax.swing.JFrame {
                         System.out.println("aqui");
                         Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, senhaSalva);                    
                         PersistenciaArquivo persistencia = new PersistenciaArquivo();     
-                        persistencia.AtualizarDadosDono(novoDono,"dono.csv");
+                        persistencia.atualizarDadosDono(novoDono,"dono.csv");
                         this.dispose();
                         Inicial inicial = new Inicial();
                         inicial.setVisible(true);
@@ -699,7 +699,7 @@ public class PerfilDono extends javax.swing.JFrame {
                         if (senhaAtual.equals(senhaSalva)){
                             Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, senha);
                             PersistenciaArquivo persistencia = new PersistenciaArquivo();     
-                            persistencia.AtualizarDadosDono(novoDono,"dono.csv");
+                            persistencia.atualizarDadosDono(novoDono,"dono.csv");
                             this.dispose();
                             Inicial inicial = new Inicial();
                             inicial.setVisible(true);
