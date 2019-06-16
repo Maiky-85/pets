@@ -309,7 +309,7 @@ public class CadastroClinica extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(242, 167, 30));
-        jLabel5.setText("Dados da clínica");
+        jLabel5.setText("Cadastrar clínica");
 
         campoCep.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         try {

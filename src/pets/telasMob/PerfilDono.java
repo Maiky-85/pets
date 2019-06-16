@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import pets.modelo.ContaLogada;
 import pets.modelo.Contato;
 import pets.modelo.Dono;
@@ -61,16 +62,21 @@ public class PerfilDono extends javax.swing.JFrame {
         campoTwitter.setText(contaLogada.getCampo(7));
         //Pega o Whatsapp e mostra no perfil
         campoWhatsapp.setText(contaLogada.getCampo(8));
-        
-       
-        
-        //Pega o senha e mostra no perfil
-        //campoSenha.setText(contaLogada.getCampo(9));
-        
-        
-
     }
 
+    public void setNovaSenha(String senha) {
+        novaSenha.setText(senha);
+    }
+
+    public void setNovaSenha2(String senha) {
+        novaSenha2.setText(senha);
+    }
+
+    public void setCampoSenhaAtual(String senha) {
+        campoSenhaAtual.setText(senha);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -657,8 +663,7 @@ public class PerfilDono extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMenuActionPerformed
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        
-        
+        boolean verificador;
         if (campoNome.getText().trim().equals("") ){
             this.dispose();
             Inicial inicial = new Inicial();
@@ -666,59 +671,24 @@ public class PerfilDono extends javax.swing.JFrame {
         }
         else{
             try {
-                ContaLogada contaLogada = new ContaLogada();
-                String senhaSalva = contaLogada.getCampo(9);
-                String senha = new String(novaSenha.getPassword());
-                String senha2 = new String(novaSenha2.getPassword());
-                String senhaAtual = new String(campoSenhaAtual.getPassword());
-                //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
-                Endereco endereco = new Endereco(this.campoRua.getText(), this.campoNumero.getText(), this.campoBairro.getText(), this.campoCidade.getText(), 
-                                    (String)this.campoEstado.getSelectedItem(), this.campoCep.getText(), this.campoComplemento.getText());
-                Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
-                RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
-
-                if (senha.equals("") && senha2.equals("")){
-                    if (senhaAtual.equals(senhaSalva)){
-                        System.out.println("aqui");
-                        Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, senhaSalva);                    
-                        PersistenciaArquivo persistencia = new PersistenciaArquivo();     
-                        persistencia.atualizarDadosDono(novoDono,"dono.csv");
-                        this.dispose();
-                        Inicial inicial = new Inicial();
-                        inicial.setVisible(true);
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Senha atual incorreta", "Atenção", JOptionPane.WARNING_MESSAGE);
-                        novaSenha.setText("");
-                        novaSenha2.setText("");
-                        campoSenhaAtual.setText("");
-                    }
+                Dono novoDono = new Dono();
+                verificador = novoDono.atualizarDono(this.campoNome.getText(), 
+                                new String(novaSenha.getPassword()), new String(novaSenha2.getPassword()), 
+                                new String(campoSenhaAtual.getPassword()), this.campoRua.getText(), 
+                                this.campoNumero.getText(), this.campoBairro.getText(), 
+                                this.campoCidade.getText(), (String)this.campoEstado.getSelectedItem(), 
+                                this.campoCep.getText(), this.campoComplemento.getText(), 
+                                this.campoNumTelefone.getText(), this.campoNumCelular.getText(), 
+                                this.campoEmail.getText(), this.campoFacebook.getText(), 
+                                this.campoTwitter.getText(), this.campoInstagram.getText(), 
+                                this.campoWhatsapp.getText());
+                
+                if(verificador){    
+                    this.dispose();
+                    Inicial inicial = new Inicial();
+                    inicial.setVisible(true);
                 }
-                else{
-                    if ((senha.equals(senha2))){
-                        if (senhaAtual.equals(senhaSalva)){
-                            Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, senha);
-                            PersistenciaArquivo persistencia = new PersistenciaArquivo();     
-                            persistencia.atualizarDadosDono(novoDono,"dono.csv");
-                            this.dispose();
-                            Inicial inicial = new Inicial();
-                            inicial.setVisible(true);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Senha atual esta incorreta", "Atenção", JOptionPane.WARNING_MESSAGE);
-                            novaSenha.setText("");
-                            novaSenha2.setText("");
-                            campoSenhaAtual.setText("");
-                        }
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Novas senhas devem ser iguais", "Atenção", JOptionPane.WARNING_MESSAGE);
-                        novaSenha.setText("");
-                        novaSenha2.setText("");
-                        campoSenhaAtual.setText("");
-                    }
-                }
-                    
+                
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
             }
