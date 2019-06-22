@@ -7,9 +7,12 @@ package pets.telasMob;
 
 //import pets.telas.CadastroAnimal;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.text.Normalizer.Form;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import pets.telas.Principal;
@@ -26,6 +29,8 @@ public class Inicial extends javax.swing.JFrame {
      */
     public Inicial() {
         initComponents();
+        cao1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/caoSelec.png")));
+        cao1.setSelected(true);
     }
 
     /**
@@ -47,6 +52,8 @@ public class Inicial extends javax.swing.JFrame {
         mapa = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         botaoAdicionar = new javax.swing.JButton();
+        cao1 = new javax.swing.JButton();
+        cao2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         botaoEditar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -69,6 +76,7 @@ public class Inicial extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(300, 533));
         setMinimumSize(new java.awt.Dimension(300, 533));
         setResizable(false);
+        setSize(new java.awt.Dimension(300, 533));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -101,7 +109,7 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botaoMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(47, 47, 47)
                 .addComponent(botaoPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,6 +171,8 @@ public class Inicial extends javax.swing.JFrame {
         mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setMaximumSize(new java.awt.Dimension(200, 78));
+        jPanel3.setMinimumSize(new java.awt.Dimension(200, 78));
 
         botaoAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/adicionarTrans.png"))); // NOI18N
         botaoAdicionar.setToolTipText("Adicionar um animal");
@@ -175,20 +185,71 @@ public class Inicial extends javax.swing.JFrame {
             }
         });
 
+        cao1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/caoMen.png"))); // NOI18N
+        cao1.setToolTipText("Adicionar um animal");
+        cao1.setBorderPainted(false);
+        cao1.setContentAreaFilled(false);
+        cao1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cao1.setRequestFocusEnabled(false);
+        cao1.setVerifyInputWhenFocusTarget(false);
+        cao1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                cao1FocusGained(evt);
+            }
+        });
+        cao1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cao1MouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cao1MousePressed(evt);
+            }
+        });
+        cao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cao1ActionPerformed(evt);
+            }
+        });
+
+        cao2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/caoMen.png"))); // NOI18N
+        cao2.setToolTipText("Adicionar um animal");
+        cao2.setBorderPainted(false);
+        cao2.setContentAreaFilled(false);
+        cao2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cao2.setRequestFocusEnabled(false);
+        cao2.setVerifyInputWhenFocusTarget(false);
+        cao2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cao2MouseClicked(evt);
+            }
+        });
+        cao2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cao2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(cao1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cao2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botaoAdicionar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cao2)
+                    .addComponent(botaoAdicionar)
+                    .addComponent(cao1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -273,9 +334,9 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(labelCor)
@@ -299,21 +360,20 @@ public class Inicial extends javax.swing.JFrame {
                                     .addComponent(labelPorte))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(botaoEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botaoDeletar)
-                        .addContainerGap())))
+                        .addComponent(botaoDeletar)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)
+                        .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
@@ -342,7 +402,7 @@ public class Inicial extends javax.swing.JFrame {
                             .addComponent(campoPorte))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(menuInf)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -362,8 +422,8 @@ public class Inicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mapa, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -412,6 +472,34 @@ public class Inicial extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botaoDeletarActionPerformed
+
+    private void cao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cao1ActionPerformed
+        cao1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/caoSelec.png")));
+        cao1.setSelected(true);
+        cao2.setSelected(false);
+    }//GEN-LAST:event_cao1ActionPerformed
+
+    private void cao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cao2ActionPerformed
+        cao2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/caoSelec.png")));
+        cao2.setSelected(true);
+        cao1.setSelected(false);
+    }//GEN-LAST:event_cao2ActionPerformed
+
+    private void cao2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cao2MouseClicked
+        
+    }//GEN-LAST:event_cao2MouseClicked
+
+    private void cao1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cao1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cao1MouseEntered
+
+    private void cao1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cao1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cao1MousePressed
+
+    private void cao1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cao1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cao1FocusGained
 
     /**
      * @param args the command line arguments
@@ -469,6 +557,8 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JLabel campoPorte;
     private javax.swing.JLabel campoRaca;
     private javax.swing.JLabel campoTipo;
+    private javax.swing.JButton cao1;
+    private javax.swing.JButton cao2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
