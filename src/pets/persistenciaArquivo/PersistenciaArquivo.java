@@ -14,10 +14,14 @@ package pets.persistenciaArquivo;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import javax.swing.JOptionPane;
 import pets.modelo.Animal;
 import pets.modelo.Clinica;
@@ -96,7 +100,8 @@ public class PersistenciaArquivo {
         }
         }        
     }    
-public void salvarDadosDono(Dono dono) throws Exception {
+    
+    public void salvarDadosDono(Dono dono) throws Exception {
         
         File arq = new File("dono.csv");
 
@@ -171,6 +176,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
         }
         }
     }
+    
     public void atualizarDadosDono(Dono dono, String arquivo) throws Exception {
         
         File arq = new File(arquivo);
@@ -314,7 +320,7 @@ public void salvarDadosDono(Dono dono) throws Exception {
         }
     }
     
-     public void contaLogada(String email) throws IOException, Exception{
+    public void contaLogada(String email) throws IOException, Exception{
         File arq = new File("contaOn.txt");
         
         try{
@@ -390,4 +396,41 @@ public void salvarDadosDono(Dono dono) throws Exception {
         throw new Exception ("Não foi possível deletar nome.");
         }
     }
+    
+    public void salvarFoto(File f, String name) throws Exception{
+    
+        FileInputStream fileInputStream = null;
+
+            try {
+
+                File file = f;
+                byte[] bFile = new byte[(int) file.length()];
+
+                //converter pra bytes
+                fileInputStream = new FileInputStream(file);
+                fileInputStream.read(bFile);
+
+                //salvar no arquivo
+                try {
+                    Path pathy = Paths.get("fotos\\" + name);
+                    Files.write(pathy, bFile);
+                } catch (IOException e) {
+                    
+                }
+
+            } catch (IOException e) {
+                    
+            } finally {
+                if (fileInputStream != null) {
+                    try {
+                        fileInputStream.close();
+                    } catch (IOException e) {
+
+                    }
+                }
+
+             }
+        
+    }
+    
 }

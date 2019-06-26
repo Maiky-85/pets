@@ -433,8 +433,12 @@ public class Inicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
-        CadastroAnimal cadastroAnimal = new CadastroAnimal();
-        cadastroAnimal.setVisible(true);
+//        CadastroAnimal cadastroAnimal = new CadastroAnimal();
+//        cadastroAnimal.setVisible(true);
+    
+        CadastroAnimalV2 cadastroAnimalV2 = new CadastroAnimalV2();
+        cadastroAnimalV2.setVisible(true);
+
         this.hide();
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
