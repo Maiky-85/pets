@@ -490,7 +490,7 @@ public class CadastroAnimal extends javax.swing.JFrame {
         else{
             try {                
                 Animal cadastro = new Animal();
-                verificador=cadastro.cadastrarAnimal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
+                verificador=cadastro.cadastrarAnimal("",this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
                     (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
                     this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
                 if(verificador){

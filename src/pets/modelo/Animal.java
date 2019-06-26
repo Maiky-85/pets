@@ -18,6 +18,7 @@ import pets.persistenciaArquivo.PersistenciaArquivo;
 public class Animal {
     
     // atributos da classe Animal
+    private String foto;
     private String nome;
     private String tipo;
     private String cor;
@@ -36,9 +37,10 @@ public class Animal {
         
     }
     
-    public Animal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
+    public Animal(String foto, String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
     String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao) {
         
+        this.setFoto(foto);
         this.setNome(nome);
 	this.setTipo(tipo);
 	this.setCor(cor);
@@ -54,6 +56,14 @@ public class Animal {
         this.setObservacao(observacao);
     }
 
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -170,10 +180,10 @@ public class Animal {
         this.observacao = observacao;
     }
     
-    public boolean cadastrarAnimal(String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
+    public boolean cadastrarAnimal(String foto, String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
     String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao)throws Exception{
         try{
-            Animal animal = new Animal(nome, tipo, cor, raca, sexo, porte, idade, castracao, vacinaV10, 
+            Animal animal = new Animal(foto, nome, tipo, cor, raca, sexo, porte, idade, castracao, vacinaV10, 
                             vacinaAntirrabica, vermifugacao, ultimaLocalizacao, observacao);
             
             PersistenciaArquivo persistencia = new PersistenciaArquivo();

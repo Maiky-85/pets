@@ -5,8 +5,12 @@
  */
 package pets.telasMob;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import pets.modelo.Conta;
 
 /**
@@ -20,8 +24,10 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
-        
-        
+    
+    
+    
+    
     }
 
     public void setCampoEmail(String campoEmail) {
@@ -59,7 +65,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 200));
-        setMaximumSize(new java.awt.Dimension(300, 533));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 0));
@@ -77,6 +82,11 @@ public class TelaLogin extends javax.swing.JFrame {
         campoEmail.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoEmail.setForeground(new java.awt.Color(102, 102, 102));
         campoEmail.setBorder(null);
+        campoEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                campoEmailKeyPressed(evt);
+            }
+        });
 
         campoSenha.setBackground(new java.awt.Color(255, 255, 255));
         campoSenha.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -85,6 +95,11 @@ public class TelaLogin extends javax.swing.JFrame {
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoSenhaActionPerformed(evt);
+            }
+        });
+        campoSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                campoSenhaKeyPressed(evt);
             }
         });
 
@@ -231,6 +246,18 @@ public class TelaLogin extends javax.swing.JFrame {
         cadastro.setVisible(true);
         this.hide(); 
     }//GEN-LAST:event_botaoCadastrarActionPerformed
+
+    private void campoEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoEmailKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            botaoEntrar.doClick();
+        }
+    }//GEN-LAST:event_campoEmailKeyPressed
+
+    private void campoSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoSenhaKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            botaoEntrar.doClick();
+        }
+    }//GEN-LAST:event_campoSenhaKeyPressed
 
     /**
      * @param args the command line arguments

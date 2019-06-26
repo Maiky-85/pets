@@ -280,7 +280,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         else{
             try {
                 Animal cadastro = new Animal();
-                verificador=cadastro.cadastrarAnimal(this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
+                verificador=cadastro.cadastrarAnimal(this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
                     (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
                     this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
                 if(verificador){
@@ -295,6 +295,14 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoSalvarActionPerformed
 
+    private void setNomeFoto(String nomeFoto){
+        this.nomeFoto = nomeFoto;
+    }
+    
+    private String getNomeFoto(){
+        return this.nomeFoto;
+    }
+    
     private void botaoFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFotoActionPerformed
         
         JFileChooser foto = new JFileChooser();
@@ -319,6 +327,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
             try {
                 persistencia.salvarFoto(f, name);
+                this.setNomeFoto(name);
             } catch (Exception ex) {
                 
             }
@@ -391,4 +400,6 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelFoto;
     // End of variables declaration//GEN-END:variables
+
+    private String nomeFoto = "";
 }

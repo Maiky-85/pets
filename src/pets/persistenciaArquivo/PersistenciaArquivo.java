@@ -263,7 +263,8 @@ public class PersistenciaArquivo {
 
                 PrintWriter escreveArq = new PrintWriter(arqWriter);
                 
-                escreveArq.println(animal.getNome() + 
+                escreveArq.println(animal.getFoto() +
+                    ";" + animal.getNome() + 
                     ";" + animal.getTipo() +
                     ";" + animal.getCor() + 
                     ";" + animal.getRaca() +
@@ -293,10 +294,11 @@ public class PersistenciaArquivo {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
-            escreveArq.println("Nome;Tipo;Cor;Raça;Sexo;Porte;Idade;Castratado;VacinaV10"
+            escreveArq.println("Foto; Nome;Tipo;Cor;Raça;Sexo;Porte;Idade;Castratado;VacinaV10"
                     +"Vacina Antirrábica;Vermifugado;Último local visto;Informações Adicionais");
             
-            escreveArq.println(animal.getNome() + 
+            escreveArq.println(animal.getFoto() +
+                    ";" + animal.getNome() + 
                     ";" + animal.getTipo() +
                     ";" + animal.getCor() + 
                     ";" + animal.getRaca() +

@@ -46,7 +46,7 @@ public class AnimalTest {
     public void testGetNome() {
         System.out.println("getNome");
         
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Bidu";
         String result = instance.getNome();
         assertEquals(expResult, result);
@@ -61,7 +61,7 @@ public class AnimalTest {
     public void testSetNome() {
         System.out.println("setNome");
         String nome = "Bidu";
-        Animal instance = new Animal(nome, "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("",nome, "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setNome(nome);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -73,7 +73,7 @@ public class AnimalTest {
     @Test
     public void testGetTipo() {
         System.out.println("getTipo");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Cachorro";
         String result = instance.getTipo();
         assertEquals(expResult, result);
@@ -88,7 +88,7 @@ public class AnimalTest {
     public void testSetTipo() {
         System.out.println("setTipo");
         String tipo = "Cachorro";
-        Animal instance = new Animal("Bidu", tipo, "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", tipo, "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setTipo(tipo);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -100,7 +100,7 @@ public class AnimalTest {
     @Test
     public void testGetCor() {
         System.out.println("getCor");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Preto";
         String result = instance.getCor();
         assertEquals(expResult, result);
@@ -115,7 +115,7 @@ public class AnimalTest {
     public void testSetCor() {
         System.out.println("setCor");
         String cor = "Preto";
-        Animal instance = new Animal("Bidu", "Cachorro", cor, "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", cor, "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setCor(cor);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -127,7 +127,7 @@ public class AnimalTest {
     @Test
     public void testGetRaca() {
         System.out.println("getRaca");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Beagle";
         String result = instance.getRaca();
         assertEquals(expResult, result);
@@ -142,7 +142,7 @@ public class AnimalTest {
     public void testSetRaca() {
         System.out.println("setRaca");
         String raca = "Beagle";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", raca, "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", raca, "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setRaca(raca);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -154,7 +154,7 @@ public class AnimalTest {
     @Test
     public void testGetSexo() {
         System.out.println("getSexo");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Macho";
         String result = instance.getSexo();
         assertEquals(expResult, result);
@@ -169,7 +169,7 @@ public class AnimalTest {
     public void testSetSexo() {
         System.out.println("setSexo");
         String sexo = "Macho";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", sexo, "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", sexo, "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setSexo(sexo);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -181,7 +181,7 @@ public class AnimalTest {
     @Test
     public void testGetPorte() {
         System.out.println("getPorte");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Médio";
         String result = instance.getPorte();
         assertEquals(expResult, result);
@@ -196,7 +196,7 @@ public class AnimalTest {
     public void testSetPorte() {
         System.out.println("setPorte");
         String porte = "Médio";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", porte, "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", porte, "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setPorte(porte);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -208,7 +208,7 @@ public class AnimalTest {
     @Test
     public void testGetIdade() {
         System.out.println("getIdade");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         int expResult = 7;
         int result = instance.getIdade();
         assertEquals(expResult, result);
@@ -223,7 +223,7 @@ public class AnimalTest {
     public void testSetIdade() {
         System.out.println("setIdade");
         int idade = 7;
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setIdade(idade);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -235,7 +235,7 @@ public class AnimalTest {
     @Test
     public void testGetCastracao() {
         System.out.println("getCastracao");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Sim";
         String result = instance.getCastracao();
         assertEquals(expResult, result);
@@ -250,7 +250,7 @@ public class AnimalTest {
     public void testSetCastracao() {
         System.out.println("setCastracao");
         String castracao = "Sim";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", castracao, "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", castracao, "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setCastracao(castracao);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -262,7 +262,7 @@ public class AnimalTest {
     @Test
     public void testGetVacinaAntirrabica() {
         System.out.println("getVacinaAntirrabica");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "02/05/2019";
         String result = instance.getVacinaAntirrabica();
         assertEquals(expResult, result);
@@ -277,7 +277,7 @@ public class AnimalTest {
     public void testSetVacinaAntirrabica() {
         System.out.println("setVacinaAntirrabica");
         String vacinaAntirrabica = "01/02/19";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", vacinaAntirrabica, "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", vacinaAntirrabica, "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setVacinaAntirrabica(vacinaAntirrabica);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -289,7 +289,7 @@ public class AnimalTest {
     @Test
     public void testGetVacinaV10() {
         System.out.println("getVacinaV10");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "01/02/19";
         String result = instance.getVacinaV10();
         assertEquals(expResult, result);
@@ -304,7 +304,7 @@ public class AnimalTest {
     public void testSetVacinaV10() {
         System.out.println("setVacinaV10");
         String vacinaV10 = "01/02/19";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", vacinaV10, "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", vacinaV10, "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         instance.setVacinaV10(vacinaV10);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -316,7 +316,7 @@ public class AnimalTest {
     @Test
     public void testGetVermifugacao() {
         System.out.println("getVermifugacao");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "03/04/2019";
         String result = instance.getVermifugacao();
         assertEquals(expResult, result);
@@ -331,7 +331,7 @@ public class AnimalTest {
     public void testSetVermifugacao() {
         System.out.println("setVermifugacao");
         String vermifugacao = "03/04/2019";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", vermifugacao, "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", vermifugacao, "Em casa", "Possui dermatite");
         instance.setVermifugacao(vermifugacao);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -343,7 +343,7 @@ public class AnimalTest {
     @Test
     public void testGetUltimaLocalizacao() {
         System.out.println("getUltimaLocalizacao");
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Em casa";
         String result = instance.getUltimaLocalizacao();
         assertEquals(expResult, result);
@@ -358,7 +358,7 @@ public class AnimalTest {
     public void testSetUltimaLocalizacao() {
         System.out.println("setUltimaLocalizacao");
         String ultimaLocalizacao = "Em casa";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", ultimaLocalizacao, "Possui dermatite");
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", ultimaLocalizacao, "Possui dermatite");
         instance.setUltimaLocalizacao(ultimaLocalizacao);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -370,7 +370,7 @@ public class AnimalTest {
     @Test
     public void testGetObservacao() {
         System.out.println("getObservacao");
-       Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
+       Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", "Possui dermatite");
         String expResult = "Possui dermatite";
         String result = instance.getObservacao();
         assertEquals(expResult, result);
@@ -385,7 +385,7 @@ public class AnimalTest {
     public void testSetObservacao() {
         System.out.println("setObservacao");
         String observacao = "Possui dermatite";
-        Animal instance = new Animal("Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", observacao);
+        Animal instance = new Animal("","Bidu", "Cachorro", "Preto", "Beagle", "Macho", "Médio", "7", "Sim", "01/02/19", "02/05/2019", "03/04/2019", "Em casa", observacao);
         instance.setObservacao(observacao);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
