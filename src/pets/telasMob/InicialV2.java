@@ -35,7 +35,15 @@ public class InicialV2 extends javax.swing.JFrame {
      */
     public InicialV2() {
         initComponents();
+        
+        
         loadImage();
+        /*
+        try {
+            testeLoadInfo();
+        } catch (IOException ex) {
+            
+        }*/
         
     }
 
@@ -324,24 +332,36 @@ public class InicialV2 extends javax.swing.JFrame {
     
     private void testeLoadInfo() throws FileNotFoundException, IOException{
         
-        File arq = new File("d.csv");
-        FileReader fr = new FileReader(arq);
-        BufferedReader br = new BufferedReader(fr);
-                
-        //List <String> dados = new ArrayList();
-        List<String[]> dadosAnimal = new ArrayList();
+        File arq = new File("animal.csv");
         
-        String linha; 
-        
-        while ((linha = br.readLine()) != null) {
-            String[] values = linha.split(";");
-            //System.out.println(Arrays.toString(values));
-            dadosAnimal.add(values);
-            
+        if(arq.exists()){
+            FileReader fr = new FileReader(arq);
+            BufferedReader br = new BufferedReader(fr);
+
+            //List <String> dados = new ArrayList();
+            List<String[]> dadosAnimal = new ArrayList();
+
+            String linha; 
+
+            while ((linha = br.readLine()) != null) {
+                String[] values = linha.split(";");
+                //System.out.println(Arrays.toString(values));
+                dadosAnimal.add(values);
+
+            }
+            System.out.println(dadosAnimal.size());
+
+            if(dadosAnimal.size() > 1){
+                continuaTesteLoadInfo(dadosAnimal);
+            }
+            else{
+
+            }
         }
-        //System.out.println(dadosAnimal);
-        
-        continuaTesteLoadInfo(dadosAnimal);
+        else{
+           
+        }
+
         
     }
     
