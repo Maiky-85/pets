@@ -19,6 +19,7 @@ import java.util.ArrayList;
 //import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 //import javax.imageio.ImageIO;
 //import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -33,11 +34,63 @@ public class InicialV2 extends javax.swing.JFrame {
     /**
      * Creates new form InicialV2
      */
-    public InicialV2() {
+    public InicialV2() throws FileNotFoundException, IOException {
         initComponents();
         
         
-        loadImage();
+        File arq = new File("animal.csv");
+        
+        if(arq.exists()){
+            FileReader fr = new FileReader(arq);
+            BufferedReader br = new BufferedReader(fr);
+
+            //List <String> dados = new ArrayList();
+            //List<String[]> dadosAnimal = new ArrayList();
+
+            String linha; 
+
+            while ((linha = br.readLine()) != null) {
+                String[] values = linha.split(";");
+                //System.out.println(Arrays.toString(values));
+                dadosAnimal.add(values);
+                
+                
+                
+            }
+            System.out.println(dadosAnimal.size());
+            
+                      
+            jLabel2.setPreferredSize(new Dimension(43, 43));
+            jLabel2.setSize(43,43);
+            
+            loadImage(dadosAnimal.get(1)[0], jLabel2);
+            
+            testeLoadInfo(1);
+            
+/*
+            if(dadosAnimal.size() > 1){
+                //continuaTesteLoadInfo(dadosAnimal);
+                
+                loadImage(dadosAnimal.get(1)[0], labelFoto);
+                
+                this.campoNome.setText(dadosAnimal.get(1)[1]);
+                this.campoTipo.setText(dadosAnimal.get(1)[2]);
+                this.campoCor.setText(dadosAnimal.get(1)[3]);
+                this.campoRaca.setText(dadosAnimal.get(1)[4]);
+                this.campoPorte.setText(dadosAnimal.get(1)[6]);
+                
+            }
+            else{
+
+            }
+  */      }
+        else{
+           
+        }
+        
+        
+        
+        //loadImage();
         /*
         try {
             testeLoadInfo();
@@ -83,7 +136,6 @@ public class InicialV2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(301, 534));
-        setPreferredSize(new java.awt.Dimension(301, 565));
         setResizable(false);
 
         jPanel2.setMinimumSize(new java.awt.Dimension(301, 534));
@@ -91,7 +143,7 @@ public class InicialV2 extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botaoPontos.setBackground(new java.awt.Color(255, 255, 255));
-        botaoPontos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/menu2icon3.png"))); // NOI18N
+        botaoPontos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/sairicon2.png"))); // NOI18N
         botaoPontos.setToolTipText("Sair da conta");
         botaoPontos.setBorder(null);
         botaoPontos.setBorderPainted(false);
@@ -350,12 +402,13 @@ public class InicialV2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoDeletarActionPerformed
 
-    private void loadImage(){
+    private void loadImage(String fileName, JLabel label){
         
         //teste
-        File folderInput = new File("fotos/a1.JPG");
+        //File folderInput = new File("fotos/a1.JPG");
+        File file = new File("fotos/", fileName);
         TesteResizeFoto tamanho = new TesteResizeFoto();
-        jLabel2.setIcon(tamanho.ResizeImage(folderInput.getAbsolutePath(), jLabel2));
+        label.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), label));
     }
     
     private void continuaTesteLoadInfo(List<String[]> dados){
@@ -364,8 +417,27 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }
     
-    private void testeLoadInfo() throws FileNotFoundException, IOException{
+   
+    
+    private void testeLoadInfo(int pos) throws FileNotFoundException, IOException{
         
+        
+        if(dadosAnimal.size() > 1){
+            //continuaTesteLoadInfo(dadosAnimal);
+
+            loadImage(dadosAnimal.get(pos)[0], labelFoto);
+
+            this.campoNome.setText(dadosAnimal.get(pos)[1]);
+            this.campoTipo.setText(dadosAnimal.get(pos)[2]);
+            this.campoCor.setText(dadosAnimal.get(pos)[3]);
+            this.campoRaca.setText(dadosAnimal.get(pos)[4]);
+            this.campoPorte.setText(dadosAnimal.get(pos)[6]);
+
+        }
+        
+        
+        
+        /*
         File arq = new File("animal.csv");
         
         if(arq.exists()){
@@ -381,12 +453,23 @@ public class InicialV2 extends javax.swing.JFrame {
                 String[] values = linha.split(";");
                 //System.out.println(Arrays.toString(values));
                 dadosAnimal.add(values);
-
+                
+                
+                
             }
             System.out.println(dadosAnimal.size());
 
             if(dadosAnimal.size() > 1){
-                continuaTesteLoadInfo(dadosAnimal);
+                //continuaTesteLoadInfo(dadosAnimal);
+                
+                loadImage(dadosAnimal.get(1)[0], labelFoto);
+                
+                this.campoNome.setText(dadosAnimal.get(1)[1]);
+                this.campoTipo.setText(dadosAnimal.get(1)[2]);
+                this.campoCor.setText(dadosAnimal.get(1)[3]);
+                this.campoRaca.setText(dadosAnimal.get(1)[4]);
+                this.campoPorte.setText(dadosAnimal.get(1)[6]);
+                
             }
             else{
 
@@ -394,26 +477,26 @@ public class InicialV2 extends javax.swing.JFrame {
         }
         else{
            
-        }
+        }*/
 
         
     }
     
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         System.out.println("click");
-        jLabel2.setPreferredSize(new Dimension(50, 50));
-        jLabel2.setSize(50,50);
+        jLabel2.setPreferredSize(new Dimension(43, 43));
+        jLabel2.setSize(43,43);
         
         
         //BufferedImage folderImage = ImageIO.read(folderInput);
         //ImageIcon im = new ImageIcon(folderImage);
         //jLabel2.setIcon(im);
         
-        loadImage();
+        //loadImage();
         
         try {
             //mostrar info
-            testeLoadInfo();
+            testeLoadInfo(1);
         } catch (IOException ex) {
             
         }
@@ -484,7 +567,11 @@ public class InicialV2 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InicialV2().setVisible(true);
+                try {
+                    new InicialV2().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -515,4 +602,8 @@ public class InicialV2 extends javax.swing.JFrame {
     private javax.swing.JLabel labelTipo;
     private javax.swing.JLabel mapa;
     // End of variables declaration//GEN-END:variables
+
+    private List<String[]> dadosAnimal = new ArrayList();
+
+
 }
