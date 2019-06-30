@@ -430,14 +430,14 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPerfilActionPerformed
-        PerfilDono perfil;
+        PerfilDonoV2 perfil = null;
         try {
-            perfil = new PerfilDono();
-            perfil.setVisible(true);
-            this.dispose();
+            perfil = new PerfilDonoV2();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
+        perfil.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_botaoPerfilActionPerformed
 
@@ -468,7 +468,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         this.dispose();
-        Inicial inicial = new Inicial();
+        InicialV2 inicial = new InicialV2();
         inicial.setVisible(true);
     }//GEN-LAST:event_jPanel1MouseClicked
 
@@ -485,25 +485,25 @@ public class Menu extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         this.dispose();
-        Inicial inicial = new Inicial();
+        InicialV2 inicial = new InicialV2();
         inicial.setVisible(true);
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         this.dispose();
-        Inicial inicial = new Inicial();
+        InicialV2 inicial = new InicialV2();
         inicial.setVisible(true);
     }//GEN-LAST:event_jPanel3MouseClicked
 
     private void mapaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mapaMouseClicked
         this.dispose();
-        Inicial inicial = new Inicial();
+        InicialV2 inicial = new InicialV2();
         inicial.setVisible(true);
     }//GEN-LAST:event_mapaMouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
         this.dispose();
-        Inicial inicial = new Inicial();
+        InicialV2 inicial = new InicialV2();
         inicial.setVisible(true);
     }//GEN-LAST:event_jPanel4MouseClicked
 

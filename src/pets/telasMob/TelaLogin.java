@@ -5,12 +5,12 @@
  */
 package pets.telasMob;
 
-import java.awt.event.KeyAdapter;
+//import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+//import javax.swing.JPasswordField;
+//import javax.swing.JTextField;
 import pets.modelo.Conta;
 
 /**
@@ -233,7 +233,7 @@ public class TelaLogin extends javax.swing.JFrame {
         try{
             Conta login = new Conta();
             login.logarConta(email, senha);
-            Inicial principal = new Inicial();
+            InicialV2 principal = new InicialV2();
             principal.setVisible(true);
             this.dispose(); 
         } catch (Exception ex) {
@@ -244,7 +244,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         CadastrarConta cadastro = new CadastrarConta();
         cadastro.setVisible(true);
-        this.hide(); 
+        this.setVisible(false); 
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     private void campoEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoEmailKeyPressed

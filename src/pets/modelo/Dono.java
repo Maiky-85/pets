@@ -15,11 +15,13 @@ package pets.modelo;
 import java.io.FileNotFoundException;
 import javax.swing.JOptionPane;
 import pets.persistenciaArquivo.PersistenciaArquivo;
-import pets.telasMob.PerfilDono;
+//import pets.telasMob.PerfilDono;
+import pets.telasMob.PerfilDonoV2;
 
 public class Dono {
     
     // atributos da classe Dono
+    private String foto;
     private String nome;
     private Endereco endereco;
     private Contato contato;
@@ -27,8 +29,8 @@ public class Dono {
     private String senha;
     
     
-    public Dono(String nome, Endereco endereco, Contato contato, RedeSocial redeSocial, String senha) {
-        
+    public Dono(String foto, String nome, Endereco endereco, Contato contato, RedeSocial redeSocial, String senha) {
+        this.setFoto(foto);
         this.setNome(nome);
 	this.setEndereco(endereco);
 	this.setContato(contato);
@@ -38,6 +40,14 @@ public class Dono {
     
     public Dono(){
         
+    }
+    
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
             
     // nome do dono
@@ -86,7 +96,7 @@ public class Dono {
     }
     
     
-    public boolean atualizarDono(String nome, String senha, String senha2, String senhaAtual, String rua, String numero, String bairro, String cidade, String estado, String cep, String complemento,
+    public boolean atualizarDono(String foto, String nome, String senha, String senha2, String senhaAtual, String rua, String numero, String bairro, String cidade, String estado, String cep, String complemento,
                                 String numTelefone, String numCelular, String email, String facebook, String twitter, String instagram, String whatsapp)throws Exception{
         try {
             ContaLogada contaLogada = new ContaLogada();
@@ -99,7 +109,7 @@ public class Dono {
 
             if (senha.equals("") && senha2.equals("")){
                 if (senhaAtual.equals(senhaSalva)){
-                    Dono novoDono = new Dono(nome, endereco, contatoDono, redeSocial, senhaSalva);                    
+                    Dono novoDono = new Dono(foto, nome, endereco, contatoDono, redeSocial, senhaSalva);                    
                     
                     PersistenciaArquivo persistencia = new PersistenciaArquivo();     
                     persistencia.atualizarDadosDono(novoDono,"dono.csv");
@@ -111,7 +121,7 @@ public class Dono {
                 else{
                     JOptionPane.showMessageDialog(null, "Senha atual incorreta", "Atenção", JOptionPane.WARNING_MESSAGE);
                     
-                    PerfilDono dono = new PerfilDono();
+                    PerfilDonoV2 dono = new PerfilDonoV2();
                     dono.setNovaSenha("");
                     dono.setNovaSenha2("");
                     dono.setCampoSenhaAtual("");
@@ -120,7 +130,7 @@ public class Dono {
             else{
                 if ((senha.equals(senha2))){
                     if (senhaAtual.equals(senhaSalva)){
-                        Dono novoDono = new Dono(nome, endereco, contatoDono, redeSocial, senha);
+                        Dono novoDono = new Dono(foto, nome, endereco, contatoDono, redeSocial, senha);
                         PersistenciaArquivo persistencia = new PersistenciaArquivo();     
                         persistencia.atualizarDadosDono(novoDono,"dono.csv");
                         
@@ -131,7 +141,7 @@ public class Dono {
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "Senha atual esta incorreta", "Atenção", JOptionPane.WARNING_MESSAGE);
-                        PerfilDono dono = new PerfilDono();
+                        PerfilDonoV2 dono = new PerfilDonoV2();
                         dono.setNovaSenha("");
                         dono.setNovaSenha2("");
                         dono.setCampoSenhaAtual("");
@@ -139,7 +149,7 @@ public class Dono {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Novas senhas devem ser iguais", "Atenção", JOptionPane.WARNING_MESSAGE);
-                    PerfilDono dono = new PerfilDono();
+                    PerfilDonoV2 dono = new PerfilDonoV2();
                     dono.setNovaSenha("");
                     dono.setNovaSenha2("");
                     dono.setCampoSenhaAtual("");

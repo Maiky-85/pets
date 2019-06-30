@@ -9,13 +9,13 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
+//import javax.swing.JPasswordField;
 import pets.modelo.ContaLogada;
-import pets.modelo.Contato;
+//import pets.modelo.Contato;
 import pets.modelo.Dono;
-import pets.modelo.Endereco;
-import pets.modelo.RedeSocial;
-import pets.persistenciaArquivo.PersistenciaArquivo;
+//import pets.modelo.Endereco;
+//import pets.modelo.RedeSocial;
+//import pets.persistenciaArquivo.PersistenciaArquivo;
 
 
 
@@ -672,7 +672,7 @@ public class PerfilDono extends javax.swing.JFrame {
         else{
             try {
                 Dono novoDono = new Dono();
-                verificador = novoDono.atualizarDono(this.campoNome.getText(), 
+                verificador = novoDono.atualizarDono(null,this.campoNome.getText(), 
                                 new String(novaSenha.getPassword()), new String(novaSenha2.getPassword()), 
                                 new String(campoSenhaAtual.getPassword()), this.campoRua.getText(), 
                                 this.campoNumero.getText(), this.campoBairro.getText(), 

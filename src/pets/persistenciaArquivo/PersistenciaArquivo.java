@@ -113,7 +113,7 @@ public class PersistenciaArquivo {
 
                 PrintWriter escreveArq = new PrintWriter(arqWriter);
                 
-                escreveArq.println(dono.getContato().getEmail() + ";"  +  
+                escreveArq.println(dono.getFoto() + ";" + dono.getContato().getEmail() + ";"  +  
                 dono.getNome() +
                 ";" + dono.getEndereco().getRua() + 
                 "," + dono.getEndereco().getNumero() +
@@ -146,10 +146,10 @@ public class PersistenciaArquivo {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);      
             
-            escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
+            escreveArq.println("Foto;Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Instagram;Twitter;Whatsapp;Senha");
             
-            escreveArq.println(dono.getContato().getEmail() + ";"  +  
+            escreveArq.println(dono.getFoto() + ";" + dono.getContato().getEmail() + ";"  +  
                 dono.getNome() +
                 ";" + dono.getEndereco().getRua() + 
                 "," + dono.getEndereco().getNumero() +
@@ -215,7 +215,7 @@ public class PersistenciaArquivo {
             else{
                 JOptionPane.showMessageDialog(null, contaOn + " atualizado.");
                 verificador = true;
-                escreveArq.write(dono.getContato().getEmail() + ";"  +  
+                escreveArq.write(dono.getFoto() + ";" + dono.getContato().getEmail() + ";"  +  
                 dono.getNome() +
                 ";" + dono.getEndereco().getRua() + 
                 "," + dono.getEndereco().getNumero() +
@@ -294,7 +294,7 @@ public class PersistenciaArquivo {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
-            escreveArq.println("Foto; Nome;Tipo;Cor;Raça;Sexo;Porte;Idade;Castratado;VacinaV10"
+            escreveArq.println("Foto;Nome;Tipo;Cor;Raça;Sexo;Porte;Idade;Castratado;VacinaV10"
                     +"Vacina Antirrábica;Vermifugado;Último local visto;Informações Adicionais");
             
             escreveArq.println(animal.getFoto() +

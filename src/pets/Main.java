@@ -12,7 +12,7 @@
 
 package pets;
 
-import javax.swing.UIManager;
+//import javax.swing.UIManager;
 import pets.telasMob.TelaComecar;
 //import pets.telasMob.TelaLogin;
 

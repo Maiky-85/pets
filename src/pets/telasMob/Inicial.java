@@ -7,12 +7,12 @@ package pets.telasMob;
 
 //import pets.telas.CadastroAnimal;
 
-import java.awt.image.BufferedImage;
+//import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.text.Normalizer.Form;
+//import java.text.Normalizer.Form;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
+//import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import pets.telas.Principal;
@@ -73,7 +73,6 @@ public class Inicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 200));
-        setMaximumSize(new java.awt.Dimension(300, 533));
         setMinimumSize(new java.awt.Dimension(300, 533));
         setResizable(false);
         setSize(new java.awt.Dimension(300, 533));
@@ -133,6 +132,11 @@ public class Inicial extends javax.swing.JFrame {
         botaoRede.setBorderPainted(false);
         botaoRede.setContentAreaFilled(false);
         botaoRede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoRede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoRedeActionPerformed(evt);
+            }
+        });
 
         botaoPets.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         botaoPets.setForeground(new java.awt.Color(255, 255, 255));
@@ -264,6 +268,11 @@ public class Inicial extends javax.swing.JFrame {
         botaoEditar.setBorderPainted(false);
         botaoEditar.setContentAreaFilled(false);
         botaoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEditarActionPerformed(evt);
+            }
+        });
 
         campoFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/fundo.png"))); // NOI18N
 
@@ -328,15 +337,14 @@ public class Inicial extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel5)
-                .addGap(78, 264, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(labelCor)
@@ -359,13 +367,12 @@ public class Inicial extends javax.swing.JFrame {
                                     .addComponent(menuInf)
                                     .addComponent(labelPorte))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botaoEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botaoDeletar)))
-                .addContainerGap())
+                                .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(botaoEditar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botaoDeletar)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,6 +511,14 @@ public class Inicial extends javax.swing.JFrame {
     private void cao1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cao1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_cao1FocusGained
+
+    private void botaoRedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRedeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoRedeActionPerformed
+
+    private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoEditarActionPerformed
 
     /**
      * @param args the command line arguments

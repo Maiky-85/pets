@@ -54,7 +54,7 @@ public class Conta {
                     Endereco endereco = new Endereco("","0","","","AC","00000000","");
                     Contato contatoDono = new Contato("00000000000","00000000000", email);                                  
                     RedeSocial redeSocial = new RedeSocial("","","","00000000000");
-                    Dono novoDono = new Dono(nome, endereco, contatoDono, redeSocial,senha1);
+                    Dono novoDono = new Dono(null, nome, endereco, contatoDono, redeSocial,senha1);
 
                     // vai salvar os dados parciais do dono na persistencia de arquivo
                     PersistenciaArquivo persistencia = new PersistenciaArquivo();

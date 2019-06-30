@@ -51,7 +51,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial, "123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial, "123");
         
         String expResult = "João da Silva";
         String result = instance.getNome();
@@ -72,7 +72,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono(nome, endereco, contato, redeSocial,"123");
+        Dono instance = new Dono(null, nome, endereco, contato, redeSocial,"123");
         
         instance.setNome(nome);
         // TODO review the generated test code and remove the default call to fail.
@@ -90,7 +90,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial, "123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial, "123");
         
         Endereco expResult = endereco;
         Endereco result = instance.getEndereco();
@@ -110,7 +110,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial,"123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial,"123");
         
         instance.setEndereco(endereco);
         // TODO review the generated test code and remove the default call to fail.
@@ -128,7 +128,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial,"123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial,"123");
         
         Contato expResult = contato;
         Contato result = instance.getContato();
@@ -148,7 +148,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial,"123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial,"123");
         
         instance.setContato(contato);
         // TODO review the generated test code and remove the default call to fail.
@@ -166,7 +166,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial,"123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial,"123");
         
         RedeSocial expResult = redeSocial;
         RedeSocial result = instance.getRedeSocial();
@@ -186,7 +186,7 @@ public class DonoTest {
         Contato contato = new Contato("2732265454", "27998970066", "vidaanimal@gmail.com");
         RedeSocial redeSocial = new RedeSocial("www.facebook.com/clinicavidaanimal/", "www.twitter.com/clinicavidaanimal/", "www.instagram.com/clinicavidaanimal/", "027996343201");
         
-        Dono instance = new Dono("João da Silva", endereco, contato, redeSocial,"123");
+        Dono instance = new Dono(null, "João da Silva", endereco, contato, redeSocial,"123");
         
         instance.setRedeSocial(redeSocial);
         // TODO review the generated test code and remove the default call to fail.

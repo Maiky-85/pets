@@ -7,7 +7,7 @@ package pets.telasMob;
 
 import javax.swing.JOptionPane;
 import pets.modelo.Animal;
-import pets.persistenciaArquivo.PersistenciaArquivo;
+//import pets.persistenciaArquivo.PersistenciaArquivo;
 
 
 /**

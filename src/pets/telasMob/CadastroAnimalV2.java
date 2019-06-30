@@ -285,7 +285,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
                     this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
                 if(verificador){
                     this.dispose();
-                    Inicial inicial = new Inicial();
+                    InicialV2 inicial = new InicialV2();
                     inicial.setVisible(true);
                 }
             } catch (Exception ex) {
@@ -338,7 +338,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         this.dispose();
-        Inicial inicial = new Inicial();
+        InicialV2 inicial = new InicialV2();
         inicial.setVisible(true);
     }//GEN-LAST:event_botaoVoltarActionPerformed
 

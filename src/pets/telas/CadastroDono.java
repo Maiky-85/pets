@@ -12,8 +12,8 @@
 
 package pets.telas;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pets.modelo.Contato;
 import pets.modelo.Dono;
@@ -395,7 +395,7 @@ public class CadastroDono extends javax.swing.JFrame {
                 Contato contatoDono = new Contato(this.campoNumTelefone.getText(), this.campoNumCelular.getText(), this.campoEmail.getText());
                 RedeSocial redeSocial = new RedeSocial(this.campoFacebook.getText(), this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());
 
-                Dono novoDono = new Dono(this.campoNome.getText(), endereco, contatoDono, redeSocial, this.campoSenha.getText());
+                Dono novoDono = new Dono(null,this.campoNome.getText(), endereco, contatoDono, redeSocial, this.campoSenha.getText());
 
                 // vai salvar os dados do formulário do dono na persistencia de arquivo
 
