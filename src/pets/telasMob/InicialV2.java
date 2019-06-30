@@ -56,8 +56,10 @@ public class InicialV2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        botaoPontos = new javax.swing.JButton();
+        botaoMenu = new javax.swing.JButton();
         botaoAdicionar = new javax.swing.JButton();
-        mapa = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -69,23 +71,55 @@ public class InicialV2 extends javax.swing.JFrame {
         labelCor = new javax.swing.JLabel();
         labelRaca = new javax.swing.JLabel();
         labelPorte = new javax.swing.JLabel();
-        campoFoto = new javax.swing.JLabel();
         campoNome = new javax.swing.JLabel();
         campoTipo = new javax.swing.JLabel();
         campoCor = new javax.swing.JLabel();
         campoRaca = new javax.swing.JLabel();
         campoPorte = new javax.swing.JLabel();
-        menuInf = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        botaoMenu = new javax.swing.JButton();
-        botaoPontos = new javax.swing.JButton();
+        labelFoto = new javax.swing.JLabel();
+        bgFoto = new javax.swing.JLabel();
+        mapa = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(301, 534));
+        setPreferredSize(new java.awt.Dimension(301, 565));
         setResizable(false);
 
-        botaoAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/adicionarTrans.png"))); // NOI18N
+        jPanel2.setMinimumSize(new java.awt.Dimension(301, 534));
+        jPanel2.setPreferredSize(new java.awt.Dimension(301, 534));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        botaoPontos.setBackground(new java.awt.Color(255, 255, 255));
+        botaoPontos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/menu2icon3.png"))); // NOI18N
+        botaoPontos.setToolTipText("Sair da conta");
+        botaoPontos.setBorder(null);
+        botaoPontos.setBorderPainted(false);
+        botaoPontos.setContentAreaFilled(false);
+        botaoPontos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoPontos.setPreferredSize(new java.awt.Dimension(35, 35));
+        botaoPontos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoPontosActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botaoPontos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 40, 40));
+
+        botaoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/menuicon3.png"))); // NOI18N
+        botaoMenu.setToolTipText("Menu");
+        botaoMenu.setBorder(null);
+        botaoMenu.setContentAreaFilled(false);
+        botaoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMenuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botaoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 40, 40));
+
+        botaoAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/add4.png"))); // NOI18N
         botaoAdicionar.setToolTipText("Adicionar um animal");
+        botaoAdicionar.setBorder(null);
         botaoAdicionar.setBorderPainted(false);
         botaoAdicionar.setContentAreaFilled(false);
         botaoAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -94,9 +128,7 @@ public class InicialV2 extends javax.swing.JFrame {
                 botaoAdicionarActionPerformed(evt);
             }
         });
-
-        mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
-        mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jPanel2.add(botaoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 50, 50));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(330, 70));
 
@@ -104,7 +136,7 @@ public class InicialV2 extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setOpaque(true);
-        jLabel2.setPreferredSize(new java.awt.Dimension(40, 40));
+        jLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -116,15 +148,17 @@ public class InicialV2 extends javax.swing.JFrame {
                 jLabel2MouseReleased(evt);
             }
         });
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, -1, -1));
 
         jScrollPane1.setViewportView(jPanel5);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 55));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
         jPanel4.setAlignmentY(0.0F);
 
-        botaoEditar.setFont(new java.awt.Font("Khmer UI", 1, 10)); // NOI18N
+        botaoEditar.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         botaoEditar.setForeground(new java.awt.Color(153, 153, 153));
         botaoEditar.setText("Editar");
         botaoEditar.setBorder(null);
@@ -132,7 +166,7 @@ public class InicialV2 extends javax.swing.JFrame {
         botaoEditar.setContentAreaFilled(false);
         botaoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        botaoDeletar.setFont(new java.awt.Font("Khmer UI", 1, 10)); // NOI18N
+        botaoDeletar.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         botaoDeletar.setForeground(new java.awt.Color(153, 153, 153));
         botaoDeletar.setText("Deletar");
         botaoDeletar.setBorder(null);
@@ -145,202 +179,151 @@ public class InicialV2 extends javax.swing.JFrame {
             }
         });
 
-        labelNome.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        labelNome.setForeground(new java.awt.Color(153, 153, 153));
+        labelNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        labelNome.setForeground(new java.awt.Color(102, 102, 102));
         labelNome.setText("Nome:");
 
-        labelTipo.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        labelTipo.setForeground(new java.awt.Color(153, 153, 153));
+        labelTipo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        labelTipo.setForeground(new java.awt.Color(102, 102, 102));
         labelTipo.setText("Tipo:");
 
-        labelCor.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        labelCor.setForeground(new java.awt.Color(153, 153, 153));
+        labelCor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        labelCor.setForeground(new java.awt.Color(102, 102, 102));
         labelCor.setText("Cor:");
 
-        labelRaca.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        labelRaca.setForeground(new java.awt.Color(153, 153, 153));
+        labelRaca.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        labelRaca.setForeground(new java.awt.Color(102, 102, 102));
         labelRaca.setText("Raça:");
 
-        labelPorte.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        labelPorte.setForeground(new java.awt.Color(153, 153, 153));
+        labelPorte.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        labelPorte.setForeground(new java.awt.Color(102, 102, 102));
         labelPorte.setText("Porte:");
 
-        campoFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/fundo.png"))); // NOI18N
-
-        campoNome.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        campoNome.setForeground(new java.awt.Color(153, 153, 153));
+        campoNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        campoNome.setForeground(new java.awt.Color(102, 102, 102));
         campoNome.setText("?");
 
-        campoTipo.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        campoTipo.setForeground(new java.awt.Color(153, 153, 153));
+        campoTipo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        campoTipo.setForeground(new java.awt.Color(102, 102, 102));
         campoTipo.setText("?");
 
-        campoCor.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        campoCor.setForeground(new java.awt.Color(153, 153, 153));
+        campoCor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        campoCor.setForeground(new java.awt.Color(102, 102, 102));
         campoCor.setText("?");
 
-        campoRaca.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        campoRaca.setForeground(new java.awt.Color(153, 153, 153));
+        campoRaca.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        campoRaca.setForeground(new java.awt.Color(102, 102, 102));
         campoRaca.setText("?");
 
-        campoPorte.setFont(new java.awt.Font("Khmer UI", 1, 12)); // NOI18N
-        campoPorte.setForeground(new java.awt.Color(153, 153, 153));
+        campoPorte.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        campoPorte.setForeground(new java.awt.Color(102, 102, 102));
         campoPorte.setText("?");
 
-        menuInf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/menuInf.png"))); // NOI18N
-        menuInf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelFoto.setBackground(new java.awt.Color(102, 102, 102));
+        labelFoto.setToolTipText("Foto");
+        labelFoto.setOpaque(true);
+        labelFoto.setPreferredSize(new java.awt.Dimension(78, 78));
+
+        bgFoto.setBackground(new java.awt.Color(255, 255, 255));
+        bgFoto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 4, 1, 4, new java.awt.Color(255, 186, 120)));
+        bgFoto.setOpaque(true);
+        bgFoto.setPreferredSize(new java.awt.Dimension(86, 80));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(labelCor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoCor, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(labelTipo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addComponent(botaoEditar))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(labelRaca)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(labelNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(menuInf)
-                            .addComponent(labelPorte))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(botaoEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(41, 41, 41)
                         .addComponent(botaoDeletar)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelCor)
+                    .addComponent(labelTipo)
+                    .addComponent(labelRaca)
+                    .addComponent(labelNome)
+                    .addComponent(labelPorte))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(campoRaca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(campoCor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(campoTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(botaoEditar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoDeletar)
-                            .addComponent(botaoEditar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelNome)
-                            .addComponent(campoNome))
+                        .addGap(1, 1, 1)
+                        .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botaoDeletar)
+                .addGap(22, 22, 22))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(labelNome)
                         .addGap(4, 4, 4)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelTipo)
-                            .addComponent(campoTipo))
+                        .addComponent(labelTipo)
                         .addGap(4, 4, 4)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelCor, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoCor))
+                        .addComponent(labelCor, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelRaca)
                             .addComponent(campoRaca))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelPorte))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(campoNome)
                         .addGap(4, 4, 4)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelPorte)
-                            .addComponent(campoPorte))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(menuInf)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                        .addComponent(campoTipo)
+                        .addGap(3, 3, 3)
+                        .addComponent(campoCor)
+                        .addGap(24, 24, 24)
+                        .addComponent(campoPorte)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
 
-        botaoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/menu2.png"))); // NOI18N
-        botaoMenu.setToolTipText("Menu");
-        botaoMenu.setBorder(null);
-        botaoMenu.setContentAreaFilled(false);
-        botaoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoMenuActionPerformed(evt);
-            }
-        });
+        mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
+        mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jPanel2.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 156, 300, 235));
 
-        botaoPontos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/3pontos2.png"))); // NOI18N
-        botaoPontos.setToolTipText("Sair da conta");
-        botaoPontos.setBorderPainted(false);
-        botaoPontos.setContentAreaFilled(false);
-        botaoPontos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoPontos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoPontosActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(botaoMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(47, 47, 47)
-                .addComponent(botaoPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botaoPontos))
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/principal.png"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mapa, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(botaoAdicionar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mapa, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -507,29 +490,29 @@ public class InicialV2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgFoto;
     private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoDeletar;
     private javax.swing.JButton botaoEditar;
     private javax.swing.JButton botaoMenu;
     private javax.swing.JButton botaoPontos;
     private javax.swing.JLabel campoCor;
-    private javax.swing.JLabel campoFoto;
     private javax.swing.JLabel campoNome;
     private javax.swing.JLabel campoPorte;
     private javax.swing.JLabel campoRaca;
     private javax.swing.JLabel campoTipo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelCor;
+    private javax.swing.JLabel labelFoto;
     private javax.swing.JLabel labelNome;
     private javax.swing.JLabel labelPorte;
     private javax.swing.JLabel labelRaca;
     private javax.swing.JLabel labelTipo;
     private javax.swing.JLabel mapa;
-    private javax.swing.JLabel menuInf;
     // End of variables declaration//GEN-END:variables
 }
