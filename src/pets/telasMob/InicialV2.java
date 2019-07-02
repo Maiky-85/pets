@@ -595,12 +595,7 @@ public class InicialV2 extends javax.swing.JFrame {
             
             for(int i = 2; dadosAnimal.size() > i; i++){
                 
-                if(i == 2){
-                    this.setPosX(60);
-                }
-                else{
-                    this.setPosX(52);
-                }
+                this.setPosX(52);
                 
                 //this.setSelected(i);
                 
