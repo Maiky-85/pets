@@ -433,9 +433,10 @@ public class InicialV2 extends javax.swing.JFrame {
         try {
             tela=deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
             if (tela){
-                this.dispose();
+                
                 InicialV2 inicial;
                 inicial = new InicialV2();
+                this.dispose();
                 inicial.setVisible(true);
             }
         } catch (Exception ex) {          
