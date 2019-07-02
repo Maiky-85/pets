@@ -123,9 +123,11 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         campoTwitter = new javax.swing.JTextField();
         campoWhatsapp = new javax.swing.JFormattedTextField();
         botaoSalvar = new javax.swing.JButton();
+        nome19 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(500, 200));
         setPreferredSize(new java.awt.Dimension(328, 540));
         setResizable(false);
 
@@ -180,7 +182,6 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         bgFoto.setPreferredSize(new java.awt.Dimension(86, 80));
         jPanel1.add(bgFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 60, -1, -1));
 
-        campoNome.setBackground(new java.awt.Color(255, 255, 255));
         campoNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoNome.setForeground(new java.awt.Color(102, 102, 102));
         campoNome.setToolTipText("Nome");
@@ -200,64 +201,56 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         nome7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         nome7.setForeground(new java.awt.Color(51, 51, 51));
         nome7.setText("Senha atual:");
-        jPanel1.add(nome7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        jPanel1.add(nome7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
         nome14.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         nome14.setForeground(new java.awt.Color(51, 51, 51));
         nome14.setText("Nova senha:");
         nome14.setToolTipText("Complemento");
-        jPanel1.add(nome14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        jPanel1.add(nome14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
         nome8.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         nome8.setForeground(new java.awt.Color(51, 51, 51));
         nome8.setText("Confirmar senha:");
-        jPanel1.add(nome8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+        jPanel1.add(nome8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
-        campoSenhaAtual.setBackground(new java.awt.Color(255, 255, 255));
         campoSenhaAtual.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoSenhaAtual.setForeground(new java.awt.Color(102, 102, 102));
         campoSenhaAtual.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoSenhaAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 358, 160, 23));
+        jPanel1.add(campoSenhaAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 160, 23));
 
-        novaSenha.setBackground(new java.awt.Color(255, 255, 255));
         novaSenha.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         novaSenha.setForeground(new java.awt.Color(102, 102, 102));
         novaSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(novaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 398, 160, 23));
+        jPanel1.add(novaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 170, 23));
 
-        campoRua.setBackground(new java.awt.Color(255, 255, 255));
         campoRua.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoRua.setForeground(new java.awt.Color(102, 102, 102));
         campoRua.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 130, 23));
 
-        campoNumero.setBackground(new java.awt.Color(255, 255, 255));
         campoNumero.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoNumero.setForeground(new java.awt.Color(102, 102, 102));
         campoNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 527, 40, 23));
 
-        campoComplemento.setBackground(new java.awt.Color(255, 255, 255));
         campoComplemento.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoComplemento.setForeground(new java.awt.Color(102, 102, 102));
         campoComplemento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoComplemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 570, 210, 23));
 
-        campoBairro.setBackground(new java.awt.Color(255, 255, 255));
         campoBairro.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoBairro.setForeground(new java.awt.Color(102, 102, 102));
         campoBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 610, 210, 23));
 
-        campoCidade.setBackground(new java.awt.Color(255, 255, 255));
         campoCidade.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoCidade.setForeground(new java.awt.Color(102, 102, 102));
         campoCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 650, 210, 23));
 
-        campoCep.setBackground(new java.awt.Color(51, 51, 51));
         campoCep.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoCep.setForeground(new java.awt.Color(255, 255, 255));
+        campoCep.setForeground(new java.awt.Color(51, 51, 51));
         try {
             campoCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
@@ -265,9 +258,8 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         }
         jPanel1.add(campoCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 690, 120, 23));
 
-        campoEstado.setBackground(new java.awt.Color(51, 51, 51));
         campoEstado.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoEstado.setForeground(new java.awt.Color(255, 255, 255));
+        campoEstado.setForeground(new java.awt.Color(102, 102, 102));
         campoEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO" }));
         campoEstado.setBorder(null);
         campoEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -309,7 +301,6 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         nome1.setText("Rua:");
         jPanel1.add(nome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
 
-        novaSenha2.setBackground(new java.awt.Color(255, 255, 255));
         novaSenha2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         novaSenha2.setForeground(new java.awt.Color(102, 102, 102));
         novaSenha2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
@@ -318,11 +309,10 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
                 novaSenha2ActionPerformed(evt);
             }
         });
-        jPanel1.add(novaSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 437, 160, 23));
+        jPanel1.add(novaSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 140, 23));
 
-        campoNumTelefone.setBackground(new java.awt.Color(51, 51, 51));
         campoNumTelefone.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoNumTelefone.setForeground(new java.awt.Color(255, 255, 255));
+        campoNumTelefone.setForeground(new java.awt.Color(51, 51, 51));
         try {
             campoNumTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
@@ -335,9 +325,8 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         });
         jPanel1.add(campoNumTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 810, 230, 23));
 
-        campoNumCelular.setBackground(new java.awt.Color(51, 51, 51));
         campoNumCelular.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoNumCelular.setForeground(new java.awt.Color(255, 255, 255));
+        campoNumCelular.setForeground(new java.awt.Color(51, 51, 51));
         try {
             campoNumCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
@@ -357,27 +346,23 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         });
         jPanel1.add(campoEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 850, 230, 23));
 
-        campoFacebook.setBackground(new java.awt.Color(255, 255, 255));
         campoFacebook.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoFacebook.setForeground(new java.awt.Color(102, 102, 102));
         campoFacebook.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoFacebook, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 935, 230, 23));
 
-        campoInstagram.setBackground(new java.awt.Color(255, 255, 255));
         campoInstagram.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoInstagram.setForeground(new java.awt.Color(102, 102, 102));
         campoInstagram.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoInstagram, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 980, 230, 23));
 
-        campoTwitter.setBackground(new java.awt.Color(255, 255, 255));
         campoTwitter.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoTwitter.setForeground(new java.awt.Color(102, 102, 102));
         campoTwitter.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoTwitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1020, 230, 23));
 
-        campoWhatsapp.setBackground(new java.awt.Color(51, 51, 51));
         campoWhatsapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoWhatsapp.setForeground(new java.awt.Color(255, 255, 255));
+        campoWhatsapp.setForeground(new java.awt.Color(51, 51, 51));
         try {
             campoWhatsapp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
@@ -398,10 +383,15 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
                 botaoSalvarActionPerformed(evt);
             }
         });
-        jPanel1.add(botaoSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1065, 280, 30));
+        jPanel1.add(botaoSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1065, 260, 30));
+
+        nome19.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
+        nome19.setForeground(new java.awt.Color(134, 134, 134));
+        nome19.setText("Deixe em branco para não alterar");
+        jPanel1.add(nome19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/dono1.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -438,8 +428,14 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         boolean verificador;
         if (campoNome.getText().trim().equals("") ){
             this.dispose();
-            InicialV2 inicial = new InicialV2();
-            inicial.setVisible(true);
+            InicialV2 inicial;
+            try {
+                inicial = new InicialV2();
+                inicial.setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(PerfilDonoV2.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
         else{
             try {
@@ -515,9 +511,15 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoFotoActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        Menu menu;
+        try {
+            menu = new Menu();
+            menu.setVisible(true);
+            this.setVisible(false);
+        } catch (IOException ex) {
+            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
     /**
@@ -588,6 +590,7 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
     private javax.swing.JLabel nome13;
     private javax.swing.JLabel nome14;
     private javax.swing.JLabel nome18;
+    private javax.swing.JLabel nome19;
     private javax.swing.JLabel nome2;
     private javax.swing.JLabel nome3;
     private javax.swing.JLabel nome4;

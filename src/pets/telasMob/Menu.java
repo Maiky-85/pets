@@ -67,7 +67,7 @@ public class Menu extends javax.swing.JFrame {
         botaoClinicas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(500, 200));
+        setLocation(new java.awt.Point(645, 140));
         setMinimumSize(new java.awt.Dimension(300, 533));
         setResizable(false);
 
@@ -432,13 +432,13 @@ public class Menu extends javax.swing.JFrame {
     private void botaoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPerfilActionPerformed
         PerfilDonoV2 perfil = null;
         try {
+            this.dispose();
             perfil = new PerfilDonoV2();
+            perfil.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
-        perfil.setVisible(true);
-        this.dispose();
-        
+    
     }//GEN-LAST:event_botaoPerfilActionPerformed
 
     private void botaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContaActionPerformed
@@ -468,8 +468,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void botaoClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoClinicasActionPerformed
@@ -485,26 +491,46 @@ public class Menu extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }       
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }      
     }//GEN-LAST:event_jPanel3MouseClicked
 
     private void mapaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mapaMouseClicked
         this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }     
     }//GEN-LAST:event_mapaMouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
         this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }       
     }//GEN-LAST:event_jPanel4MouseClicked
 
     /**

@@ -45,7 +45,7 @@ public class InicialV2 extends javax.swing.JFrame {
     /**
      * Creates new form InicialV2
      */
-    public InicialV2() {
+    public InicialV2() throws IOException {
         initComponents();
         
         this.setPosX(jLabel2.getX());
@@ -70,14 +70,12 @@ public class InicialV2 extends javax.swing.JFrame {
                     String[] values = linha.split(";");
                     //System.out.println(Arrays.toString(values));
                     dadosAnimal.add(values);
-                    
-                    
-                    
+   
                 }
             } catch (IOException ex) {
                 Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println(dadosAnimal.size());
+            //System.out.println(dadosAnimal.size());
             
             if (dadosAnimal.size() > 1){         
                 jLabel2.setPreferredSize(new Dimension(43, 43));
@@ -98,7 +96,8 @@ public class InicialV2 extends javax.swing.JFrame {
                 //System.out.println(jLabel2.getName());
                 criaLabelsIcons();
             }
-            
+        fr.close();
+        br.close();     
             
       }
         else{
@@ -168,6 +167,7 @@ public class InicialV2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(500, 200));
         setMinimumSize(new java.awt.Dimension(301, 534));
         setResizable(false);
 
@@ -218,6 +218,7 @@ public class InicialV2 extends javax.swing.JFrame {
         jScrollPane1.setPreferredSize(new java.awt.Dimension(330, 70));
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setOpaque(true);
@@ -352,7 +353,7 @@ public class InicialV2 extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoEditar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,7 +390,7 @@ public class InicialV2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, 140));
 
         mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
         mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
@@ -428,10 +429,16 @@ public class InicialV2 extends javax.swing.JFrame {
     private void botaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeletarActionPerformed
         String nome = JOptionPane.showInputDialog("Nome do animal");
         PersistenciaArquivo deletar = new PersistenciaArquivo();
+        boolean tela;
         try {
-            deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
-        } catch (Exception ex) {
-            
+            tela=deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
+            if (tela){
+                this.dispose();
+                InicialV2 inicial;
+                inicial = new InicialV2();
+                inicial.setVisible(true);
+            }
+        } catch (Exception ex) {          
         }
     }//GEN-LAST:event_botaoDeletarActionPerformed
 
@@ -553,7 +560,7 @@ public class InicialV2 extends javax.swing.JFrame {
         loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
         
         
-        System.out.println(novoT.getName());
+        //System.out.println(novoT.getName());
         
         for(j = 0; dadosAnimal.get(j)[0] != novoT.getName(); j++){
 
@@ -564,8 +571,8 @@ public class InicialV2 extends javax.swing.JFrame {
             this.setSelected(j);
         }
         
-        System.out.println(novoT.getName());
-        System.out.println(j);
+        //System.out.println(novoT.getName());
+        //System.out.println(j);
         
         
         
@@ -635,7 +642,7 @@ public class InicialV2 extends javax.swing.JFrame {
     
     
     private void resizeLabelSelecionado(JLabel label, int x, int y){
-        System.out.println("click");
+        //System.out.println("click");
         label.setPreferredSize(new Dimension(x, y));
         label.setSize(x, y);
     }
@@ -742,7 +749,11 @@ public class InicialV2 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InicialV2().setVisible(true);
+                try {
+                    new InicialV2().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

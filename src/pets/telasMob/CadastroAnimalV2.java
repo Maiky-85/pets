@@ -6,6 +6,9 @@
 package pets.telasMob;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -57,7 +60,10 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(318, 540));
+        setLocation(new java.awt.Point(500, 200));
+        setMaximumSize(new java.awt.Dimension(300, 533));
+        setMinimumSize(new java.awt.Dimension(300, 533));
+        setPreferredSize(new java.awt.Dimension(300, 533));
         setResizable(false);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(318, 540));
@@ -66,22 +72,19 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(301, 808));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        campoObservacao.setBackground(new java.awt.Color(255, 255, 255));
         campoObservacao.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoObservacao.setForeground(new java.awt.Color(102, 102, 102));
         campoObservacao.setToolTipText("Informações adicionais");
         campoObservacao.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 700, 230, 23));
+        jPanel1.add(campoObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 700, 220, 23));
 
-        campoUltimaLocalizacao.setBackground(new java.awt.Color(255, 255, 255));
         campoUltimaLocalizacao.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoUltimaLocalizacao.setForeground(new java.awt.Color(102, 102, 102));
         campoUltimaLocalizacao.setToolTipText("Última localização");
         campoUltimaLocalizacao.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoUltimaLocalizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 230, 23));
+        jPanel1.add(campoUltimaLocalizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 220, 23));
 
-        campoVermifugacao.setBackground(new java.awt.Color(51, 51, 51));
-        campoVermifugacao.setForeground(new java.awt.Color(255, 255, 255));
+        campoVermifugacao.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoVermifugacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -89,11 +92,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         }
         campoVermifugacao.setToolTipText("Data Vermifugação");
         campoVermifugacao.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoVermifugacao.setRequestFocusEnabled(false);
-        jPanel1.add(campoVermifugacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, 230, 23));
+        jPanel1.add(campoVermifugacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, 220, 23));
 
-        campoV10.setBackground(new java.awt.Color(51, 51, 51));
-        campoV10.setForeground(new java.awt.Color(255, 255, 255));
+        campoV10.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoV10.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -101,11 +102,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         }
         campoV10.setToolTipText("Última vacina V8 ou V10");
         campoV10.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoV10.setRequestFocusEnabled(false);
-        jPanel1.add(campoV10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 230, 23));
+        jPanel1.add(campoV10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 220, 23));
 
-        campoAntirrabica.setBackground(new java.awt.Color(51, 51, 51));
-        campoAntirrabica.setForeground(new java.awt.Color(255, 255, 255));
+        campoAntirrabica.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoAntirrabica.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -113,49 +112,48 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         }
         campoAntirrabica.setToolTipText("Última vacina antirrábica");
         campoAntirrabica.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoAntirrabica.setRequestFocusEnabled(false);
-        jPanel1.add(campoAntirrabica, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 230, 23));
+        campoAntirrabica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoAntirrabicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(campoAntirrabica, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 220, 23));
 
-        campoCastracao.setBackground(new java.awt.Color(51, 51, 51));
         campoCastracao.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoCastracao.setForeground(new java.awt.Color(255, 255, 255));
+        campoCastracao.setForeground(new java.awt.Color(102, 102, 102));
         campoCastracao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "É castrado?", "Sim", "Não", "Não se aplica" }));
         campoCastracao.setBorder(null);
         campoCastracao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoCastracao.setFocusable(false);
         campoCastracao.setRequestFocusEnabled(false);
-        jPanel1.add(campoCastracao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 230, 30));
+        jPanel1.add(campoCastracao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 220, 30));
 
-        campoIdade.setBackground(new java.awt.Color(255, 255, 255));
         campoIdade.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoIdade.setForeground(new java.awt.Color(102, 102, 102));
         campoIdade.setToolTipText("Idade");
         campoIdade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoIdade, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 230, 23));
+        jPanel1.add(campoIdade, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 220, 23));
 
-        campoPorte.setBackground(new java.awt.Color(51, 51, 51));
         campoPorte.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoPorte.setForeground(new java.awt.Color(255, 255, 255));
+        campoPorte.setForeground(new java.awt.Color(102, 102, 102));
         campoPorte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o porte", "Micro Toy", "Pequeno", "Médio", "Grande", "Extra Grande" }));
         campoPorte.setBorder(null);
         campoPorte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoPorte.setFocusable(false);
         campoPorte.setRequestFocusEnabled(false);
-        jPanel1.add(campoPorte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 230, 30));
+        jPanel1.add(campoPorte, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 220, 30));
 
-        campoSexo.setBackground(new java.awt.Color(51, 51, 51));
         campoSexo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoSexo.setForeground(new java.awt.Color(255, 255, 255));
+        campoSexo.setForeground(new java.awt.Color(102, 102, 102));
         campoSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o sexo", "Macho", "Fêmea" }));
         campoSexo.setBorder(null);
         campoSexo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoSexo.setFocusable(false);
         campoSexo.setRequestFocusEnabled(false);
-        jPanel1.add(campoSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 230, 30));
+        jPanel1.add(campoSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 220, 30));
 
-        campoRaca.setBackground(new java.awt.Color(51, 51, 51));
         campoRaca.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        campoRaca.setForeground(new java.awt.Color(255, 255, 255));
+        campoRaca.setForeground(new java.awt.Color(102, 102, 102));
         campoRaca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a raça", "Akita", "Basset Hound", "Beagle", "Boxer", "Buldogue", "Bull Terrier", "Chihuahua", "Chow Chow", "Cocker", "Collie", "Dachshund", "Dálmata", "Doberman", "Dogo Argentino", "Fila Brasileiro", "Fox Terrier", "Golden Retriever", "Husky Siberiano", "Labrador", "Lhasa Apso", "Lulu da Pomerânia", "Maltês", "Pastor Alemão", "Pinscher", "Poodle", "Pug", "Rottweiler", "Sem Raça Definida (SRD)", "ShihTzu", "Yorkshire Terrier", "Outra Raça" }));
         campoRaca.setBorder(null);
         campoRaca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -166,28 +164,25 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
                 campoRacaActionPerformed(evt);
             }
         });
-        jPanel1.add(campoRaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 343, 230, 30));
+        jPanel1.add(campoRaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 343, 220, 30));
 
-        campoCor.setBackground(new java.awt.Color(255, 255, 255));
         campoCor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoCor.setForeground(new java.awt.Color(102, 102, 102));
         campoCor.setToolTipText("Cor");
         campoCor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 230, 23));
+        jPanel1.add(campoCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 220, 23));
 
-        campoTipo.setBackground(new java.awt.Color(255, 255, 255));
         campoTipo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoTipo.setForeground(new java.awt.Color(102, 102, 102));
         campoTipo.setToolTipText("Tipo");
         campoTipo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 230, 23));
+        jPanel1.add(campoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 220, 23));
 
-        campoNome.setBackground(new java.awt.Color(255, 255, 255));
         campoNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoNome.setForeground(new java.awt.Color(102, 102, 102));
         campoNome.setToolTipText("Nome");
         campoNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 230, 23));
+        jPanel1.add(campoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 220, 23));
 
         botaoFoto.setBackground(new java.awt.Color(242, 242, 242));
         botaoFoto.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
@@ -219,7 +214,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
                 botaoSalvarActionPerformed(evt);
             }
         });
-        jPanel1.add(botaoSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 751, 280, 30));
+        jPanel1.add(botaoSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 751, 270, 30));
 
         botaoVoltar.setFont(new java.awt.Font("Comic Sans MS", 1, 40)); // NOI18N
         botaoVoltar.setForeground(new java.awt.Color(102, 102, 102));
@@ -249,7 +244,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         jPanel1.add(bgFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 60, -1, -1));
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/animal1.png"))); // NOI18N
-        jPanel1.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        bg.setToolTipText("");
+        jPanel1.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -257,7 +253,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,9 +334,18 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         this.dispose();
-        InicialV2 inicial = new InicialV2();
-        inicial.setVisible(true);
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(CadastroAnimalV2.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botaoVoltarActionPerformed
+
+    private void campoAntirrabicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAntirrabicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoAntirrabicaActionPerformed
 
     /**
      * @param args the command line arguments

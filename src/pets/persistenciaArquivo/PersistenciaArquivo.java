@@ -208,7 +208,7 @@ public class PersistenciaArquivo {
                 email = email + linha.charAt(i);
                 i=i+1;
             }         
-            //escreve linhas em novo arquivo enquanto nome diferente de removeClinica
+            //escreve linhas em novo arquivo
             if (!email.equals(contaOn)){
                 escreveArq.write(linha + "\r\n");          
             }
@@ -343,7 +343,7 @@ public class PersistenciaArquivo {
         }
      }    
         
-    public void deletarDadosAnimal(String remover, String arquivo) throws Exception {
+    public boolean deletarDadosAnimal(String remover, String arquivo) throws Exception {
         File arq = new File(arquivo);
         File newArq = new File("tempArquivo.csv");
 
@@ -365,14 +365,18 @@ public class PersistenciaArquivo {
             //Aqui imprimimos a linha
             //System.out.println(linha);
             int i=0;
+            int j=0;
             String nome="";
             //Concatena as strings do nome
-            while (linha.charAt(i) != ';'){
-                nome = nome + linha.charAt(i);
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    nome = nome + linha.charAt(i);
+                if (linha.charAt(i) == ';')
+                    j+=1;
                 i=i+1;
             }
             
-            //escreve linhas em novo arquivo enquanto nome diferente de removeClinica
+            //escreve linhas em novo arquivo
             if (!nome.equals(remover)){
                 fileWriter.write(linha + "\r\n");          
             }
@@ -392,11 +396,13 @@ public class PersistenciaArquivo {
         
         arq.delete();
         newArq.renameTo(new File(arquivo)); 
- 
+        if (verificador)
+            return true;
 	} catch (IOException e) {
     	e.printStackTrace();
         throw new Exception ("Não foi possível deletar nome.");
         }
+    return false;
     }
     
     public void salvarFoto(File f, String name) throws Exception{
