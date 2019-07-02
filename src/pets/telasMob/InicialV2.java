@@ -5,6 +5,8 @@
  */
 package pets.telasMob;
 
+
+//import java.awt.Color;
 import java.awt.Dimension;
 //import java.awt.Image;
 import java.util.List;
@@ -17,13 +19,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 //import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 //import javax.imageio.ImageIO;
 //import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+//import javax.swing.SwingConstants;
+//import org.netbeans.lib.awtextra.AbsoluteLayout;
 import pets.persistenciaArquivo.PersistenciaArquivo;
+
 
 /**
  *
@@ -34,14 +40,19 @@ public class InicialV2 extends javax.swing.JFrame {
     /**
      * Creates new form InicialV2
      */
-    public InicialV2() throws FileNotFoundException, IOException {
+    public InicialV2() {
         initComponents();
         
-        
+        this.setPosX(jLabel2.getX());
         File arq = new File("animal.csv");
         
         if(arq.exists()){
-            FileReader fr = new FileReader(arq);
+            FileReader fr = null;
+            try {
+                fr = new FileReader(arq);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
+            }
             BufferedReader br = new BufferedReader(fr);
 
             //List <String> dados = new ArrayList();
@@ -49,26 +60,45 @@ public class InicialV2 extends javax.swing.JFrame {
 
             String linha; 
 
-            while ((linha = br.readLine()) != null) {
-                String[] values = linha.split(";");
-                //System.out.println(Arrays.toString(values));
-                dadosAnimal.add(values);
-                
-                
-                
+            try {
+                while ((linha = br.readLine()) != null) {
+                    String[] values = linha.split(";");
+                    //System.out.println(Arrays.toString(values));
+                    dadosAnimal.add(values);
+                    
+                    
+                    
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
             }
             System.out.println(dadosAnimal.size());
             
-                      
-            jLabel2.setPreferredSize(new Dimension(43, 43));
-            jLabel2.setSize(43,43);
+            if (dadosAnimal.size() > 1){         
+                jLabel2.setPreferredSize(new Dimension(43, 43));
+                jLabel2.setSize(43,43);
+
+                loadImage(dadosAnimal.get(1)[0], jLabel2);
+
+                try {
+                    testeLoadInfo(1);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                //System.out.println(jLabel2.getName());
+                criaLabelsIcons();
+            }
             
-            loadImage(dadosAnimal.get(1)[0], jLabel2);
             
-            testeLoadInfo(1);
-            
-/*
-            if(dadosAnimal.size() > 1){
+      }
+        else{
+           
+        }
+        
+                        /*
+                if(dadosAnimal.size() > 1){
                 //continuaTesteLoadInfo(dadosAnimal);
                 
                 loadImage(dadosAnimal.get(1)[0], labelFoto);
@@ -79,16 +109,11 @@ public class InicialV2 extends javax.swing.JFrame {
                 this.campoRaca.setText(dadosAnimal.get(1)[4]);
                 this.campoPorte.setText(dadosAnimal.get(1)[6]);
                 
-            }
-            else{
-
-            }
-  */      }
-        else{
-           
-        }
-        
-        
+                }
+                else{
+                
+                }
+            */
         
         //loadImage();
         /*
@@ -417,7 +442,7 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }
     
-   
+  
     
     private void testeLoadInfo(int pos) throws FileNotFoundException, IOException{
         
@@ -482,10 +507,84 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }
     
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private int getPosX(){
+        return this.posX;
+    }
+    
+    private void setPosX(int posX){
+        this.posX += posX;
+    }
+   
+    private void novoLabelClicked(java.awt.event.MouseEvent evt){
+        
+        JLabel novoT = new JLabel();
+        novoT = (JLabel) evt.getSource();
+        
+        resizeLabelSelecionado(novoT);
+        
+        
+        
+        try {
+            testeLoadInfo(1);
+        } catch (IOException ex) {
+            
+        }
+        
+    }
+    
+    private void criaLabelsIcons(){
+        
+        if(dadosAnimal.size() > 2){
+            
+            
+            for(int i = 2; dadosAnimal.size() > i; i++){
+                
+                if(i == 2){
+                    this.setPosX(60);
+                }
+                else{
+                    this.setPosX(52);
+                }
+                
+                JLabel novoLabel = new javax.swing.JLabel();
+                
+                novoLabel.setOpaque(true);
+                novoLabel.setPreferredSize(new java.awt.Dimension(35, 35));
+                novoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                        novoLabelClicked(evt);
+                    }
+                });
+                jPanel5.add(novoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(this.getPosX(), 5, -1, -1));
+
+                novoLabel.setBounds(this.getPosX(), 5, 35, 35);
+                
+                loadImage(dadosAnimal.get(i)[0], novoLabel);
+                
+                
+                
+                
+            
+            
+            }
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+    private void resizeLabelSelecionado(JLabel label){
         System.out.println("click");
-        jLabel2.setPreferredSize(new Dimension(43, 43));
-        jLabel2.setSize(43,43);
+        label.setPreferredSize(new Dimension(43, 43));
+        label.setSize(43,43);
+    }
+    
+    
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        resizeLabelSelecionado(jLabel2);
         
         
         //BufferedImage folderImage = ImageIO.read(folderInput);
@@ -567,11 +666,7 @@ public class InicialV2 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new InicialV2().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new InicialV2().setVisible(true);
             }
         });
     }
@@ -604,6 +699,7 @@ public class InicialV2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private List<String[]> dadosAnimal = new ArrayList();
+    private int posX = 0;
 
 
 }

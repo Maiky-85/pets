@@ -27,7 +27,9 @@ public class TesteResizeFoto {
         Image img = MyImage.getImage();
         Image newImg;
         
-        if(labelIcon.getWidth() > labelIcon.getHeight()){
+        //System.out.println(MyImage.getIconWidth() + " a " + MyImage.getIconHeight());
+        
+        if(MyImage.getIconWidth() < MyImage.getIconHeight()){
             newImg = img.getScaledInstance(labelIcon.getWidth(), -1, Image.SCALE_SMOOTH);
         }
         else{
