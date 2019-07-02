@@ -78,6 +78,8 @@ public class InicialV2 extends javax.swing.JFrame {
                 jLabel2.setPreferredSize(new Dimension(43, 43));
                 jLabel2.setSize(43,43);
 
+                this.setAtualClicked(jLabel2);
+                
                 loadImage(dadosAnimal.get(1)[0], jLabel2);
 
                 try {
@@ -515,12 +517,28 @@ public class InicialV2 extends javax.swing.JFrame {
         this.posX += posX;
     }
    
+    private JLabel getAtualClicked(){
+        
+        return this.atualClicked;
+    }
+    
+    private void setAtualClicked(JLabel label){
+        
+        this.atualClicked = label;
+        
+    }
+    
     private void novoLabelClicked(java.awt.event.MouseEvent evt){
         
         JLabel novoT = new JLabel();
         novoT = (JLabel) evt.getSource();
         
-        resizeLabelSelecionado(novoT);
+        
+        resizeLabelSelecionado(this.atualClicked, 35, 35);
+        
+        this.setAtualClicked(novoT);
+        
+        resizeLabelSelecionado(novoT, 43, 43);
         
         
         
@@ -576,15 +594,21 @@ public class InicialV2 extends javax.swing.JFrame {
     }
     
     
-    private void resizeLabelSelecionado(JLabel label){
+    private void resizeLabelSelecionado(JLabel label, int x, int y){
         System.out.println("click");
-        label.setPreferredSize(new Dimension(43, 43));
-        label.setSize(43,43);
+        label.setPreferredSize(new Dimension(x, y));
+        label.setSize(x, y);
     }
     
     
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        resizeLabelSelecionado(jLabel2);
+        
+        
+        resizeLabelSelecionado(this.atualClicked, 35, 35);
+        
+        this.setAtualClicked(jLabel2);
+        
+        resizeLabelSelecionado(jLabel2, 43, 43);
         
         
         //BufferedImage folderImage = ImageIO.read(folderInput);
@@ -700,6 +724,6 @@ public class InicialV2 extends javax.swing.JFrame {
 
     private List<String[]> dadosAnimal = new ArrayList();
     private int posX = 0;
-
+    private JLabel atualClicked = null;
 
 }
