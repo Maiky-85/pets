@@ -7,6 +7,7 @@ package pets.telasMob;
 
 
 //import java.awt.Color;
+import java.awt.Color;
 import java.awt.Dimension;
 //import java.awt.Image;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.io.FileReader;
 //import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 //import java.util.Arrays;
 //import java.util.Arrays;
 import java.util.logging.Level;
@@ -26,9 +28,12 @@ import javax.swing.JLabel;
 //import javax.imageio.ImageIO;
 //import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
 //import javax.swing.SwingConstants;
 //import org.netbeans.lib.awtextra.AbsoluteLayout;
 import pets.persistenciaArquivo.PersistenciaArquivo;
+import javax.swing.plaf.BorderUIResource.MatteBorderUIResource;
 
 
 /**
@@ -77,9 +82,10 @@ public class InicialV2 extends javax.swing.JFrame {
             if (dadosAnimal.size() > 1){         
                 jLabel2.setPreferredSize(new Dimension(43, 43));
                 jLabel2.setSize(43,43);
-
+                jLabel2.setBorder(borda());
+                this.setSelected(1);
                 this.setAtualClicked(jLabel2);
-                
+                jLabel2.setName(dadosAnimal.get(1)[0]);
                 loadImage(dadosAnimal.get(1)[0], jLabel2);
 
                 try {
@@ -516,6 +522,14 @@ public class InicialV2 extends javax.swing.JFrame {
     private void setPosX(int posX){
         this.posX += posX;
     }
+    
+    private int getSelected(){
+        return this.selected;
+    }
+    
+    private void setSelected(int animal){
+        this.selected = animal;
+    }
    
     private JLabel getAtualClicked(){
         
@@ -532,18 +546,42 @@ public class InicialV2 extends javax.swing.JFrame {
         
         JLabel novoT = new JLabel();
         novoT = (JLabel) evt.getSource();
-        
+        int j = 0;
         
         resizeLabelSelecionado(this.atualClicked, 35, 35);
+        this.atualClicked.setBorder(null);
+        loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
+        
+        
+        System.out.println(novoT.getName());
+        
+        for(j = 0; dadosAnimal.get(j)[0] != novoT.getName(); j++){
+
+        }
+
+        if(dadosAnimal.get(j)[0] == novoT.getName()){
+                
+            this.setSelected(j);
+        }
+        
+        System.out.println(novoT.getName());
+        System.out.println(j);
+        
+        
         
         this.setAtualClicked(novoT);
         
         resizeLabelSelecionado(novoT, 43, 43);
+        novoT.setBorder(borda());
+        loadImage(dadosAnimal.get(j)[0], novoT);
+        
+        
+        
         
         
         
         try {
-            testeLoadInfo(1);
+            testeLoadInfo(this.getSelected());
         } catch (IOException ex) {
             
         }
@@ -564,18 +602,25 @@ public class InicialV2 extends javax.swing.JFrame {
                     this.setPosX(52);
                 }
                 
+                //this.setSelected(i);
+                
+                
+                
                 JLabel novoLabel = new javax.swing.JLabel();
                 
                 novoLabel.setOpaque(true);
                 novoLabel.setPreferredSize(new java.awt.Dimension(35, 35));
                 novoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
+                        
                         novoLabelClicked(evt);
                     }
                 });
                 jPanel5.add(novoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(this.getPosX(), 5, -1, -1));
 
                 novoLabel.setBounds(this.getPosX(), 5, 35, 35);
+                novoLabel.setSize(35,35);
+                novoLabel.setName(dadosAnimal.get(i)[0]);
                 
                 loadImage(dadosAnimal.get(i)[0], novoLabel);
                 
@@ -600,16 +645,25 @@ public class InicialV2 extends javax.swing.JFrame {
         label.setSize(x, y);
     }
     
+    private Border borda(){
+        MatteBorder novaB = new MatteBorder(2,2,2,2, new Color(255,186,120));
+        return novaB;
+        
+        
+    }
     
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+       
         
         
         resizeLabelSelecionado(this.atualClicked, 35, 35);
-        
+        loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
+        this.atualClicked.setBorder(null);
         this.setAtualClicked(jLabel2);
-        
+        this.setSelected(1);
         resizeLabelSelecionado(jLabel2, 43, 43);
-        
+        jLabel2.setBorder(borda());
+        loadImage(dadosAnimal.get(1)[0], jLabel2);
         
         //BufferedImage folderImage = ImageIO.read(folderInput);
         //ImageIcon im = new ImageIcon(folderImage);
@@ -619,7 +673,10 @@ public class InicialV2 extends javax.swing.JFrame {
         
         try {
             //mostrar info
+            
             testeLoadInfo(1);
+            
+            
         } catch (IOException ex) {
             
         }
@@ -725,5 +782,7 @@ public class InicialV2 extends javax.swing.JFrame {
     private List<String[]> dadosAnimal = new ArrayList();
     private int posX = 0;
     private JLabel atualClicked = null;
-
+    
+    
+    private int selected = 0;
 }
