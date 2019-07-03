@@ -187,6 +187,7 @@ public class InicialV2 extends javax.swing.JFrame {
         botaoPontos.setBorderPainted(false);
         botaoPontos.setContentAreaFilled(false);
         botaoPontos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoPontos.setFocusable(false);
         botaoPontos.setPreferredSize(new java.awt.Dimension(35, 35));
         botaoPontos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +201,7 @@ public class InicialV2 extends javax.swing.JFrame {
         botaoMenu.setBorder(null);
         botaoMenu.setContentAreaFilled(false);
         botaoMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoMenu.setFocusable(false);
         botaoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoMenuActionPerformed(evt);
@@ -213,6 +215,7 @@ public class InicialV2 extends javax.swing.JFrame {
         botaoAdicionar.setBorderPainted(false);
         botaoAdicionar.setContentAreaFilled(false);
         botaoAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoAdicionar.setFocusable(false);
         botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAdicionarActionPerformed(evt);

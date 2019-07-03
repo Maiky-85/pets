@@ -60,6 +60,8 @@ public class ContaLogada {
             }            
             if (email.equals(contaOn)){
                 campoOk = true;
+                i=0;  
+                j=0;
                 while (linha.charAt(i) != ';' || j<k){  //laço para concatenar o nome
                     if (j==k){
                         campo = campo + linha.charAt(i);
@@ -79,7 +81,7 @@ public class ContaLogada {
     return campo;    
     }
 
-public String getEndereco(String parte) throws FileNotFoundException, IOException{
+    public String getEndereco(String parte) throws FileNotFoundException, IOException{
         File arq = new File("dono.csv");
         FileReader fileReader = new FileReader(arq);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

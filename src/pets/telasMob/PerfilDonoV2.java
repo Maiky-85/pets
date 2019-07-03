@@ -14,6 +14,9 @@ import pets.modelo.Dono;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -34,6 +37,16 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
     public PerfilDonoV2() throws IOException{
         initComponents();
         ContaLogada contaLogada = new ContaLogada();
+        
+        if(contaLogada.getCampo(0) != null){
+            File file = new File("fotos/", contaLogada.getCampo(0));
+            TesteResizeFoto tamanho = new TesteResizeFoto();
+            labelFoto.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), labelFoto));
+            String name = file.getName();
+            this.setNovaFoto(name);
+            this.setNomeFoto(name);
+        }
+        
         //Pega o nome e mostra no perfil
         campoNome.setText(contaLogada.getCampo(2));     
         //Pega a rua e mostra no perfil
@@ -217,12 +230,12 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         campoSenhaAtual.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoSenhaAtual.setForeground(new java.awt.Color(102, 102, 102));
         campoSenhaAtual.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(campoSenhaAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 160, 23));
+        jPanel1.add(campoSenhaAtual, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 160, 23));
 
         novaSenha.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         novaSenha.setForeground(new java.awt.Color(102, 102, 102));
         novaSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
-        jPanel1.add(novaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 170, 23));
+        jPanel1.add(novaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 160, 23));
 
         campoRua.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoRua.setForeground(new java.awt.Color(102, 102, 102));
@@ -249,8 +262,8 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         campoCidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 650, 210, 23));
 
-        campoCep.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoCep.setForeground(new java.awt.Color(51, 51, 51));
+        campoCep.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
+        campoCep.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
@@ -263,6 +276,7 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         campoEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO" }));
         campoEstado.setBorder(null);
         campoEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        campoEstado.setFocusable(false);
         jPanel1.add(campoEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 690, -1, 23));
 
         nome6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -309,10 +323,10 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
                 novaSenha2ActionPerformed(evt);
             }
         });
-        jPanel1.add(novaSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 140, 23));
+        jPanel1.add(novaSenha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 160, 23));
 
-        campoNumTelefone.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoNumTelefone.setForeground(new java.awt.Color(51, 51, 51));
+        campoNumTelefone.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
+        campoNumTelefone.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoNumTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
@@ -325,8 +339,8 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         });
         jPanel1.add(campoNumTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 810, 230, 23));
 
-        campoNumCelular.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoNumCelular.setForeground(new java.awt.Color(51, 51, 51));
+        campoNumCelular.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
+        campoNumCelular.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoNumCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
@@ -361,8 +375,8 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         campoTwitter.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
         jPanel1.add(campoTwitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1020, 230, 23));
 
-        campoWhatsapp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        campoWhatsapp.setForeground(new java.awt.Color(51, 51, 51));
+        campoWhatsapp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
+        campoWhatsapp.setForeground(new java.awt.Color(102, 102, 102));
         try {
             campoWhatsapp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
@@ -388,7 +402,7 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         nome19.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         nome19.setForeground(new java.awt.Color(134, 134, 134));
         nome19.setText("Deixe em branco para não alterar");
-        jPanel1.add(nome19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, 20));
+        jPanel1.add(nome19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/dono1.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
@@ -479,6 +493,14 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         return this.nomeFoto;
     }
     
+    private void setNovaFoto(String novaFoto){
+        this.novaFoto = novaFoto;
+    }
+    
+    private String getNovaFoto(){
+        return this.novaFoto;
+    }
+    
     private void botaoFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFotoActionPerformed
 
         JFileChooser foto = new JFileChooser();
@@ -503,6 +525,26 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
             try {
                 persistencia.salvarFoto(f, name);
                 this.setNomeFoto(name);
+                
+                
+                if(this.getNovaFoto() != null){
+                    //System.out.println("a");
+                    if(!this.getNomeFoto().equals(this.getNovaFoto())){
+                      //  System.out.println("b");
+                        Path p = Paths.get("fotos\\" + this.getNovaFoto());
+                        try {
+                        //    System.out.println("c");
+                            Files.delete(p);
+                        } catch (IOException ex) {
+                            
+                        }
+                    }
+                    
+                }
+                else{
+                    this.setNovaFoto("");
+                }
+                
             } catch (Exception ex) {
 
             }
@@ -603,4 +645,5 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private String nomeFoto = "";
+    private String novaFoto = null;
 }
