@@ -366,11 +366,10 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
                         checaJFormated(this.campoV10), checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao), checaJText2(this.campoObservacao));
                 }
                 else{
-                    verificador=cadastro.atualizarAnimal(posAnimal, this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
-                        (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
-                        this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
+                    verificador=cadastro.atualizarAnimal(posAnimal, this.getNomeFoto(), this.campoNome.getText(), checaJText(this.campoTipo), checaJText(this.campoCor), (String)checaJCombo(this.campoRaca),
+                        (String)checaJCombo(this.campoSexo), (String)checaJCombo(this.campoPorte), this.campoIdade.getText(), (String)checaJCombo(this.campoCastracao), checaJFormated(this.campoAntirrabica),
+                        checaJFormated(this.campoV10), checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao), checaJText2(this.campoObservacao));
                 
-                    
                 }
                 
                 if(verificador){
