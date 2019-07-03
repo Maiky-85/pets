@@ -8,6 +8,7 @@ package pets.telasMob;
 
 //import java.awt.Color;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 //import java.awt.Image;
 import java.util.List;
@@ -18,6 +19,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 //import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 //import java.util.Arrays;
@@ -33,7 +37,7 @@ import javax.swing.border.MatteBorder;
 //import javax.swing.SwingConstants;
 //import org.netbeans.lib.awtextra.AbsoluteLayout;
 import pets.persistenciaArquivo.PersistenciaArquivo;
-import javax.swing.plaf.BorderUIResource.MatteBorderUIResource;
+//import javax.swing.plaf.BorderUIResource.MatteBorderUIResource;
 
 
 /**
@@ -215,12 +219,15 @@ public class InicialV2 extends javax.swing.JFrame {
         });
         jPanel2.add(botaoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 50, 50));
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setBorder(null);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(330, 70));
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.setOpaque(true);
         jLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -427,17 +434,33 @@ public class InicialV2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
     private void botaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeletarActionPerformed
-        String nome = JOptionPane.showInputDialog("Nome do animal");
+        //String nome = JOptionPane.showInputDialog("Nome do animal");
+        String nome = dadosAnimal.get(this.getSelected())[1];
+        String foto = dadosAnimal.get(this.getSelected())[0];
         PersistenciaArquivo deletar = new PersistenciaArquivo();
         boolean tela;
         try {
-            tela=deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
-            if (tela){
+            
+            int input = JOptionPane.showConfirmDialog(null, "Deseja realmente deletar " + nome + "?", "", JOptionPane.YES_NO_OPTION);
+            
+            if(input == 0){
                 
-                InicialV2 inicial;
-                inicial = new InicialV2();
-                this.dispose();
-                inicial.setVisible(true);
+                tela=deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
+                if (tela){
+
+                    InicialV2 inicial;
+                    inicial = new InicialV2();
+                    this.dispose();
+                    inicial.setVisible(true);
+                }
+                
+                Path p = Paths.get("fotos\\" + foto);
+                
+                try {
+                    Files.delete(p);
+                } catch (IOException e) {
+                    throw new Exception("Não foi possível apagar foto");          
+                }
             }
         } catch (Exception ex) {          
         }
@@ -625,6 +648,9 @@ public class InicialV2 extends javax.swing.JFrame {
                 novoLabel.setSize(35,35);
                 novoLabel.setName(dadosAnimal.get(i)[0]);
                 
+                Cursor c = new Cursor(HAND_CURSOR);
+                novoLabel.setCursor(c);
+                
                 loadImage(dadosAnimal.get(i)[0], novoLabel);
                 
                 
@@ -712,12 +738,14 @@ public class InicialV2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoMenuActionPerformed
 
     private void botaoPontosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPontosActionPerformed
-        int nome = JOptionPane.showConfirmDialog(null, "Deseja sair?");
+        
+        int nome = JOptionPane.showConfirmDialog(null, "Deseja sair do aplicativo?", "", JOptionPane.YES_NO_OPTION);
         if (nome==0){
-            TelaLogin login = new TelaLogin();
-            login.setVisible(true);
+            //TelaLogin login = new TelaLogin();
+            //login.setVisible(true);
             this.dispose();
         }
+        
     }//GEN-LAST:event_botaoPontosActionPerformed
 
     /**

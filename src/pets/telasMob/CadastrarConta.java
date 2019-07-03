@@ -5,6 +5,7 @@
  */
 package pets.telasMob;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import pets.modelo.Conta;
@@ -84,6 +85,11 @@ public class CadastrarConta extends javax.swing.JFrame {
                 campoSenhaActionPerformed(evt);
             }
         });
+        campoSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                campoSenhaKeyPressed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,6 +120,11 @@ public class CadastrarConta extends javax.swing.JFrame {
         campoNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoNome.setForeground(new java.awt.Color(102, 102, 102));
         campoNome.setBorder(null);
+        campoNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                campoNomeKeyPressed(evt);
+            }
+        });
 
         campoSenha2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoSenha2.setForeground(new java.awt.Color(102, 102, 102));
@@ -121,6 +132,11 @@ public class CadastrarConta extends javax.swing.JFrame {
         campoSenha2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoSenha2ActionPerformed(evt);
+            }
+        });
+        campoSenha2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                campoSenha2KeyPressed(evt);
             }
         });
 
@@ -131,6 +147,11 @@ public class CadastrarConta extends javax.swing.JFrame {
         campoEmail.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoEmail.setForeground(new java.awt.Color(102, 102, 102));
         campoEmail.setBorder(null);
+        campoEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                campoEmailKeyPressed(evt);
+            }
+        });
 
         botaoVoltar.setBackground(new java.awt.Color(242, 167, 30));
         botaoVoltar.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
@@ -231,9 +252,12 @@ public class CadastrarConta extends javax.swing.JFrame {
         String senha2 = new String(campoSenha2.getPassword());
         boolean verificador;
         if (campoNome.getText().trim().equals("") ){
-            TelaLogin inicio = new TelaLogin();
+            /*TelaLogin inicio = new TelaLogin();
             inicio.setVisible(true);
-            this.dispose();
+            this.dispose();*/
+            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos para cadastrar nova conta");
+            
         }
         else{
             try{
@@ -262,6 +286,28 @@ public class CadastrarConta extends javax.swing.JFrame {
         inicio.setVisible(true);
     }//GEN-LAST:event_botaoVoltarActionPerformed
 
+    private void campoNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoNomeKeyPressed
+        entraEnter(evt);
+    }//GEN-LAST:event_campoNomeKeyPressed
+
+    private void campoEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoEmailKeyPressed
+        entraEnter(evt);
+    }//GEN-LAST:event_campoEmailKeyPressed
+
+    private void campoSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoSenhaKeyPressed
+        entraEnter(evt);
+    }//GEN-LAST:event_campoSenhaKeyPressed
+
+    private void campoSenha2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoSenha2KeyPressed
+        entraEnter(evt);
+    }//GEN-LAST:event_campoSenha2KeyPressed
+
+    private void entraEnter(java.awt.event.KeyEvent evt){
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            botaoCadastrar.doClick();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
