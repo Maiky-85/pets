@@ -27,8 +27,8 @@ public class Menu extends javax.swing.JFrame {
     public Menu() throws IOException {
         initComponents();
         ContaLogada contaLogada = new ContaLogada();
-        campoNome.setText(contaLogada.getCampo(1));
-        campoCelular.setText(contaLogada.getCampo(4));
+        campoNome.setText(contaLogada.getCampo(2));
+        campoCelular.setText(contaLogada.getCampo(5));
     }
 
     /**
@@ -65,11 +65,7 @@ public class Menu extends javax.swing.JFrame {
         botaoPerguntas = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         botaoClinicas = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(645, 140));
-        setMinimumSize(new java.awt.Dimension(300, 533));
-        setResizable(false);
+        jPanel7 = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -89,6 +85,11 @@ public class Menu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 48, Short.MAX_VALUE)
         );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(645, 140));
+        setMinimumSize(new java.awt.Dimension(300, 533));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(242, 167, 30));
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,11 +137,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 75, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 71, Short.MAX_VALUE)
+            .addGap(0, 93, Short.MAX_VALUE)
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -392,6 +393,25 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(119, Short.MAX_VALUE))
         );
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 49, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -402,17 +422,17 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mapa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -432,9 +452,9 @@ public class Menu extends javax.swing.JFrame {
     private void botaoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPerfilActionPerformed
         PerfilDonoV2 perfil = null;
         try {
-            this.dispose();
             perfil = new PerfilDonoV2();
             perfil.setVisible(true);
+            this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -466,72 +486,82 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoPerguntasActionPerformed
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        this.dispose();
-        InicialV2 inicial;
-        try {
-            inicial = new InicialV2();
-            inicial.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_jPanel1MouseClicked
-
     private void botaoClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoClinicasActionPerformed
-        this.dispose();
         CadastroClinica clinica;
         try {
             clinica = new CadastroClinica();
             clinica.setVisible(true);
+            this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }      
     }//GEN-LAST:event_botaoClinicasActionPerformed
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        this.dispose();
         InicialV2 inicial;
         try {
             inicial = new InicialV2();
             inicial.setVisible(true);
+            this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }//GEN-LAST:event_jPanel2MouseClicked
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        this.dispose();
-        InicialV2 inicial;
-        try {
-            inicial = new InicialV2();
-            inicial.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }      
-    }//GEN-LAST:event_jPanel3MouseClicked
-
     private void mapaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mapaMouseClicked
-        this.dispose();
         InicialV2 inicial;
         try {
             inicial = new InicialV2();
             inicial.setVisible(true);
+            this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }     
     }//GEN-LAST:event_mapaMouseClicked
 
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        this.dispose();
         InicialV2 inicial;
         try {
             inicial = new InicialV2();
             inicial.setVisible(true);
+            this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }       
     }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jPanel1MouseClicked
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        InicialV2 inicial;
+        try {
+            inicial = new InicialV2();
+            inicial.setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jPanel7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -612,6 +642,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel mapa;
     // End of variables declaration//GEN-END:variables
 }

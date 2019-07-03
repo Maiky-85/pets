@@ -35,7 +35,7 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         initComponents();
         ContaLogada contaLogada = new ContaLogada();
         //Pega o nome e mostra no perfil
-        campoNome.setText(contaLogada.getCampo(1));     
+        campoNome.setText(contaLogada.getCampo(2));     
         //Pega a rua e mostra no perfil
         campoRua.setText(contaLogada.getEndereco("rua"));        
         //Pega o número e mostra no perfil
@@ -53,17 +53,17 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         //Pega o e-mail e mostra no perfil (não editável)
         campoEmail.setText(contaLogada.getEmailLogado());
         //Pega o telefone e mostra no perfil
-        campoNumTelefone.setText(contaLogada.getCampo(3));
+        campoNumTelefone.setText(contaLogada.getCampo(4));
         //Pega o celular e mostra no perfil
-        campoNumCelular.setText(contaLogada.getCampo(4));
+        campoNumCelular.setText(contaLogada.getCampo(5));
         //Pega o facebook e mostra no perfil
-        campoFacebook.setText(contaLogada.getCampo(5));
+        campoFacebook.setText(contaLogada.getCampo(6));
         //Pega o Instagram e mostra no perfil
-        campoInstagram.setText(contaLogada.getCampo(6));
+        campoInstagram.setText(contaLogada.getCampo(7));
         //Pega o Twitter e mostra no perfil
-        campoTwitter.setText(contaLogada.getCampo(7));
+        campoTwitter.setText(contaLogada.getCampo(8));
         //Pega o Whatsapp e mostra no perfil
-        campoWhatsapp.setText(contaLogada.getCampo(8));
+        campoWhatsapp.setText(contaLogada.getCampo(9));
     }
 
     public void setNovaSenha(String senha) {

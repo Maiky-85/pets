@@ -202,12 +202,17 @@ public class PersistenciaArquivo {
         while ((linha = bufferedReader.readLine()) != null) {
             //Aqui imprimimos a linha
             int i=0;
+            int j=0;
             String email="";
-            //Concatena as strings do nome
-            while (linha.charAt(i) != ';'){
-                email = email + linha.charAt(i);
-                i=i+1;
-            }         
+            //Concatena as strings do email
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    email = email + linha.charAt(i);
+                if (linha.charAt(i)==';'){
+                   j+=1;
+                }               
+                i+=1; 
+            }                 
             //escreve linhas em novo arquivo
             if (!email.equals(contaOn)){
                 escreveArq.write(linha + "\r\n");          

@@ -50,13 +50,13 @@ public class ContaLogada {
             int i=0;  
             int j=0;
             
-            while (linha.charAt(i) != ';'){
-               
-                email = email + linha.charAt(i);
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    email = email + linha.charAt(i);
                 if (linha.charAt(i)==';'){
-                   j=j+1;
+                   j+=1;
                 }               
-                i=i+1; 
+                i+=1; 
             }            
             if (email.equals(contaOn)){
                 campoOk = true;
@@ -92,24 +92,24 @@ public String getEndereco(String parte) throws FileNotFoundException, IOExceptio
         while ((linha = bufferedReader.readLine()) != null && !nomeOk){ //busca o e-mail
             int i=0;  
             int j=0;           
-            while (linha.charAt(i) != ';'){               
-                email = email + linha.charAt(i);
-                if (linha.charAt(i)==';'){
-                   j=j+1;
-                }               
-                i=i+1; 
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    email = email + linha.charAt(i);
+                if (linha.charAt(i)==';')
+                   j+=1;               
+                i+=1; 
             }            
             if (email.equals(contaOn)){ //e-mail encontrado
 
                 nomeOk = true;
-                while (linha.charAt(i) != ';' || j<2){  //laço para concatenar o endereço
-                    if (j==2){
+                while (linha.charAt(i) != ';' || j<3){  //laço para concatenar o endereço
+                    if (j==3){
                         nome = nome + linha.charAt(i);
                     }   
                     if (linha.charAt(i)==';'){
-                       j=j+1;
+                       j+=1;
                     }                 
-                    i=i+1;
+                    i+=1;
                 }
             }
             else{

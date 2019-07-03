@@ -111,8 +111,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(318, 540));
 
-        jPanel1.setMinimumSize(new java.awt.Dimension(301, 808));
-        jPanel1.setPreferredSize(new java.awt.Dimension(301, 808));
+        jPanel1.setMaximumSize(new java.awt.Dimension(290, 2147483647));
+        jPanel1.setMinimumSize(new java.awt.Dimension(290, 808));
+        jPanel1.setPreferredSize(new java.awt.Dimension(290, 808));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         campoObservacao.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -125,6 +126,11 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         campoUltimaLocalizacao.setForeground(new java.awt.Color(102, 102, 102));
         campoUltimaLocalizacao.setToolTipText("Última localização");
         campoUltimaLocalizacao.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
+        campoUltimaLocalizacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUltimaLocalizacaoActionPerformed(evt);
+            }
+        });
         jPanel1.add(campoUltimaLocalizacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, 220, 23));
 
         campoVermifugacao.setForeground(new java.awt.Color(102, 102, 102));
@@ -266,7 +272,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
                 botaoSalvarActionPerformed(evt);
             }
         });
-        jPanel1.add(botaoSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 751, 270, 30));
+        jPanel1.add(botaoSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 751, 260, 30));
 
         botaoVoltar.setFont(new java.awt.Font("Comic Sans MS", 1, 40)); // NOI18N
         botaoVoltar.setForeground(new java.awt.Color(102, 102, 102));
@@ -297,7 +303,10 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/animal1.png"))); // NOI18N
         bg.setToolTipText("");
-        jPanel1.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
+        bg.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bg.setMaximumSize(new java.awt.Dimension(283, 808));
+        bg.setPreferredSize(new java.awt.Dimension(285, 808));
+        jPanel1.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -305,7 +314,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,6 +482,10 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     private void campoIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoIdadeActionPerformed
+
+    private void campoUltimaLocalizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUltimaLocalizacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoUltimaLocalizacaoActionPerformed
 
     /**
      * @param args the command line arguments

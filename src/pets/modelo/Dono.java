@@ -100,7 +100,7 @@ public class Dono {
                                 String numTelefone, String numCelular, String email, String facebook, String twitter, String instagram, String whatsapp)throws Exception{
         try {
             ContaLogada contaLogada = new ContaLogada();
-            String senhaSalva = contaLogada.getCampo(9);
+            String senhaSalva = contaLogada.getCampo(10);
             
             //cria um objeto do tipo Dono após criar Endereco, Contato e RedeSocial
             Endereco endereco = new Endereco(rua, numero, bairro, cidade, estado, cep, complemento);

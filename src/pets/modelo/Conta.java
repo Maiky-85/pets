@@ -36,7 +36,7 @@ public class Conta {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
-            escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
+            escreveArq.println("Foto;Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Twitter;Instagram;Whatsapp;Senha");
             escreveArq.close();
 
@@ -91,7 +91,7 @@ public class Conta {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
-            escreveArq.println("Email;Dono do Animal;Endereço;Telefone;Celular;"
+            escreveArq.println("Foto;Email;Dono do Animal;Endereço;Telefone;Celular;"
                     + "Facebook;Twitter;Instagram;Whatsapp;Senha");
             escreveArq.close();
 
@@ -107,23 +107,24 @@ public class Conta {
             int i=0;
             int j=0;          
             //Concatena as strings do nome
-            while (linha.charAt(i) != ';'){
-                emailVerificar = emailVerificar + linha.charAt(i);  
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    emailVerificar = emailVerificar + linha.charAt(i);  
                 if (linha.charAt(i)==';'){
-                   j=j+1;
+                   j+=1;
                 }               
-                i=i+1; 
+                i+=1; 
             }
             if (emailVerificar.equals(email)){
                 emailOk = true;
-                while (linha.charAt(i) != ';' || j<9){  //laço para verificar senha cadastrada
-                    if (j==9){
+                while (linha.charAt(i) != ';' || j<10){  //laço para verificar senha cadastrada
+                    if (j==10){
                         senhaVerificar = senhaVerificar + linha.charAt(i);
                     }   
                     if (linha.charAt(i)==';'){ //fim da linha TEM Q MELHORAR, POIS PRECISA DO ; NO FINAL
-                       j=j+1;
+                       j+=1;
                     }                 
-                    i=i+1;
+                    i+=1;
                 }
                 if (senhaVerificar.equals(senha)){
                     
@@ -160,12 +161,13 @@ public class Conta {
             int i=0;
             int j=0;          
             //Concatena as strings do nome
-            while (linha.charAt(i) != ';'){
-                emailVerificar = emailVerificar + linha.charAt(i);  
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    emailVerificar = emailVerificar + linha.charAt(i);  
                 if (linha.charAt(i)==';'){
-                   j=j+1;
+                   j+=1;
                 }               
-                i=i+1; 
+                i+=1; 
             }
             if (emailVerificar.equals(email)){
                 emailCadastrado = true;                
