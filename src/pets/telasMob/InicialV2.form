@@ -65,7 +65,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/testes/sairicon2.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Sair da conta"/>
+            <Property name="toolTipText" type="java.lang.String" value="Fechar aplicativo"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

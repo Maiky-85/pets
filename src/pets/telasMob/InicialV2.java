@@ -182,7 +182,7 @@ public class InicialV2 extends javax.swing.JFrame {
 
         botaoPontos.setBackground(new java.awt.Color(255, 255, 255));
         botaoPontos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/sairicon2.png"))); // NOI18N
-        botaoPontos.setToolTipText("Sair da conta");
+        botaoPontos.setToolTipText("Fechar aplicativo");
         botaoPontos.setBorder(null);
         botaoPontos.setBorderPainted(false);
         botaoPontos.setContentAreaFilled(false);
@@ -229,7 +229,6 @@ public class InicialV2 extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.setOpaque(true);
         jLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
