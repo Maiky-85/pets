@@ -195,4 +195,22 @@ public class Animal {
             }
     return false;
     }
+
+    public boolean atualizarAnimal(int pos, String foto, String nome, String tipo, String cor, String raca, String sexo, String porte, String idade, String castracao, String vacinaV10, 
+    String vacinaAntirrabica, String vermifugacao, String ultimaLocalizacao, String observacao)throws Exception{
+        try{
+            Animal animal = new Animal(foto, nome, tipo, cor, raca, sexo, porte, idade, castracao, vacinaV10, 
+                            vacinaAntirrabica, vermifugacao, ultimaLocalizacao, observacao);
+            
+            PersistenciaArquivo persistencia = new PersistenciaArquivo();
+            persistencia.atualizarDadosAnimal(pos, animal, "animal.csv");
+            return true;
+            
+        }catch(Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
+            }
+    return false;
+    }
+
+
 }

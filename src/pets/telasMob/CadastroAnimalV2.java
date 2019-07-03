@@ -7,6 +7,7 @@ package pets.telasMob;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -26,6 +27,36 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
      */
     public CadastroAnimalV2() {
         initComponents();
+        
+        verificador2 = false;
+    }
+    
+    public CadastroAnimalV2(List<String[]> dadosAnimal, int posAnimal) {
+        initComponents();
+        
+        File file = new File("fotos/", dadosAnimal.get(posAnimal)[0]);
+        TesteResizeFoto tamanho = new TesteResizeFoto();
+        labelFoto.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), labelFoto));
+        
+        String name = file.getName();
+        this.setNomeFoto(name);
+        
+        this.campoNome.setText(dadosAnimal.get(posAnimal)[1]);
+        this.campoTipo.setText(dadosAnimal.get(posAnimal)[2]);
+        this.campoCor.setText(dadosAnimal.get(posAnimal)[3]);
+        this.campoRaca.setSelectedItem(dadosAnimal.get(posAnimal)[4]);
+        this.campoSexo.setSelectedItem(dadosAnimal.get(posAnimal)[5]);
+        this.campoPorte.setSelectedItem(dadosAnimal.get(posAnimal)[6]);
+        this.campoIdade.setText(dadosAnimal.get(posAnimal)[7]);
+        this.campoCastracao.setSelectedItem(dadosAnimal.get(posAnimal)[8]);
+        //this.campoAntirrabica.setText(dadosAnimal.get(posAnimal)[9]);
+        //this.campoV10.setText(dadosAnimal.get(posAnimal)[1]);
+        //this.campoVermifugacao.setText(dadosAnimal.get(posAnimal)[1]);
+        //this.campoUltimaLocalizacao.setText(dadosAnimal.get(posAnimal)[1]);
+        //this.campoObservacao.setText(dadosAnimal.get(posAnimal)[1]);
+                        
+        this.posAnimal = posAnimal;        
+        verificador2 = true;
     }
 
     /**
@@ -274,11 +305,22 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nome não pode ficar vazio");
         }
         else{
+            
             try {
                 Animal cadastro = new Animal();
-                verificador=cadastro.cadastrarAnimal(this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
-                    (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
-                    this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
+                if(verificador2 == false){
+                    verificador=cadastro.cadastrarAnimal(this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
+                        (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
+                        this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
+                }
+                else{
+                    verificador=cadastro.atualizarAnimal(posAnimal, this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
+                        (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
+                        this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
+                
+                    
+                }
+                
                 if(verificador){
                     this.dispose();
                     InicialV2 inicial = new InicialV2();
@@ -287,10 +329,18 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
             }
-
+            
         }
     }//GEN-LAST:event_botaoSalvarActionPerformed
 
+    private void setNovaFoto(String novaFoto){
+        this.novaFoto = novaFoto;
+    }
+    
+    private String getNovaFoto(){
+        return this.novaFoto;
+    }
+    
     private void setNomeFoto(String nomeFoto){
         this.nomeFoto = nomeFoto;
     }
@@ -318,6 +368,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             //labelFoto.setIcon(new ImageIcon(f.toString()));
            
             String name = f.getName();
+            
+            
             
             //salvar foto na pasta
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
@@ -407,4 +459,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private String nomeFoto = "";
+    private String novaFoto = "";
+    private boolean verificador2 = false;
+    private int posAnimal;
 }

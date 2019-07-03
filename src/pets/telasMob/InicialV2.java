@@ -258,6 +258,11 @@ public class InicialV2 extends javax.swing.JFrame {
         botaoEditar.setBorderPainted(false);
         botaoEditar.setContentAreaFilled(false);
         botaoEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEditarActionPerformed(evt);
+            }
+        });
 
         botaoDeletar.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         botaoDeletar.setForeground(new java.awt.Color(153, 153, 153));
@@ -747,6 +752,15 @@ public class InicialV2 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_botaoPontosActionPerformed
+
+    private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
+        
+        CadastroAnimalV2 animalEdit = new CadastroAnimalV2(dadosAnimal, this.getSelected());
+        animalEdit.setVisible(true);
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_botaoEditarActionPerformed
 
     /**
      * @param args the command line arguments

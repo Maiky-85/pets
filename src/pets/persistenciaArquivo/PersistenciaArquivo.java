@@ -440,5 +440,85 @@ public class PersistenciaArquivo {
              }
         
     }
+   
+    public boolean atualizarDadosAnimal(int atualizar, Animal animal, String arquivo) throws Exception {
+        File arq = new File(arquivo);
+        File newArq = new File("tempArquivo.csv");
+
+        try {
+            //Indicamos o arquivo que será lido
+            FileReader fileReader = new FileReader(arq);
+            //Criamos o objeto bufferReader que nos oferece o 
+            FileWriter fileWriter = new FileWriter(newArq);
+            //Criamos o objeto bufferReader que nos oferece o método de leitura readLine()
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            //String que irá receber cada linha do arquivo
+            String linha = "";
+
+            //Fazemos um loop linha a linha no arquivo, enquanto ele seja diferente de null.
+            //O método readLine() devolve a linha na posicao do loop para a variavel linha.
+            boolean verificador = false;
+            int contador = 0;
+            while ((linha = bufferedReader.readLine()) != null) {
+                //Aqui imprimimos a linha
+                //System.out.println(linha);
+                int i=0;
+                int j=0;
+                String nome="";
+                
+                //Concatena as strings do nome
+                while (j <= 1){
+                    if (j==1 && linha.charAt(i) != ';')
+                        nome = nome + linha.charAt(i);
+                    if (linha.charAt(i) == ';')
+                        j+=1;
+                    i=i+1;
+                }
+
+                //escreve linhas em novo arquivo
+                if (contador != atualizar){
+                    fileWriter.write(linha + "\r\n");          
+                }
+                else{
+                    //JOptionPane.showMessageDialog(null, remover + " removido.");
+                    verificador = true;
+                    
+                    linha = animal.getFoto() +
+                    ";" + animal.getNome() + 
+                    ";" + animal.getTipo() +
+                    ";" + animal.getCor() + 
+                    ";" + animal.getRaca() +
+                    ";" + animal.getSexo()+
+                    ";" + animal.getPorte() +
+                    ";" + animal.getIdade() +
+                    ";" + animal.getCastracao() +
+                    ";" + animal.getVacinaV10() +
+                    ";" + animal.getVacinaAntirrabica() + 
+                    ";" + animal.getVermifugacao()+
+                    ";" + animal.getUltimaLocalizacao()+  
+                    ";" + animal.getObservacao();
+                    
+                    fileWriter.write(linha + "\r\n"); 
+                    
+                } 
+                contador++;
+            }
+
+                
+            fileWriter.close();
+            fileReader.close();     
+            bufferedReader.close();
+
+            arq.delete();
+            newArq.renameTo(new File(arquivo)); 
+            if (verificador)
+                return true;
+	} catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return false;
+    }
     
 }
