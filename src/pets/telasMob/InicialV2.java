@@ -167,6 +167,7 @@ public class InicialV2 extends javax.swing.JFrame {
         campoPorte = new javax.swing.JLabel();
         labelFoto = new javax.swing.JLabel();
         bgFoto = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         mapa = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -227,6 +228,8 @@ public class InicialV2 extends javax.swing.JFrame {
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.setOpaque(true);
         jLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
@@ -245,7 +248,7 @@ public class InicialV2 extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel5);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 55));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 70));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
@@ -404,9 +407,16 @@ public class InicialV2 extends javax.swing.JFrame {
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, 140));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(300, 235));
+        jPanel1.setPreferredSize(new java.awt.Dimension(300, 235));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
         mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        jPanel2.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 156, 300, 235));
+        jPanel1.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 300, 210));
+
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 156, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/principal.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -688,34 +698,35 @@ public class InicialV2 extends javax.swing.JFrame {
     
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
        
+        System.out.println(dadosAnimal.get(this.getSelected()).length);
         
+        if(dadosAnimal.size() > 1){
+            resizeLabelSelecionado(this.atualClicked, 35, 35);
+            loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
+            this.atualClicked.setBorder(null);
+            this.setAtualClicked(jLabel2);
+            this.setSelected(1);
+            resizeLabelSelecionado(jLabel2, 43, 43);
+            jLabel2.setBorder(borda());
+            loadImage(dadosAnimal.get(1)[0], jLabel2);
+
+            //BufferedImage folderImage = ImageIO.read(folderInput);
+            //ImageIcon im = new ImageIcon(folderImage);
+            //jLabel2.setIcon(im);
+
+            //loadImage();
+
+            try {
+                //mostrar info
+
+                testeLoadInfo(1);
+
+
+            } catch (IOException ex) {
+
+            }
         
-        resizeLabelSelecionado(this.atualClicked, 35, 35);
-        loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
-        this.atualClicked.setBorder(null);
-        this.setAtualClicked(jLabel2);
-        this.setSelected(1);
-        resizeLabelSelecionado(jLabel2, 43, 43);
-        jLabel2.setBorder(borda());
-        loadImage(dadosAnimal.get(1)[0], jLabel2);
-        
-        //BufferedImage folderImage = ImageIO.read(folderInput);
-        //ImageIcon im = new ImageIcon(folderImage);
-        //jLabel2.setIcon(im);
-        
-        //loadImage();
-        
-        try {
-            //mostrar info
-            
-            testeLoadInfo(1);
-            
-            
-        } catch (IOException ex) {
-            
         }
-        
-        
         
          
         
@@ -815,6 +826,7 @@ public class InicialV2 extends javax.swing.JFrame {
     private javax.swing.JLabel campoTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

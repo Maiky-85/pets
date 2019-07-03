@@ -13,8 +13,11 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import pets.modelo.Animal;
 import pets.persistenciaArquivo.PersistenciaArquivo;
@@ -31,6 +34,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     public CadastroAnimalV2() {
         initComponents();
         
+        
         verificador2 = false;
     }
     
@@ -42,6 +46,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         labelFoto.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), labelFoto));
         
         String name = file.getName();
+        
+        
         this.setNomeFoto(name);
         
         
@@ -56,16 +62,17 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         this.campoPorte.setSelectedItem(dadosAnimal.get(posAnimal)[6]);
         this.campoIdade.setText(dadosAnimal.get(posAnimal)[7]);
         this.campoCastracao.setSelectedItem(dadosAnimal.get(posAnimal)[8]);
-        //this.campoAntirrabica.setText(dadosAnimal.get(posAnimal)[9]);
-        //this.campoV10.setText(dadosAnimal.get(posAnimal)[1]);
-        //this.campoVermifugacao.setText(dadosAnimal.get(posAnimal)[1]);
-        //this.campoUltimaLocalizacao.setText(dadosAnimal.get(posAnimal)[1]);
-        //this.campoObservacao.setText(dadosAnimal.get(posAnimal)[1]);
+        this.campoV10.setText(dadosAnimal.get(posAnimal)[9]);
+        this.campoAntirrabica.setText(dadosAnimal.get(posAnimal)[10]);
+        this.campoVermifugacao.setText(dadosAnimal.get(posAnimal)[11]);
+        this.campoUltimaLocalizacao.setText(dadosAnimal.get(posAnimal)[12]);
+        this.campoObservacao.setText(dadosAnimal.get(posAnimal)[13]);
                         
         this.posAnimal = posAnimal;        
         verificador2 = true;
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -99,9 +106,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 200));
-        setMaximumSize(new java.awt.Dimension(300, 533));
         setMinimumSize(new java.awt.Dimension(300, 533));
-        setPreferredSize(new java.awt.Dimension(300, 533));
         setResizable(false);
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(318, 540));
@@ -159,7 +164,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
         campoCastracao.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoCastracao.setForeground(new java.awt.Color(102, 102, 102));
-        campoCastracao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "É castrado?", "Sim", "Não", "Não se aplica" }));
+        campoCastracao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "É castrado?", "Sim", "Não", "Não se aplica" }));
+        campoCastracao.setSelectedIndex(1);
         campoCastracao.setBorder(null);
         campoCastracao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoCastracao.setFocusable(false);
@@ -170,11 +176,17 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         campoIdade.setForeground(new java.awt.Color(102, 102, 102));
         campoIdade.setToolTipText("Idade");
         campoIdade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(204, 204, 204)));
+        campoIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoIdadeActionPerformed(evt);
+            }
+        });
         jPanel1.add(campoIdade, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 220, 23));
 
         campoPorte.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoPorte.setForeground(new java.awt.Color(102, 102, 102));
-        campoPorte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o porte", "Micro Toy", "Pequeno", "Médio", "Grande", "Extra Grande" }));
+        campoPorte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Selecione o porte", "Micro Toy", "Pequeno", "Médio", "Grande", "Extra Grande" }));
+        campoPorte.setSelectedIndex(1);
         campoPorte.setBorder(null);
         campoPorte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoPorte.setFocusable(false);
@@ -183,7 +195,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
         campoSexo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoSexo.setForeground(new java.awt.Color(102, 102, 102));
-        campoSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o sexo", "Macho", "Fêmea" }));
+        campoSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Selecione o sexo", "Macho", "Fêmea" }));
+        campoSexo.setSelectedIndex(1);
         campoSexo.setBorder(null);
         campoSexo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoSexo.setFocusable(false);
@@ -192,7 +205,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
         campoRaca.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoRaca.setForeground(new java.awt.Color(102, 102, 102));
-        campoRaca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a raça", "Akita", "Basset Hound", "Beagle", "Boxer", "Buldogue", "Bull Terrier", "Chihuahua", "Chow Chow", "Cocker", "Collie", "Dachshund", "Dálmata", "Doberman", "Dogo Argentino", "Fila Brasileiro", "Fox Terrier", "Golden Retriever", "Husky Siberiano", "Labrador", "Lhasa Apso", "Lulu da Pomerânia", "Maltês", "Pastor Alemão", "Pinscher", "Poodle", "Pug", "Rottweiler", "Sem Raça Definida (SRD)", "ShihTzu", "Yorkshire Terrier", "Outra Raça" }));
+        campoRaca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Selecione a raça", "Akita", "Basset Hound", "Beagle", "Boxer", "Buldogue", "Bull Terrier", "Chihuahua", "Chow Chow", "Cocker", "Collie", "Dachshund", "Dálmata", "Doberman", "Dogo Argentino", "Fila Brasileiro", "Fox Terrier", "Golden Retriever", "Husky Siberiano", "Labrador", "Lhasa Apso", "Lulu da Pomerânia", "Maltês", "Pastor Alemão", "Pinscher", "Poodle", "Pug", "Rottweiler", "Sem Raça Definida (SRD)", "ShihTzu", "Yorkshire Terrier", "Outra Raça" }));
+        campoRaca.setSelectedIndex(1);
         campoRaca.setBorder(null);
         campoRaca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         campoRaca.setFocusable(false);
@@ -306,19 +320,50 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoRacaActionPerformed
 
+    
+    
+    
+    private String checaJText2(JTextField jtext){
+        if(jtext.getText().length() < 2 || jtext.getText() == null){
+            jtext.setText(" ");
+        }
+        return jtext.getText();
+    }
+    
+    private String checaJText(JTextField jtext){
+        if(jtext.getText() == null){
+            jtext.setText(" ");
+        }
+        return jtext.getText();
+    }
+    
+    private Object checaJCombo(JComboBox<String> jcombo){
+        if(jcombo.getSelectedIndex() == 1){
+            jcombo.setSelectedIndex(0);
+        }
+        return jcombo.getSelectedItem();
+    }
+    
+    private String checaJFormated(JFormattedTextField jformated){
+        if(jformated.getText() == null){
+            jformated.setText(" ");
+        }
+        return jformated.getText();
+    }
+    
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         boolean verificador;
         if (campoNome.getText().trim().equals("") ){
             JOptionPane.showMessageDialog(null, "Nome não pode ficar vazio");
         }
         else{
-            
+
             try {
                 Animal cadastro = new Animal();
                 if(verificador2 == false){
-                    verificador=cadastro.cadastrarAnimal(this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
-                        (String)this.campoSexo.getSelectedItem(), (String)this.campoPorte.getSelectedItem(), this.campoIdade.getText(), (String)this.campoCastracao.getSelectedItem(), this.campoAntirrabica.getText(),
-                        this.campoV10.getText(), this.campoVermifugacao.getText(), this.campoUltimaLocalizacao.getText(), this.campoObservacao.getText());
+                    verificador=cadastro.cadastrarAnimal(this.getNomeFoto(), this.campoNome.getText(), checaJText(this.campoTipo), checaJText(this.campoCor), (String)checaJCombo(this.campoRaca),
+                        (String)checaJCombo(this.campoSexo), (String)checaJCombo(this.campoPorte), this.campoIdade.getText(), (String)checaJCombo(this.campoCastracao), checaJFormated(this.campoAntirrabica),
+                        checaJFormated(this.campoV10), checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao), checaJText2(this.campoObservacao));
                 }
                 else{
                     verificador=cadastro.atualizarAnimal(posAnimal, this.getNomeFoto(), this.campoNome.getText(), this.campoTipo.getText(), this.campoCor.getText(), (String)this.campoRaca.getSelectedItem(),
@@ -398,6 +443,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
                     }
                     
                 }
+                else{
+                    this.setNovaFoto("");
+                }
                 
             } catch (Exception ex) {
 
@@ -422,6 +470,10 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     private void campoAntirrabicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAntirrabicaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoAntirrabicaActionPerformed
+
+    private void campoIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoIdadeActionPerformed
 
     /**
      * @param args the command line arguments

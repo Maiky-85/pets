@@ -294,8 +294,8 @@ public class PersistenciaArquivo {
             
             PrintWriter escreveArq = new PrintWriter(arqWriter);
             
-            escreveArq.println("Foto;Nome;Tipo;Cor;Raça;Sexo;Porte;Idade;Castratado;VacinaV10"
-                    +"Vacina Antirrábica;Vermifugado;Último local visto;Informações Adicionais");
+            escreveArq.println("Foto;Nome;Tipo;Cor;Raça;Sexo;Porte;Idade;Castratado;VacinaV10;"
+                    +"Vacina Antirrábica;Vermifugado;Último local visto;Informações adicionais");
             
             escreveArq.println(animal.getFoto() +
                     ";" + animal.getNome() + 

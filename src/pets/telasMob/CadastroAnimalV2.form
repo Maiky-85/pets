@@ -178,13 +178,15 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="&#xc9; castrado?"/>
-                    <StringItem index="1" value="Sim"/>
-                    <StringItem index="2" value="N&#xe3;o"/>
-                    <StringItem index="3" value="N&#xe3;o se aplica"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value=""/>
+                    <StringItem index="1" value="&#xc9; castrado?"/>
+                    <StringItem index="2" value="Sim"/>
+                    <StringItem index="3" value="N&#xe3;o"/>
+                    <StringItem index="4" value="N&#xe3;o se aplica"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -220,6 +222,9 @@
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoIdadeActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="50" y="460" width="220" height="23"/>
@@ -235,15 +240,17 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
-                    <StringItem index="0" value="Selecione o porte"/>
-                    <StringItem index="1" value="Micro Toy"/>
-                    <StringItem index="2" value="Pequeno"/>
-                    <StringItem index="3" value="M&#xe9;dio"/>
-                    <StringItem index="4" value="Grande"/>
-                    <StringItem index="5" value="Extra Grande"/>
+                  <StringArray count="7">
+                    <StringItem index="0" value=""/>
+                    <StringItem index="1" value="Selecione o porte"/>
+                    <StringItem index="2" value="Micro Toy"/>
+                    <StringItem index="3" value="Pequeno"/>
+                    <StringItem index="4" value="M&#xe9;dio"/>
+                    <StringItem index="5" value="Grande"/>
+                    <StringItem index="6" value="Extra Grande"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -271,12 +278,14 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="Selecione o sexo"/>
-                    <StringItem index="1" value="Macho"/>
-                    <StringItem index="2" value="F&#xea;mea"/>
+                  <StringArray count="4">
+                    <StringItem index="0" value=""/>
+                    <StringItem index="1" value="Selecione o sexo"/>
+                    <StringItem index="2" value="Macho"/>
+                    <StringItem index="3" value="F&#xea;mea"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -304,41 +313,43 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="32">
-                    <StringItem index="0" value="Selecione a ra&#xe7;a"/>
-                    <StringItem index="1" value="Akita"/>
-                    <StringItem index="2" value="Basset Hound"/>
-                    <StringItem index="3" value="Beagle"/>
-                    <StringItem index="4" value="Boxer"/>
-                    <StringItem index="5" value="Buldogue"/>
-                    <StringItem index="6" value="Bull Terrier"/>
-                    <StringItem index="7" value="Chihuahua"/>
-                    <StringItem index="8" value="Chow Chow"/>
-                    <StringItem index="9" value="Cocker"/>
-                    <StringItem index="10" value="Collie"/>
-                    <StringItem index="11" value="Dachshund"/>
-                    <StringItem index="12" value="D&#xe1;lmata"/>
-                    <StringItem index="13" value="Doberman"/>
-                    <StringItem index="14" value="Dogo Argentino"/>
-                    <StringItem index="15" value="Fila Brasileiro"/>
-                    <StringItem index="16" value="Fox Terrier"/>
-                    <StringItem index="17" value="Golden Retriever"/>
-                    <StringItem index="18" value="Husky Siberiano"/>
-                    <StringItem index="19" value="Labrador"/>
-                    <StringItem index="20" value="Lhasa Apso"/>
-                    <StringItem index="21" value="Lulu da Pomer&#xe2;nia"/>
-                    <StringItem index="22" value="Malt&#xea;s"/>
-                    <StringItem index="23" value="Pastor Alem&#xe3;o"/>
-                    <StringItem index="24" value="Pinscher"/>
-                    <StringItem index="25" value="Poodle"/>
-                    <StringItem index="26" value="Pug"/>
-                    <StringItem index="27" value="Rottweiler"/>
-                    <StringItem index="28" value="Sem Ra&#xe7;a Definida (SRD)"/>
-                    <StringItem index="29" value="ShihTzu"/>
-                    <StringItem index="30" value="Yorkshire Terrier"/>
-                    <StringItem index="31" value="Outra Ra&#xe7;a"/>
+                  <StringArray count="33">
+                    <StringItem index="0" value=""/>
+                    <StringItem index="1" value="Selecione a ra&#xe7;a"/>
+                    <StringItem index="2" value="Akita"/>
+                    <StringItem index="3" value="Basset Hound"/>
+                    <StringItem index="4" value="Beagle"/>
+                    <StringItem index="5" value="Boxer"/>
+                    <StringItem index="6" value="Buldogue"/>
+                    <StringItem index="7" value="Bull Terrier"/>
+                    <StringItem index="8" value="Chihuahua"/>
+                    <StringItem index="9" value="Chow Chow"/>
+                    <StringItem index="10" value="Cocker"/>
+                    <StringItem index="11" value="Collie"/>
+                    <StringItem index="12" value="Dachshund"/>
+                    <StringItem index="13" value="D&#xe1;lmata"/>
+                    <StringItem index="14" value="Doberman"/>
+                    <StringItem index="15" value="Dogo Argentino"/>
+                    <StringItem index="16" value="Fila Brasileiro"/>
+                    <StringItem index="17" value="Fox Terrier"/>
+                    <StringItem index="18" value="Golden Retriever"/>
+                    <StringItem index="19" value="Husky Siberiano"/>
+                    <StringItem index="20" value="Labrador"/>
+                    <StringItem index="21" value="Lhasa Apso"/>
+                    <StringItem index="22" value="Lulu da Pomer&#xe2;nia"/>
+                    <StringItem index="23" value="Malt&#xea;s"/>
+                    <StringItem index="24" value="Pastor Alem&#xe3;o"/>
+                    <StringItem index="25" value="Pinscher"/>
+                    <StringItem index="26" value="Poodle"/>
+                    <StringItem index="27" value="Pug"/>
+                    <StringItem index="28" value="Rottweiler"/>
+                    <StringItem index="29" value="Sem Ra&#xe7;a Definida (SRD)"/>
+                    <StringItem index="30" value="ShihTzu"/>
+                    <StringItem index="31" value="Yorkshire Terrier"/>
+                    <StringItem index="32" value="Outra Ra&#xe7;a"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
