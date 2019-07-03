@@ -258,7 +258,10 @@ public class PersistenciaArquivo {
     }
      
     public void salvarDadosAnimal(Animal animal) throws Exception {
-        File arq = new File("animal.csv");
+        ContaLogada contaLogada = new ContaLogada();
+        String conta=contaLogada.getEmailLogado();
+        
+        File arq = new File("animal_" + conta + ".csv");
         
         if (arq.exists()){
             try {
@@ -327,127 +330,11 @@ public class PersistenciaArquivo {
         }
     }
     
-    public void contaLogada(String email) throws IOException, Exception{
-        File arq = new File("contaOn.txt");
-        
-        try{
-            arq.createNewFile();
-            FileWriter arqWriter;
-            arqWriter = new FileWriter(arq, false);
-
-            PrintWriter escreveArq = new PrintWriter(arqWriter);
-
-            escreveArq.println(email);
-
-            escreveArq.flush();
-            escreveArq.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new Exception ("Não foi possível salvar Animal.");
-        }
-     }    
-        
-    public boolean deletarDadosAnimal(String remover, String arquivo) throws Exception {
-        File arq = new File(arquivo);
-        File newArq = new File("tempArquivo.csv");
-
-    try {
-        //Indicamos o arquivo que será lido
-        FileReader fileReader = new FileReader(arq);
-        //Criamos o objeto bufferReader que nos oferece o 
-        FileWriter fileWriter = new FileWriter(newArq);
-        //Criamos o objeto bufferReader que nos oferece o método de leitura readLine()
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        //String que irá receber cada linha do arquivo
-        String linha = "";
-
-        //Fazemos um loop linha a linha no arquivo, enquanto ele seja diferente de null.
-        //O método readLine() devolve a linha na posicao do loop para a variavel linha.
-        boolean verificador = false;
-        while ((linha = bufferedReader.readLine()) != null) {
-            //Aqui imprimimos a linha
-            //System.out.println(linha);
-            int i=0;
-            int j=0;
-            String nome="";
-            //Concatena as strings do nome
-            while (j <= 1){
-                if (j==1 && linha.charAt(i) != ';')
-                    nome = nome + linha.charAt(i);
-                if (linha.charAt(i) == ';')
-                    j+=1;
-                i=i+1;
-            }
-            
-            //escreve linhas em novo arquivo
-            if (!nome.equals(remover)){
-                fileWriter.write(linha + "\r\n");          
-            }
-            else{
-                JOptionPane.showMessageDialog(null, remover + " removido.");
-                verificador = true;
-            }        
-        }
-        if (!verificador)
-            JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
-            //liberamos o fluxo dos objetos ou fechamos o arquivo
-        
-                
-        fileWriter.close();
-        fileReader.close();     
-        bufferedReader.close();
-        
-        arq.delete();
-        newArq.renameTo(new File(arquivo)); 
-        if (verificador)
-            return true;
-	} catch (IOException e) {
-    	e.printStackTrace();
-        throw new Exception ("Não foi possível deletar nome.");
-        }
-    return false;
-    }
-    
-    public void salvarFoto(File f, String name) throws Exception{
-    
-        FileInputStream fileInputStream = null;
-
-            try {
-
-                File file = f;
-                byte[] bFile = new byte[(int) file.length()];
-
-                //converter pra bytes
-                fileInputStream = new FileInputStream(file);
-                fileInputStream.read(bFile);
-
-                //salvar no arquivo
-                try {
-                    Path pathy = Paths.get("fotos\\" + name);
-                    Files.write(pathy, bFile);
-                } catch (IOException e) {
-                    
-                }
-
-            } catch (IOException e) {
-                    
-            } finally {
-                if (fileInputStream != null) {
-                    try {
-                        fileInputStream.close();
-                    } catch (IOException e) {
-
-                    }
-                }
-
-             }
-        
-    }
-   
     public boolean atualizarDadosAnimal(int atualizar, Animal animal, String arquivo) throws Exception {
-        File arq = new File(arquivo);
+        ContaLogada contaLogada = new ContaLogada();
+        String conta=contaLogada.getEmailLogado();
+        
+        File arq = new File(arquivo + conta + ".csv");
         File newArq = new File("tempArquivo.csv");
 
         try {
@@ -516,9 +403,11 @@ public class PersistenciaArquivo {
             bufferedReader.close();
 
             arq.delete();
-            newArq.renameTo(new File(arquivo)); 
+            newArq.renameTo(new File(arquivo + conta + ".csv")); 
+            
             if (verificador)
                 return true;
+            
 	} catch (IOException e) {
             e.printStackTrace();
         }
@@ -526,4 +415,126 @@ public class PersistenciaArquivo {
         return false;
     }
     
+    public boolean deletarDadosAnimal(String remover, String arquivo) throws Exception {
+        ContaLogada contaLogada = new ContaLogada();
+        String conta=contaLogada.getEmailLogado();
+        
+        File arq = new File(arquivo + conta + ".csv");
+        File newArq = new File("tempArquivo.csv");
+
+    try {
+        //Indicamos o arquivo que será lido
+        FileReader fileReader = new FileReader(arq);
+        //Criamos o objeto bufferReader que nos oferece o 
+        FileWriter fileWriter = new FileWriter(newArq);
+        //Criamos o objeto bufferReader que nos oferece o método de leitura readLine()
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        //String que irá receber cada linha do arquivo
+        String linha = "";
+
+        //Fazemos um loop linha a linha no arquivo, enquanto ele seja diferente de null.
+        //O método readLine() devolve a linha na posicao do loop para a variavel linha.
+        boolean verificador = false;
+        while ((linha = bufferedReader.readLine()) != null) {
+            //Aqui imprimimos a linha
+            //System.out.println(linha);
+            int i=0;
+            int j=0;
+            String nome="";
+            //Concatena as strings do nome
+            while (j <= 1){
+                if (j==1 && linha.charAt(i) != ';')
+                    nome = nome + linha.charAt(i);
+                if (linha.charAt(i) == ';')
+                    j+=1;
+                i=i+1;
+            }
+            
+            //escreve linhas em novo arquivo
+            if (!nome.equals(remover)){
+                fileWriter.write(linha + "\r\n");          
+            }
+            else{
+                JOptionPane.showMessageDialog(null, remover + " removido.");
+                verificador = true;
+            }        
+        }
+        if (!verificador)
+            JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
+            //liberamos o fluxo dos objetos ou fechamos o arquivo
+        
+                
+        fileWriter.close();
+        fileReader.close();     
+        bufferedReader.close();
+        
+        arq.delete();
+        newArq.renameTo(new File(arquivo + conta + ".csv")); 
+        if (verificador)
+            return true;
+	} catch (IOException e) {
+    	e.printStackTrace();
+        throw new Exception ("Não foi possível deletar nome.");
+        }
+    return false;
+    }
+    
+    public void contaLogada(String email) throws IOException, Exception{
+        File arq = new File("contaOn.txt");
+        
+        try{
+            arq.createNewFile();
+            FileWriter arqWriter;
+            arqWriter = new FileWriter(arq, false);
+
+            PrintWriter escreveArq = new PrintWriter(arqWriter);
+
+            escreveArq.println(email);
+
+            escreveArq.flush();
+            escreveArq.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new Exception ("Não foi possível salvar Animal.");
+        }
+     }  
+    
+    public void salvarFoto(File f, String name) throws Exception{
+    
+        FileInputStream fileInputStream = null;
+
+            try {
+
+                File file = f;
+                byte[] bFile = new byte[(int) file.length()];
+
+                //converter pra bytes
+                fileInputStream = new FileInputStream(file);
+                fileInputStream.read(bFile);
+
+                //salvar no arquivo
+                try {
+                    Path pathy = Paths.get("fotos\\" + name);
+                    Files.write(pathy, bFile);
+                } catch (IOException e) {
+                    
+                }
+
+            } catch (IOException e) {
+                    
+            } finally {
+                if (fileInputStream != null) {
+                    try {
+                        fileInputStream.close();
+                    } catch (IOException e) {
+
+                    }
+                }
+
+             }
+        
+    }
+     
 }

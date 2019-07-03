@@ -34,6 +34,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 import javax.swing.border.MatteBorder;
+import pets.modelo.ContaLogada;
 //import javax.swing.SwingConstants;
 //import org.netbeans.lib.awtextra.AbsoluteLayout;
 import pets.persistenciaArquivo.PersistenciaArquivo;
@@ -53,7 +54,10 @@ public class InicialV2 extends javax.swing.JFrame {
         initComponents();
         
         this.setPosX(jLabel2.getX());
-        File arq = new File("animal.csv");
+        
+        ContaLogada contaLogada = new ContaLogada();
+        String conta=contaLogada.getEmailLogado();
+        File arq = new File("animal_" + conta + ".csv");
         
         if(arq.exists()){
             FileReader fr = null;
@@ -462,7 +466,7 @@ public class InicialV2 extends javax.swing.JFrame {
             
             if(input == 0){
                 
-                tela=deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
+                tela=deletar.deletarDadosAnimal(nome,"animal_"); //Deletar animal do parâmetro nome
                 if (tela){
 
                     InicialV2 inicial;

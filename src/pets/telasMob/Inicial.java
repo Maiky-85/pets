@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 //import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import pets.persistenciaArquivo.PersistenciaArquivo;
-import pets.telas.Principal;
+
 
 
 /**
@@ -480,7 +480,7 @@ public class Inicial extends javax.swing.JFrame {
         try {
             deletar.deletarDadosAnimal(nome,"animal.csv"); //Deletar animal do parâmetro nome
         } catch (Exception ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botaoDeletarActionPerformed
 
