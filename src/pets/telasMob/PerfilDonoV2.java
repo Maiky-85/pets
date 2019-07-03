@@ -507,10 +507,11 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         FileNameExtensionFilter tipoFoto = new FileNameExtensionFilter(".jpg, .jpeg, .png", "jpg", "jpeg", "png");
         foto.setFileFilter(tipoFoto);
         int selecao = foto.showOpenDialog(null);
-
+        String name = "";
+        File f = null;
         if(selecao == JFileChooser.APPROVE_OPTION) {
 
-            File f = foto.getSelectedFile();
+            f = foto.getSelectedFile();
             String path = f.getAbsolutePath();
 
             //redimensionar imagem pra caber no label
@@ -518,37 +519,38 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
             labelFoto.setIcon(tamanho.ResizeImage(path, labelFoto));
             //labelFoto.setIcon(new ImageIcon(f.toString()));
 
-            String name = f.getName();
+            name = f.getName();
 
-            //salvar foto na pasta
-            PersistenciaArquivo persistencia = new PersistenciaArquivo();
-            try {
-                persistencia.salvarFoto(f, name);
-                this.setNomeFoto(name);
-                
-                
-                if(this.getNovaFoto() != null){
-                    //System.out.println("a");
-                    if(!this.getNomeFoto().equals(this.getNovaFoto())){
-                      //  System.out.println("b");
-                        Path p = Paths.get("fotos\\" + this.getNovaFoto());
-                        try {
-                        //    System.out.println("c");
-                            Files.delete(p);
-                        } catch (IOException ex) {
-                            
-                        }
-                    }
-                    
+            
+        }
+        //salvar foto na pasta
+        PersistenciaArquivo persistencia = new PersistenciaArquivo();
+        try {
+            persistencia.salvarFoto(f, name);
+            this.setNomeFoto(name);
+
+
+            if(this.getNovaFoto() != null){
+                //System.out.println("a");
+                if(!this.getNomeFoto().equals(this.getNovaFoto())){
+                  //  System.out.println("b");
+                    Path p = Paths.get("fotos\\" + this.getNovaFoto());
+                   /* try {
+                    //    System.out.println("c");
+                        Files.delete(p);
+                    } catch (IOException ex) {
+
+                    }*/
                 }
-                else{
-                    this.setNovaFoto("");
-                }
-                
+
+            }
+            else{
+                this.setNovaFoto("");
+            }
+
             } catch (Exception ex) {
 
             }
-        }
 
     }//GEN-LAST:event_botaoFotoActionPerformed
 
