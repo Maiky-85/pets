@@ -7,6 +7,9 @@ package pets.telasMob;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,6 +43,10 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         
         String name = file.getName();
         this.setNomeFoto(name);
+        
+        
+        this.setNovaFoto(name);
+        
         
         this.campoNome.setText(dadosAnimal.get(posAnimal)[1]);
         this.campoTipo.setText(dadosAnimal.get(posAnimal)[2]);
@@ -370,15 +377,32 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             String name = f.getName();
             
             
-            
             //salvar foto na pasta
             PersistenciaArquivo persistencia = new PersistenciaArquivo();
             try {
+                
                 persistencia.salvarFoto(f, name);
                 this.setNomeFoto(name);
-            } catch (Exception ex) {
                 
+                if(this.getNovaFoto() != null){
+                    System.out.println("a");
+                    if(!this.getNomeFoto().equals(this.getNovaFoto())){
+                        System.out.println("b");
+                        Path p = Paths.get("fotos\\" + this.getNovaFoto());
+                        try {
+                            System.out.println("c");
+                            Files.delete(p);
+                        } catch (IOException ex) {
+                            Logger.getLogger(CadastroAnimalV2.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    
+                }
+                
+            } catch (Exception ex) {
+
             }
+
         }
 
         
@@ -459,7 +483,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private String nomeFoto = "";
-    private String novaFoto = "";
+    private String novaFoto = null;
     private boolean verificador2 = false;
     private int posAnimal;
 }
