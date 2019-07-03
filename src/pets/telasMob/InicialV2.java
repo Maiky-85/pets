@@ -759,7 +759,7 @@ public class InicialV2 extends javax.swing.JFrame {
         if (nome==0){
             //TelaLogin login = new TelaLogin();
             //login.setVisible(true);
-            this.dispose();
+            System.exit(0);
         }
         
     }//GEN-LAST:event_botaoPontosActionPerformed
