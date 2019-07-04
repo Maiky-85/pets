@@ -345,19 +345,22 @@ public class InicialV2 extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("REDE");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.setPreferredSize(new java.awt.Dimension(140, 37));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 60, 140, 30));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 60, 140, 37));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("PETS");
+        jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(255, 255, 255)));
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 60, 150, 30));
+        jLabel4.setPreferredSize(new java.awt.Dimension(150, 37));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 60, 150, 37));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/principal.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -420,7 +423,8 @@ public class InicialV2 extends javax.swing.JFrame {
                         System.err.format("Não foi possível deletar a imagem%n" + "%s: não encontrado. ", p);
                     }
                 }
-            } catch (Exception ex) {          
+            } catch (Exception ex) { 
+                ex.printStackTrace();
             }
 
         }
@@ -516,7 +520,7 @@ public class InicialV2 extends javax.swing.JFrame {
         try {
             testeLoadInfo(this.getSelected());
         } catch (IOException ex) {
-            
+            ex.printStackTrace();
         }
         
     }
@@ -599,7 +603,7 @@ public class InicialV2 extends javax.swing.JFrame {
                 //mostrar info
                 testeLoadInfo(1);
             } catch (IOException ex) {
-
+                ex.printStackTrace();
             }        
         }    
     }//GEN-LAST:event_jLabel2MouseClicked
