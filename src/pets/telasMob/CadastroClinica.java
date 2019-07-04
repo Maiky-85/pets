@@ -496,7 +496,7 @@ public class CadastroClinica extends javax.swing.JFrame {
             menu.setVisible(true);
             this.setVisible(false);
         } catch (IOException ex) {
-            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_botaoMenuActionPerformed
@@ -516,7 +516,7 @@ public class CadastroClinica extends javax.swing.JFrame {
                         this.campoTwitter.getText(), this.campoInstagram.getText(), this.campoWhatsapp.getText());                
                 if(verificador){    
                     this.dispose();
-                    Inicial inicial = new Inicial();
+                    InicialV2 inicial = new InicialV2();
                     inicial.setVisible(true);
                 }
             } catch (Exception ex) {

@@ -579,7 +579,7 @@ public class InicialV2 extends javax.swing.JFrame {
             menu.setVisible(true);
             this.setVisible(false);
         } catch (IOException ex) {
-            Logger.getLogger(Inicial.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_botaoMenuActionPerformed
