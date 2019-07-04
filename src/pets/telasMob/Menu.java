@@ -414,14 +414,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoPerguntasActionPerformed
 
     private void botaoClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoClinicasActionPerformed
-        CadastroClinica clinica;
+       /* CadastroClinica clinica;
         try {
             clinica = new CadastroClinica();
             clinica.setVisible(true);
             this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }      
+        }    */  
     }//GEN-LAST:event_botaoClinicasActionPerformed
 
     private void jPanelFundoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelFundoMouseClicked
