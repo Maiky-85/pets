@@ -73,16 +73,27 @@ public class InicialV2 extends javax.swing.JFrame {
                 Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            //s
-            if (dadosAnimal.size() > 1){         
+            //se o arquivo existir, a primeira linha vai ser dos nomes das colunas (foto, nome, idade, raça etc)
+            //então se o dadosAnimal for maior que 1, significa que tem algum animal cadastrado
+            //esse primeiro animal cadastrado é colocado no primeiro espaço de icones (jLabel2)  
+            if (dadosAnimal.size() > 1){    
+                
+                //nessa tela principal, o primeiro icone vem selecionado
+                //então aumenta o tamanho do primeiro jlabel, pra marcar esse destaque
                 jLabel2.setPreferredSize(new Dimension(43, 43));
                 jLabel2.setSize(43,43);
+                //poe borda laranja, também pra mostrar o destaque
                 jLabel2.setBorder(borda());
+                //salva que a seleção está nesse item 1 da lista (o 0 sendo os nomes das colunas)
                 this.setSelected(1);
+                //salva que a seleção está nesse jLabel2
                 this.setAtualClicked(jLabel2);
+                //configura o nome do jlabel como o nome da imagem desse animal
                 jLabel2.setName(dadosAnimal.get(1)[0]);
+                //carrega a imagem
                 loadImage(dadosAnimal.get(1)[0], jLabel2);
-
+                
+                //tenta carregar as informações do animal selecionado para aparecerem embaixo do mapa
                 try {
                     testeLoadInfo(1);
 
@@ -90,6 +101,7 @@ public class InicialV2 extends javax.swing.JFrame {
                     Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
+                //chama a criação dos ícones dos outros animais cadastrados
                 criaLabelsIcons();
             }
         fr.close();
@@ -367,6 +379,8 @@ public class InicialV2 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    //vai pra tela de cadastrar animal
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
         CadastroAnimalV2 cadastroAnimalV2 = new CadastroAnimalV2();
         cadastroAnimalV2.setVisible(true);
@@ -374,6 +388,7 @@ public class InicialV2 extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
+    //deleta o animal selecionado e apaga a foto dele da pasta
     private void botaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeletarActionPerformed
         
         if(dadosAnimal.size() > 1){
@@ -411,19 +426,15 @@ public class InicialV2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoDeletarActionPerformed
 
+    //carrega a imagem
     private void loadImage(String fileName, JLabel label){
         File file = new File("fotos/", fileName);
+        //chama a função pra redimensionar a imagem selecionada pra ela ficar do tamanho do jlabel
         TesteResizeFoto tamanho = new TesteResizeFoto();
         label.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), label));
     }
     
-    private void continuaTesteLoadInfo(List<String[]> dados){
-        campoNome.setText(dados.get(1)[1]);
-        
-    }
-    
-  
-    
+    //carrega algumas informações do animal selecionado embaixo do mapa
     private void testeLoadInfo(int pos) throws FileNotFoundException, IOException{
         if(dadosAnimal.size() > 1){
             //continuaTesteLoadInfo(dadosAnimal);
@@ -466,33 +477,42 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }
     
+    //define o evento de "ao clicar" para o jlabel criado
     private void novoLabelClicked(java.awt.event.MouseEvent evt){
         JLabel novoT = new JLabel();
         novoT = (JLabel) evt.getSource();
         int j = 0;
         
+        //se for clicado, o jlabel que estava selecionado antes diminui de tamanho
         resizeLabelSelecionado(this.atualClicked, 35, 35);
+        //perde a borda 
         this.atualClicked.setBorder(null);
+        //e redimensiona a imagem pra esse tamanho menor
         loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
         
         
-        
+        //procura entre os dados dos animais qual posição que tem a imagem com o mesmo nome do jlabel clicado
         for(j = 0; dadosAnimal.get(j)[0] != novoT.getName(); j++){
 
         }
-
+        
+        //quando acha a posição, marca ela 
         if(dadosAnimal.get(j)[0] == novoT.getName()){
                 
             this.setSelected(j);
         }
         
-
+        //marca o jlabel clicado como o selecionado
         this.setAtualClicked(novoT);
         
+        //aumenta o tamanho dele
         resizeLabelSelecionado(novoT, 43, 43);
+        //poe borda
         novoT.setBorder(borda());
+        //redimensiona imagem
         loadImage(dadosAnimal.get(j)[0], novoT);
 
+        //pede pra carregar as informações desse animal
         try {
             testeLoadInfo(this.getSelected());
         } catch (IOException ex) {
@@ -501,6 +521,7 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }
     
+    //cria novos jlabels se existir mais de um animal
     private void criaLabelsIcons(){
         
         if(dadosAnimal.size() > 2){
@@ -508,6 +529,7 @@ public class InicialV2 extends javax.swing.JFrame {
             
             for(int i = 2; dadosAnimal.size() > i; i++){
                 
+                //vai colocar o novo jlabel na posição de acordo com a posição do anterior
                 this.setPosX(52);
                 
                 JLabel novoLabel = new javax.swing.JLabel();
@@ -522,25 +544,30 @@ public class InicialV2 extends javax.swing.JFrame {
                 });
                 jPanel5.add(novoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(this.getPosX(), 5, -1, -1));
 
+                
                 novoLabel.setBounds(this.getPosX(), 5, 35, 35);
                 novoLabel.setSize(35,35);
+                //diferencia cada jlabel criado ao colocar o nome da foto do animal desse ícone como o nome do jlabel
                 novoLabel.setName(dadosAnimal.get(i)[0]);
                 
+                //mostra o cursor de mãozinha pra mostrar que dá pra clicar ali quando o usuário passa o mouse em cima do ícone
                 Cursor c = new Cursor(HAND_CURSOR);
                 novoLabel.setCursor(c);
                 
+                //carrega a imagem do animal pro jlabel/ícone dele
                 loadImage(dadosAnimal.get(i)[0], novoLabel);
 
             }
         }
     }
     
-    
+    //redimensiona o jlabel pra um tamanho x,y
     private void resizeLabelSelecionado(JLabel label, int x, int y){
         label.setPreferredSize(new Dimension(x, y));
         label.setSize(x, y);
     }
     
+    //poe a borda laranja de tamanho 2
     private Border borda(){
         MatteBorder novaB = new MatteBorder(2,2,2,2, new Color(255,186,120));
         return novaB;
@@ -548,15 +575,25 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }
     
+    //evento de "ao clicar" do jLabel2 (o primeiro jlabel, que é o principal)
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         if(dadosAnimal.size() > 1){
+            //diminui o tamanho do antigo jlabel clicado
             resizeLabelSelecionado(this.atualClicked, 35, 35);
+            //redimensiona a imagem dele pro tamanho menor
             loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
+            //tira a borda
             this.atualClicked.setBorder(null);
+            
+            //marca esse jlabel como o selecionado
             this.setAtualClicked(jLabel2);
+            //marca esse item 
             this.setSelected(1);
+            //aumenta o tamanho desse jlabel
             resizeLabelSelecionado(jLabel2, 43, 43);
+            //poe a borda nesse jlabel
             jLabel2.setBorder(borda());
+            //redimensiona a imagem
             loadImage(dadosAnimal.get(1)[0], jLabel2);
             try {
                 //mostrar info
@@ -576,6 +613,7 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel2MouseExited
 
+    //vai pro menu lateral do Dono
     private void botaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMenuActionPerformed
         Menu menu;
         try {
@@ -588,6 +626,7 @@ public class InicialV2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botaoMenuActionPerformed
 
+    //pergunta se deseja sair do aplicativo
     private void botaoPontosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPontosActionPerformed
         
         int nome = JOptionPane.showConfirmDialog(null, "Deseja sair do aplicativo?", "", JOptionPane.YES_NO_OPTION);
@@ -597,6 +636,7 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_botaoPontosActionPerformed
 
+    //carrega a tela de animal com os dados do animal cadastrado para edição
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
         
         
@@ -608,6 +648,7 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_botaoEditarActionPerformed
 
+    //vai pra tela do mural
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         Rede rede = null;
         try {
