@@ -704,7 +704,7 @@ public class InicialV2 extends javax.swing.JFrame {
     
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
        
-        System.out.println(dadosAnimal.get(this.getSelected()).length);
+        //System.out.println(dadosAnimal.get(this.getSelected()).length);
         
         if(dadosAnimal.size() > 1){
             resizeLabelSelecionado(this.atualClicked, 35, 35);

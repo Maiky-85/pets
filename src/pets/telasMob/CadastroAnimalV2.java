@@ -444,9 +444,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             this.setNomeFoto(name);
 
             if(this.getNovaFoto() != null){
-                System.out.println("a");
+                //System.out.println("a");
                 if(!this.getNomeFoto().equals(this.getNovaFoto())){
-                    System.out.println("b");
+                    //System.out.println("b");
                     Path p = Paths.get("fotos\\" + this.getNovaFoto());
                  /*   try {
                         System.out.println("c");
