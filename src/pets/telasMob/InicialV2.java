@@ -57,9 +57,6 @@ public class InicialV2 extends javax.swing.JFrame {
             }
             BufferedReader br = new BufferedReader(fr);
 
-            //List <String> dados = new ArrayList();
-            //List<String[]> dadosAnimal = new ArrayList();
-
             String linha; 
 
             try {
@@ -216,7 +213,7 @@ public class InicialV2 extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel5);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 50));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 70));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
@@ -322,12 +319,13 @@ public class InicialV2 extends javax.swing.JFrame {
 
         mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
         mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        jPanel1.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 210));
+        jPanel1.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 300, 200));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 156, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("REDE");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -335,13 +333,14 @@ public class InicialV2 extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 60, 140, 30));
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("PETS");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 60, 150, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/principal.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -393,13 +392,13 @@ public class InicialV2 extends javax.swing.JFrame {
                         inicial.setVisible(true);
                     }
 
-                   /* Path p = Paths.get("fotos\\" + foto);
+                    Path p = Paths.get("fotos\\" + foto);
 
                     try {
                         Files.delete(p);
                     } catch (IOException e) {
                         throw new Exception("Não foi possível apagar foto");          
-                    }*/
+                    }
                 }
             } catch (Exception ex) {          
             }
@@ -588,8 +587,6 @@ public class InicialV2 extends javax.swing.JFrame {
         
         int nome = JOptionPane.showConfirmDialog(null, "Deseja sair do aplicativo?", "", JOptionPane.YES_NO_OPTION);
         if (nome==0){
-            //TelaLogin login = new TelaLogin();
-            //login.setVisible(true);
             System.exit(0);
         }
         

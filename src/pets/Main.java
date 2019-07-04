@@ -14,7 +14,6 @@ package pets;
 
 //import javax.swing.UIManager;
 import pets.telasMob.TelaComecar;
-//import pets.telasMob.TelaLogin;
 
 
 
@@ -27,10 +26,7 @@ public class Main {
         TelaComecar inicio = new TelaComecar();
         inicio.setVisible(true);
         
-        /* //teste
-        TelaLogin login = new TelaLogin();
-        login.setVisible(true);
-          */  
+        
     }
     
 }

@@ -9,6 +9,7 @@ import pets.modelo.Dono;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Level;
@@ -33,6 +34,7 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         initComponents();
         ContaLogada contaLogada = new ContaLogada();
         
+        //Pega a foto e mostra no perfil
         if(contaLogada.getCampo(0) != null){
             File file = new File("fotos/", contaLogada.getCampo(0));
             TesteResizeFoto tamanho = new TesteResizeFoto();
@@ -510,7 +512,6 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
             //redimensionar imagem pra caber no label
             TesteResizeFoto tamanho = new TesteResizeFoto();
             labelFoto.setIcon(tamanho.ResizeImage(path, labelFoto));
-            //labelFoto.setIcon(new ImageIcon(f.toString()));
 
             name = f.getName();
         }
@@ -536,11 +537,11 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
             if(this.getNovaFoto() != null){
                 if(!this.getNomeFoto().equals(this.getNovaFoto())){
                     Path p = Paths.get("fotos\\" + this.getNovaFoto());
-                   /* try {
+                    try {
                         Files.delete(p);
                     } catch (IOException ex) {
 
-                    }*/
+                    }
                 }
 
             }

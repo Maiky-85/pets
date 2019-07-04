@@ -5,8 +5,6 @@
  */
 package pets.telasMob;
 
-import java.awt.event.KeyEvent;
-
 /**
  *
  * @author B. Dalzini

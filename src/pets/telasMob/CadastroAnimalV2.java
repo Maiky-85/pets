@@ -3,6 +3,7 @@ package pets.telasMob;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -425,7 +426,6 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             //redimensionar imagem pra caber no label
             TesteResizeFoto tamanho = new TesteResizeFoto();
             labelFoto.setIcon(tamanho.ResizeImage(path, labelFoto));
-            //labelFoto.setIcon(new ImageIcon(f.toString()));
            
             name = f.getName();
         }
@@ -434,9 +434,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         File fTeste = new File("fotos/", name);
         
         
-        //System.out.print(fTeste.exists());
-        //System.out.print(name+"\r\n");
         
+        //confere se já existe uma foto com o nome da nova foto, se sim, altera o nome da nova foto
         if(fTeste.exists()){
             name = "(nova)" + name;
         }
@@ -444,7 +443,6 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             
         }
         
-        //System.out.print(name);
         
         //salvar foto na pasta
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
@@ -456,11 +454,11 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             if(this.getNovaFoto() != null){
                 if(!this.getNomeFoto().equals(this.getNovaFoto())){
                     Path p = Paths.get("fotos\\" + this.getNovaFoto());
-                 /*   try {
+                    try {
                         Files.delete(p);
                     } catch (IOException ex) {
                         Logger.getLogger(CadastroAnimalV2.class.getName()).log(Level.SEVERE, null, ex);
-                    }*/
+                    }
                 }
 
             }

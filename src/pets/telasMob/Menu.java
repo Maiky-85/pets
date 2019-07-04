@@ -64,7 +64,6 @@ public class Menu extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         labelFoto = new javax.swing.JLabel();
         campoNome = new javax.swing.JLabel();
-        campoCelular = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         botaoPerfil = new javax.swing.JButton();
         botaoConta = new javax.swing.JButton();
@@ -79,6 +78,7 @@ public class Menu extends javax.swing.JFrame {
         botaoConfig = new javax.swing.JButton();
         naoPerguntas = new javax.swing.JPanel();
         botaoPerguntas = new javax.swing.JButton();
+        campoCelular = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(645, 140));
@@ -102,18 +102,13 @@ public class Menu extends javax.swing.JFrame {
         labelFoto.setBackground(new java.awt.Color(102, 102, 102));
         labelFoto.setToolTipText("");
         labelFoto.setOpaque(true);
-        labelFoto.setPreferredSize(new java.awt.Dimension(55, 55));
-        jPanel5.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        labelFoto.setPreferredSize(new java.awt.Dimension(60, 60));
+        jPanel5.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         campoNome.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         campoNome.setForeground(new java.awt.Color(51, 51, 51));
         campoNome.setText("Nome");
-        jPanel5.add(campoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 75, -1, -1));
-
-        campoCelular.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        campoCelular.setForeground(new java.awt.Color(51, 51, 51));
-        campoCelular.setText("Tel");
-        jPanel5.add(campoCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 105, -1, -1));
+        jPanel5.add(campoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 80, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setMinimumSize(new java.awt.Dimension(193, 310));
@@ -177,7 +172,6 @@ public class Menu extends javax.swing.JFrame {
 
         naoClinicas.setBackground(new java.awt.Color(51, 51, 51));
         naoClinicas.setFocusable(false);
-        naoClinicas.setOpaque(false);
         naoClinicas.setPreferredSize(new java.awt.Dimension(75, 1));
 
         javax.swing.GroupLayout naoClinicasLayout = new javax.swing.GroupLayout(naoClinicas);
@@ -357,6 +351,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel6.add(botaoPerguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 210, 20));
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
+
+        campoCelular.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        campoCelular.setForeground(new java.awt.Color(51, 51, 51));
+        campoCelular.setText("Tel");
+        jPanel5.add(campoCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 110, -1, -1));
 
         jPanelFundo.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
