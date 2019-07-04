@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pets.telasMob;
 
 import java.io.IOException;
@@ -10,11 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pets.modelo.Clinica;
-import pets.modelo.Contato;
-import pets.modelo.Endereco;
-import pets.modelo.RedeSocial;
-import pets.persistenciaArquivo.PersistenciaArquivo;
-
 
 
 /**
@@ -23,10 +14,6 @@ import pets.persistenciaArquivo.PersistenciaArquivo;
  */
 public class CadastroClinica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroAnimal
-     * @throws java.io.IOException
-     */
     public CadastroClinica() throws IOException{
         initComponents();
     }

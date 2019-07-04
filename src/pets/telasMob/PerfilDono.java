@@ -9,13 +9,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-//import javax.swing.JPasswordField;
 import pets.modelo.ContaLogada;
-//import pets.modelo.Contato;
 import pets.modelo.Dono;
-//import pets.modelo.Endereco;
-//import pets.modelo.RedeSocial;
-//import pets.persistenciaArquivo.PersistenciaArquivo;
 
 
 

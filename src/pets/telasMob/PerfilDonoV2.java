@@ -5,16 +5,10 @@
  */
 package pets.telasMob;
 
-//import java.io.IOException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//import javax.swing.JOptionPane;
-//import javax.swing.JPasswordField;
 import pets.modelo.Dono;
 import pets.persistenciaArquivo.PersistenciaArquivo;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Level;
@@ -27,12 +21,13 @@ import pets.modelo.ContaLogada;
 
 /**
  *
- * @author B. Dalzini
+ * @author B. Dalzini/Maiky
  */
 public class PerfilDonoV2 extends javax.swing.JFrame {
 
     /**
      * Creates new form PerfilDonoV2
+     * @throws java.io.IOException
      */
     public PerfilDonoV2() throws IOException{
         initComponents();
@@ -448,8 +443,7 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
                 inicial.setVisible(true);
             } catch (IOException ex) {
                 Logger.getLogger(PerfilDonoV2.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
+            }     
         }
         else{
             try {
@@ -510,7 +504,6 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
         String name = "";
         File f = null;
         if(selecao == JFileChooser.APPROVE_OPTION) {
-
             f = foto.getSelectedFile();
             String path = f.getAbsolutePath();
 
@@ -520,8 +513,6 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
             //labelFoto.setIcon(new ImageIcon(f.toString()));
 
             name = f.getName();
-
-            
         }
         //salvar foto na pasta
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
@@ -529,14 +520,12 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
             persistencia.salvarFoto(f, name);
             this.setNomeFoto(name);
 
-
             if(this.getNovaFoto() != null){
                 //System.out.println("a");
                 if(!this.getNomeFoto().equals(this.getNovaFoto())){
                   //  System.out.println("b");
                     Path p = Paths.get("fotos\\" + this.getNovaFoto());
                    /* try {
-                    //    System.out.println("c");
                         Files.delete(p);
                     } catch (IOException ex) {
 

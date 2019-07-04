@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pets.telasMob;
 
 import java.awt.event.KeyEvent;
@@ -16,9 +12,7 @@ import pets.modelo.Conta;
  */
 public class CadastrarConta extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+
     public CadastrarConta() {
         initComponents();
         
@@ -252,12 +246,7 @@ public class CadastrarConta extends javax.swing.JFrame {
         String senha2 = new String(campoSenha2.getPassword());
         boolean verificador;
         if (campoNome.getText().trim().equals("") ){
-            /*TelaLogin inicio = new TelaLogin();
-            inicio.setVisible(true);
-            this.dispose();*/
-            
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos para cadastrar nova conta");
-            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos para cadastrar nova conta");            
         }
         else{
             try{
@@ -271,8 +260,7 @@ public class CadastrarConta extends javax.swing.JFrame {
                 }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);                
-            }
-            
+            }           
         }     
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 

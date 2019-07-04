@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pets.telasMob;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -24,7 +19,7 @@ import pets.persistenciaArquivo.PersistenciaArquivo;
 
 /**
  *
- * @author B. Dalzini
+ * @author B. Dalzini/Maiky
  */
 public class CadastroAnimalV2 extends javax.swing.JFrame {
 
@@ -33,8 +28,6 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
      */
     public CadastroAnimalV2() {
         initComponents();
-        
-        
         verificador2 = false;
     }
     
@@ -45,15 +38,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         TesteResizeFoto tamanho = new TesteResizeFoto();
         labelFoto.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), labelFoto));
         
-        String name = file.getName();
-        
-        
+        String name = file.getName(); 
         this.setNomeFoto(name);
-        
-        
-        this.setNovaFoto(name);
-        
-        
+        this.setNovaFoto(name);  
         this.campoNome.setText(dadosAnimal.get(posAnimal)[1]);
         this.campoTipo.setText(dadosAnimal.get(posAnimal)[2]);
         this.campoCor.setText(dadosAnimal.get(posAnimal)[3]);
@@ -370,15 +357,24 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             try {
                 Animal cadastro = new Animal();
                 if(verificador2 == false){
-                    verificador=cadastro.cadastrarAnimal(this.getNomeFoto(), this.campoNome.getText(), checaJText(this.campoTipo), checaJText(this.campoCor), (String)checaJCombo(this.campoRaca),
-                        (String)checaJCombo(this.campoSexo), (String)checaJCombo(this.campoPorte), this.campoIdade.getText(), (String)checaJCombo(this.campoCastracao), checaJFormated(this.campoAntirrabica),
-                        checaJFormated(this.campoV10), checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao), checaJText2(this.campoObservacao));
+                    verificador=cadastro.cadastrarAnimal(this.getNomeFoto(),
+                            this.campoNome.getText(), checaJText(this.campoTipo),
+                            checaJText(this.campoCor), (String)checaJCombo(this.campoRaca),
+                            (String)checaJCombo(this.campoSexo), (String)checaJCombo(this.campoPorte),
+                            this.campoIdade.getText(), (String)checaJCombo(this.campoCastracao),
+                            checaJFormated(this.campoAntirrabica),checaJFormated(this.campoV10),
+                            checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao),
+                            checaJText2(this.campoObservacao));
                 }
                 else{
-                    verificador=cadastro.atualizarAnimal(posAnimal, this.getNomeFoto(), this.campoNome.getText(), checaJText(this.campoTipo), checaJText(this.campoCor), (String)checaJCombo(this.campoRaca),
-                        (String)checaJCombo(this.campoSexo), (String)checaJCombo(this.campoPorte), this.campoIdade.getText(), (String)checaJCombo(this.campoCastracao), checaJFormated(this.campoAntirrabica),
-                        checaJFormated(this.campoV10), checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao), checaJText2(this.campoObservacao));
-                
+                    verificador=cadastro.atualizarAnimal(posAnimal, this.getNomeFoto(),
+                            this.campoNome.getText(), checaJText(this.campoTipo),
+                            checaJText(this.campoCor), (String)checaJCombo(this.campoRaca),
+                            (String)checaJCombo(this.campoSexo), (String)checaJCombo(this.campoPorte),
+                            this.campoIdade.getText(), (String)checaJCombo(this.campoCastracao),
+                            checaJFormated(this.campoAntirrabica),checaJFormated(this.campoV10),
+                            checaJFormated(this.campoVermifugacao), checaJText2(this.campoUltimaLocalizacao),
+                            checaJText2(this.campoObservacao));      
                 }
                 
                 if(verificador){
@@ -430,10 +426,6 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             //labelFoto.setIcon(new ImageIcon(f.toString()));
            
             name = f.getName();
-            
-            
-            
-
         }
         
         //salvar foto na pasta
@@ -463,9 +455,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
             } catch (Exception ex) {
 
-            }
-
-        
+            }      
     }//GEN-LAST:event_botaoFotoActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed

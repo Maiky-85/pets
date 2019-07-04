@@ -21,8 +21,7 @@ public class Contato {
     
     public Contato(String numTelefone, String numCelular, String email) throws Exception {
         
-        //TratamentoMascara telefoneTratado = new TratamentoMascara(numTelefone);
-        //TratamentoMascara celularTratado = new TratamentoMascara(numTelefone);
+
         numTelefone = numTelefone.replace("(", "");
         numTelefone = numTelefone.replace(")", "");
         numTelefone = numTelefone.replace("-", "");

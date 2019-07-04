@@ -5,12 +5,9 @@
  */
 package pets.telasMob;
 
-//import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-//import javax.swing.JPasswordField;
-//import javax.swing.JTextField;
 import pets.modelo.Conta;
 
 /**
@@ -23,11 +20,7 @@ public class TelaLogin extends javax.swing.JFrame {
      * Creates new form Login
      */
     public TelaLogin() {
-        initComponents();
-    
-    
-    
-    
+        initComponents();  
     }
 
     public void setCampoEmail(String campoEmail) {

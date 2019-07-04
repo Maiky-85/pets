@@ -6,49 +6,38 @@
 package pets.telasMob;
 
 
-//import java.awt.Color;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
-//import java.awt.Image;
 import java.util.List;
-//import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-//import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-//import java.util.Arrays;
-//import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
-//import javax.imageio.ImageIO;
-//import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 import javax.swing.border.MatteBorder;
 import pets.modelo.ContaLogada;
-//import javax.swing.SwingConstants;
-//import org.netbeans.lib.awtextra.AbsoluteLayout;
 import pets.persistenciaArquivo.PersistenciaArquivo;
-//import javax.swing.plaf.BorderUIResource.MatteBorderUIResource;
 
 
 /**
  *
- * @author B. Dalzini
+ * @author B. Dalzini/Maiky
  */
 public class InicialV2 extends javax.swing.JFrame {
 
     /**
      * Creates new form InicialV2
+     * @throws java.io.IOException
      */
     public InicialV2() throws IOException {
         initComponents();
@@ -111,32 +100,6 @@ public class InicialV2 extends javax.swing.JFrame {
         else{
            
         }
-        
-                        /*
-                if(dadosAnimal.size() > 1){
-                //continuaTesteLoadInfo(dadosAnimal);
-                
-                loadImage(dadosAnimal.get(1)[0], labelFoto);
-                
-                this.campoNome.setText(dadosAnimal.get(1)[1]);
-                this.campoTipo.setText(dadosAnimal.get(1)[2]);
-                this.campoCor.setText(dadosAnimal.get(1)[3]);
-                this.campoRaca.setText(dadosAnimal.get(1)[4]);
-                this.campoPorte.setText(dadosAnimal.get(1)[6]);
-                
-                }
-                else{
-                
-                }
-            */
-        
-        //loadImage();
-        /*
-        try {
-            testeLoadInfo();
-        } catch (IOException ex) {
-            
-        }*/
         
     }
 
@@ -445,9 +408,6 @@ public class InicialV2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
-        //        CadastroAnimal cadastroAnimal = new CadastroAnimal();
-        //        cadastroAnimal.setVisible(true);
-
         CadastroAnimalV2 cadastroAnimalV2 = new CadastroAnimalV2();
         cadastroAnimalV2.setVisible(true);
 
@@ -455,7 +415,6 @@ public class InicialV2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
     private void botaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeletarActionPerformed
-        //String nome = JOptionPane.showInputDialog("Nome do animal");
         String nome = dadosAnimal.get(this.getSelected())[1];
         String foto = dadosAnimal.get(this.getSelected())[0];
         PersistenciaArquivo deletar = new PersistenciaArquivo();
@@ -488,16 +447,12 @@ public class InicialV2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoDeletarActionPerformed
 
     private void loadImage(String fileName, JLabel label){
-        
-        //teste
-        //File folderInput = new File("fotos/a1.JPG");
         File file = new File("fotos/", fileName);
         TesteResizeFoto tamanho = new TesteResizeFoto();
         label.setIcon(tamanho.ResizeImage(file.getAbsolutePath(), label));
     }
     
     private void continuaTesteLoadInfo(List<String[]> dados){
-        
         campoNome.setText(dados.get(1)[1]);
         
     }
@@ -505,8 +460,6 @@ public class InicialV2 extends javax.swing.JFrame {
   
     
     private void testeLoadInfo(int pos) throws FileNotFoundException, IOException{
-        
-        
         if(dadosAnimal.size() > 1){
             //continuaTesteLoadInfo(dadosAnimal);
 
@@ -519,52 +472,6 @@ public class InicialV2 extends javax.swing.JFrame {
             this.campoPorte.setText(dadosAnimal.get(pos)[6]);
 
         }
-        
-        
-        
-        /*
-        File arq = new File("animal.csv");
-        
-        if(arq.exists()){
-            FileReader fr = new FileReader(arq);
-            BufferedReader br = new BufferedReader(fr);
-
-            //List <String> dados = new ArrayList();
-            List<String[]> dadosAnimal = new ArrayList();
-
-            String linha; 
-
-            while ((linha = br.readLine()) != null) {
-                String[] values = linha.split(";");
-                //System.out.println(Arrays.toString(values));
-                dadosAnimal.add(values);
-                
-                
-                
-            }
-            System.out.println(dadosAnimal.size());
-
-            if(dadosAnimal.size() > 1){
-                //continuaTesteLoadInfo(dadosAnimal);
-                
-                loadImage(dadosAnimal.get(1)[0], labelFoto);
-                
-                this.campoNome.setText(dadosAnimal.get(1)[1]);
-                this.campoTipo.setText(dadosAnimal.get(1)[2]);
-                this.campoCor.setText(dadosAnimal.get(1)[3]);
-                this.campoRaca.setText(dadosAnimal.get(1)[4]);
-                this.campoPorte.setText(dadosAnimal.get(1)[6]);
-                
-            }
-            else{
-
-            }
-        }
-        else{
-           
-        }*/
-
-        
     }
     
     private int getPosX(){
@@ -595,7 +502,6 @@ public class InicialV2 extends javax.swing.JFrame {
     }
     
     private void novoLabelClicked(java.awt.event.MouseEvent evt){
-        
         JLabel novoT = new JLabel();
         novoT = (JLabel) evt.getSource();
         int j = 0;
@@ -616,22 +522,13 @@ public class InicialV2 extends javax.swing.JFrame {
             this.setSelected(j);
         }
         
-        //System.out.println(novoT.getName());
-        //System.out.println(j);
-        
-        
-        
+
         this.setAtualClicked(novoT);
         
         resizeLabelSelecionado(novoT, 43, 43);
         novoT.setBorder(borda());
         loadImage(dadosAnimal.get(j)[0], novoT);
-        
-        
-        
-        
-        
-        
+
         try {
             testeLoadInfo(this.getSelected());
         } catch (IOException ex) {
@@ -648,10 +545,6 @@ public class InicialV2 extends javax.swing.JFrame {
             for(int i = 2; dadosAnimal.size() > i; i++){
                 
                 this.setPosX(52);
-                
-                //this.setSelected(i);
-                
-                
                 
                 JLabel novoLabel = new javax.swing.JLabel();
                 
@@ -673,24 +566,13 @@ public class InicialV2 extends javax.swing.JFrame {
                 novoLabel.setCursor(c);
                 
                 loadImage(dadosAnimal.get(i)[0], novoLabel);
-                
-                
-                
-                
-            
-            
+
             }
-            
-            
-            
         }
-        
-        
     }
     
     
     private void resizeLabelSelecionado(JLabel label, int x, int y){
-        //System.out.println("click");
         label.setPreferredSize(new Dimension(x, y));
         label.setSize(x, y);
     }
@@ -703,9 +585,6 @@ public class InicialV2 extends javax.swing.JFrame {
     }
     
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       
-        //System.out.println(dadosAnimal.get(this.getSelected()).length);
-        
         if(dadosAnimal.size() > 1){
             resizeLabelSelecionado(this.atualClicked, 35, 35);
             loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
@@ -715,27 +594,13 @@ public class InicialV2 extends javax.swing.JFrame {
             resizeLabelSelecionado(jLabel2, 43, 43);
             jLabel2.setBorder(borda());
             loadImage(dadosAnimal.get(1)[0], jLabel2);
-
-            //BufferedImage folderImage = ImageIO.read(folderInput);
-            //ImageIcon im = new ImageIcon(folderImage);
-            //jLabel2.setIcon(im);
-
-            //loadImage();
-
             try {
                 //mostrar info
-
                 testeLoadInfo(1);
-
-
             } catch (IOException ex) {
 
-            }
-        
-        }
-        
-         
-        
+            }        
+        }    
     }//GEN-LAST:event_jLabel2MouseClicked
 
     

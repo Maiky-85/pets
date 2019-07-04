@@ -5,9 +5,7 @@
  */
 package pets.telasMob;
 
-//import java.awt.Graphics;
 import java.awt.Image;
-//import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -17,17 +15,12 @@ import javax.swing.JLabel;
  */
 public class TesteResizeFoto {
     
-    
-    
-    
-    
     public ImageIcon ResizeImage(String ImagePath, JLabel labelIcon)
     {
         ImageIcon MyImage = new ImageIcon(ImagePath);
         Image img = MyImage.getImage();
         Image newImg;
         
-        //System.out.println(MyImage.getIconWidth() + " a " + MyImage.getIconHeight());
         
         if(MyImage.getIconWidth() < MyImage.getIconHeight()){
             newImg = img.getScaledInstance(labelIcon.getWidth(), -1, Image.SCALE_SMOOTH);
@@ -35,10 +28,6 @@ public class TesteResizeFoto {
         else{
             newImg = img.getScaledInstance(-1, labelIcon.getHeight(), Image.SCALE_SMOOTH);
         }
-        
-        //g.drawImage(img.getScaledInstance(labelIcon.getWidth(), -1, Image.SCALE_SMOOTH), labelIcon.getX(), labelIcon.getY(), this);
-
-        //BufferedImage newImg = Scalr.resize(labelIcon.getWidth(), img.getHeight(labelIcon));
         
         ImageIcon image = new ImageIcon(newImg);
         return image;
