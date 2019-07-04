@@ -42,10 +42,7 @@ public class Menu extends javax.swing.JFrame {
             //campoCelular.setText("( )    -    ");
             campoCelular.setText("");
         }
-        
-        
-        
-        //System.out.println(contaLogada.getCampo(0));
+             
         if(contaLogada.getCampo(0) != null){
             File file = new File("fotos/", contaLogada.getCampo(0));
             TesteResizeFoto tamanho = new TesteResizeFoto();

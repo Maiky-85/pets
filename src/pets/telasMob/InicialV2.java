@@ -65,14 +65,12 @@ public class InicialV2 extends javax.swing.JFrame {
             try {
                 while ((linha = br.readLine()) != null) {
                     String[] values = linha.split(";");
-                    //System.out.println(Arrays.toString(values));
                     dadosAnimal.add(values);
    
                 }
             } catch (IOException ex) {
                 Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
             }
-            //System.out.println(dadosAnimal.size());
             
             if (dadosAnimal.size() > 1){         
                 jLabel2.setPreferredSize(new Dimension(43, 43));
@@ -90,7 +88,6 @@ public class InicialV2 extends javax.swing.JFrame {
                     Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
-                //System.out.println(jLabel2.getName());
                 criaLabelsIcons();
             }
         fr.close();
@@ -136,6 +133,8 @@ public class InicialV2 extends javax.swing.JFrame {
         bgFoto = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         mapa = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -217,7 +216,7 @@ public class InicialV2 extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel5);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 70));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 230, 50));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
@@ -323,9 +322,26 @@ public class InicialV2 extends javax.swing.JFrame {
 
         mapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pets/telasMob/mapa.png"))); // NOI18N
         mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        jPanel1.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 300, 210));
+        jPanel1.add(mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 210));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 156, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("REDE");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("PETS");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testes/principal.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -451,7 +467,6 @@ public class InicialV2 extends javax.swing.JFrame {
         loadImage(dadosAnimal.get(this.getSelected())[0], this.atualClicked);
         
         
-        //System.out.println(novoT.getName());
         
         for(j = 0; dadosAnimal.get(j)[0] != novoT.getName(); j++){
 
@@ -584,6 +599,17 @@ public class InicialV2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_botaoEditarActionPerformed
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        Rede rede = null;
+        try {
+            rede = new Rede();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        rede.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -637,6 +663,8 @@ public class InicialV2 extends javax.swing.JFrame {
     private javax.swing.JLabel campoTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

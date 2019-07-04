@@ -354,7 +354,6 @@ public class PersistenciaArquivo {
             int contador = 0;
             while ((linha = bufferedReader.readLine()) != null) {
                 //Aqui imprimimos a linha
-                //System.out.println(linha);
                 int i=0;
                 int j=0;
                 String nome="";
@@ -438,7 +437,6 @@ public class PersistenciaArquivo {
         boolean verificador = false;
         while ((linha = bufferedReader.readLine()) != null) {
             //Aqui imprimimos a linha
-            //System.out.println(linha);
             int i=0;
             int j=0;
             String nome="";
