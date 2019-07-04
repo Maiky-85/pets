@@ -35,7 +35,7 @@ public class Menu extends javax.swing.JFrame {
         
         campoNome.setText(contaLogada.getCampo(2));
         
-        if(campoCelular.getText().length() > 7){
+        if(contaLogada.getCampo(5).length() > 7){
             campoCelular.setText(contaLogada.getCampo(5));
         }
         else{
