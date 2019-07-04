@@ -222,6 +222,7 @@ public class InicialV2 extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
         jPanel4.setAlignmentY(0.0F);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botaoEditar.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         botaoEditar.setForeground(new java.awt.Color(153, 153, 153));
@@ -235,6 +236,7 @@ public class InicialV2 extends javax.swing.JFrame {
                 botaoEditarActionPerformed(evt);
             }
         });
+        jPanel4.add(botaoEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 6, -1, -1));
 
         botaoDeletar.setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
         botaoDeletar.setForeground(new java.awt.Color(153, 153, 153));
@@ -248,133 +250,71 @@ public class InicialV2 extends javax.swing.JFrame {
                 botaoDeletarActionPerformed(evt);
             }
         });
+        jPanel4.add(botaoDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 112, -1, -1));
 
         labelNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         labelNome.setForeground(new java.awt.Color(102, 102, 102));
         labelNome.setText("Nome:");
+        jPanel4.add(labelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 28, -1, -1));
 
         labelTipo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         labelTipo.setForeground(new java.awt.Color(102, 102, 102));
         labelTipo.setText("Tipo:");
+        jPanel4.add(labelTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 50, -1, -1));
 
         labelCor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         labelCor.setForeground(new java.awt.Color(102, 102, 102));
         labelCor.setText("Cor:");
+        jPanel4.add(labelCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 72, -1, 15));
 
         labelRaca.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         labelRaca.setForeground(new java.awt.Color(102, 102, 102));
         labelRaca.setText("Raça:");
+        jPanel4.add(labelRaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 91, -1, -1));
 
         labelPorte.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         labelPorte.setForeground(new java.awt.Color(102, 102, 102));
         labelPorte.setText("Porte:");
+        jPanel4.add(labelPorte, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 115, -1, -1));
 
         campoNome.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoNome.setForeground(new java.awt.Color(102, 102, 102));
         campoNome.setText("?");
+        jPanel4.add(campoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 27, 118, -1));
 
         campoTipo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoTipo.setForeground(new java.awt.Color(102, 102, 102));
         campoTipo.setText("?");
+        jPanel4.add(campoTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 49, 118, -1));
 
         campoCor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoCor.setForeground(new java.awt.Color(102, 102, 102));
         campoCor.setText("?");
+        jPanel4.add(campoCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 70, 118, -1));
 
         campoRaca.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoRaca.setForeground(new java.awt.Color(102, 102, 102));
         campoRaca.setText("?");
+        jPanel4.add(campoRaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 91, 118, -1));
 
         campoPorte.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         campoPorte.setForeground(new java.awt.Color(102, 102, 102));
         campoPorte.setText("?");
+        jPanel4.add(campoPorte, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 115, 118, -1));
 
         labelFoto.setBackground(new java.awt.Color(102, 102, 102));
         labelFoto.setToolTipText("Foto");
         labelFoto.setOpaque(true);
         labelFoto.setPreferredSize(new java.awt.Dimension(78, 78));
+        jPanel4.add(labelFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 27, -1, -1));
 
         bgFoto.setBackground(new java.awt.Color(255, 255, 255));
         bgFoto.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 4, 1, 4, new java.awt.Color(255, 186, 120)));
         bgFoto.setOpaque(true);
         bgFoto.setPreferredSize(new java.awt.Dimension(86, 80));
+        jPanel4.add(bgFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 26, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(bgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(botaoEditar))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(botaoDeletar)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelCor)
-                    .addComponent(labelTipo)
-                    .addComponent(labelRaca)
-                    .addComponent(labelNome)
-                    .addComponent(labelPorte))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoRaca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoCor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoPorte, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botaoEditar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(bgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoDeletar)
-                .addGap(22, 22, 22))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(labelNome)
-                        .addGap(4, 4, 4)
-                        .addComponent(labelTipo)
-                        .addGap(4, 4, 4)
-                        .addComponent(labelCor, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelRaca)
-                            .addComponent(campoRaca))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelPorte))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(campoNome)
-                        .addGap(4, 4, 4)
-                        .addComponent(campoTipo)
-                        .addGap(3, 3, 3)
-                        .addComponent(campoCor)
-                        .addGap(24, 24, 24)
-                        .addComponent(campoPorte)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, 140));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 300, 150));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(300, 235));
@@ -434,13 +374,13 @@ public class InicialV2 extends javax.swing.JFrame {
                     inicial.setVisible(true);
                 }
                 
-                Path p = Paths.get("fotos\\" + foto);
+               /* Path p = Paths.get("fotos\\" + foto);
                 
                 try {
                     Files.delete(p);
                 } catch (IOException e) {
                     throw new Exception("Não foi possível apagar foto");          
-                }
+                }*/
             }
         } catch (Exception ex) {          
         }
