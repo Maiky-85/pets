@@ -371,34 +371,39 @@ public class InicialV2 extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoAdicionarActionPerformed
 
     private void botaoDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeletarActionPerformed
-        String nome = dadosAnimal.get(this.getSelected())[1];
-        String foto = dadosAnimal.get(this.getSelected())[0];
-        PersistenciaArquivo deletar = new PersistenciaArquivo();
-        boolean tela;
-        try {
-            
-            int input = JOptionPane.showConfirmDialog(null, "Deseja realmente deletar " + nome + "?", "", JOptionPane.YES_NO_OPTION);
-            
-            if(input == 0){
-                
-                tela=deletar.deletarDadosAnimal(nome,"animal_"); //Deletar animal do parâmetro nome
-                if (tela){
+        
+        if(dadosAnimal.size() > 1){
+        
+            String nome = dadosAnimal.get(this.getSelected())[1];
+            String foto = dadosAnimal.get(this.getSelected())[0];
+            PersistenciaArquivo deletar = new PersistenciaArquivo();
+            boolean tela;
+            try {
 
-                    InicialV2 inicial;
-                    inicial = new InicialV2();
-                    this.dispose();
-                    inicial.setVisible(true);
+                int input = JOptionPane.showConfirmDialog(null, "Deseja realmente deletar " + nome + "?", "", JOptionPane.YES_NO_OPTION);
+
+                if(input == 0){
+
+                    tela=deletar.deletarDadosAnimal(nome,"animal_"); //Deletar animal do parâmetro nome
+                    if (tela){
+
+                        InicialV2 inicial;
+                        inicial = new InicialV2();
+                        this.dispose();
+                        inicial.setVisible(true);
+                    }
+
+                   /* Path p = Paths.get("fotos\\" + foto);
+
+                    try {
+                        Files.delete(p);
+                    } catch (IOException e) {
+                        throw new Exception("Não foi possível apagar foto");          
+                    }*/
                 }
-                
-               /* Path p = Paths.get("fotos\\" + foto);
-                
-                try {
-                    Files.delete(p);
-                } catch (IOException e) {
-                    throw new Exception("Não foi possível apagar foto");          
-                }*/
+            } catch (Exception ex) {          
             }
-        } catch (Exception ex) {          
+
         }
     }//GEN-LAST:event_botaoDeletarActionPerformed
 
@@ -592,10 +597,12 @@ public class InicialV2 extends javax.swing.JFrame {
 
     private void botaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarActionPerformed
         
-        CadastroAnimalV2 animalEdit = new CadastroAnimalV2(dadosAnimal, this.getSelected());
-        animalEdit.setVisible(true);
-        this.dispose();
         
+        if(dadosAnimal.size() > 1){
+            CadastroAnimalV2 animalEdit = new CadastroAnimalV2(dadosAnimal, this.getSelected());
+            animalEdit.setVisible(true);
+            this.dispose();
+        }
         
     }//GEN-LAST:event_botaoEditarActionPerformed
 

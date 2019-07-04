@@ -405,6 +405,8 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
         return this.nomeFoto;
     }
     
+    
+    
     private void botaoFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFotoActionPerformed
         
         JFileChooser foto = new JFileChooser();
@@ -427,6 +429,22 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
            
             name = f.getName();
         }
+        
+        
+        File fTeste = new File("fotos/", name);
+        
+        
+        //System.out.print(fTeste.exists());
+        //System.out.print(name+"\r\n");
+        
+        if(fTeste.exists()){
+            name = "(nova)" + name;
+        }
+        else{
+            
+        }
+        
+        //System.out.print(name);
         
         //salvar foto na pasta
         PersistenciaArquivo persistencia = new PersistenciaArquivo();

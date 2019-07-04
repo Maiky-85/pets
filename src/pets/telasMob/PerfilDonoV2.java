@@ -514,6 +514,19 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
 
             name = f.getName();
         }
+        
+        
+        File fTeste = new File("fotos/", name);
+        
+        
+        if(fTeste.exists()){
+            name = "(nova)" + name;
+        }
+        else{
+            
+        }
+        
+        
         //salvar foto na pasta
         PersistenciaArquivo persistencia = new PersistenciaArquivo();
         try {

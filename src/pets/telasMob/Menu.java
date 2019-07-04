@@ -83,7 +83,6 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(645, 140));
         setMinimumSize(new java.awt.Dimension(301, 534));
-        setPreferredSize(new java.awt.Dimension(301, 540));
         setResizable(false);
 
         jPanelFundo.setBackground(new java.awt.Color(51, 51, 51));
@@ -138,7 +137,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoPerfilActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 104, 20));
+        jPanel6.add(botaoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 210, 20));
 
         botaoConta.setBackground(new java.awt.Color(51, 51, 51));
         botaoConta.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -157,7 +156,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoContaActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 145, 20));
+        jPanel6.add(botaoConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 210, 20));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setFocusable(false);
@@ -211,7 +210,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoClinicasActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoClinicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 89, 20));
+        jPanel6.add(botaoClinicas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 210, 20));
 
         naoAlertas.setBackground(new java.awt.Color(51, 51, 51));
         naoAlertas.setFocusable(false);
@@ -247,7 +246,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoAlertasActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoAlertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 89, 20));
+        jPanel6.add(botaoAlertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 210, 20));
 
         naoAmigos.setBackground(new java.awt.Color(51, 51, 51));
         naoAmigos.setFocusable(false);
@@ -283,7 +282,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoAmigosActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoAmigos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 140, 20));
+        jPanel6.add(botaoAmigos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 210, 20));
 
         naoConfig.setBackground(new java.awt.Color(51, 51, 51));
         naoConfig.setFocusable(false);
@@ -319,7 +318,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoConfigActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 133, 20));
+        jPanel6.add(botaoConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 210, 20));
 
         naoPerguntas.setBackground(new java.awt.Color(51, 51, 51));
         naoPerguntas.setFocusable(false);
@@ -355,7 +354,7 @@ public class Menu extends javax.swing.JFrame {
                 botaoPerguntasActionPerformed(evt);
             }
         });
-        jPanel6.add(botaoPerguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 183, 20));
+        jPanel6.add(botaoPerguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 210, 20));
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
 
@@ -393,7 +392,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoPerfilActionPerformed
 
     private void botaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoContaActionPerformed
-        int nome = JOptionPane.showConfirmDialog(null, "Deseja sair?");
+        int nome = JOptionPane.showConfirmDialog(null, "Deseja sair?", "", JOptionPane.YES_NO_OPTION);
         if (nome==0){
             TelaLogin login = new TelaLogin();
             login.setVisible(true);
