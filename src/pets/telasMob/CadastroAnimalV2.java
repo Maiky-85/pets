@@ -4,6 +4,7 @@ package pets.telasMob;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -27,11 +28,16 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     /**
      * Creates new form CadastroAnimalV2
      */
+    
+    //criacao de animal
     public CadastroAnimalV2() {
         initComponents();
+        
+        //verificador2 é true se for edição de animal, e false se for criação
         verificador2 = false;
     }
     
+    //edicao de animal
     public CadastroAnimalV2(List<String[]> dadosAnimal, int posAnimal) {
         initComponents();
         
@@ -410,6 +416,7 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
     
     private void botaoFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoFotoActionPerformed
         
+        //escolhe foto e só aceita nos formatos definidos
         JFileChooser foto = new JFileChooser();
         FileNameExtensionFilter tipoFoto = new FileNameExtensionFilter(".jpg, .jpeg, .png", "jpg", "jpeg", "png");
         foto.setFileFilter(tipoFoto);
@@ -430,12 +437,9 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
             name = f.getName();
         }
         
-        
-        File fTeste = new File("fotos/", name);
-        
-        
-        
         //confere se já existe uma foto com o nome da nova foto, se sim, altera o nome da nova foto
+        File fTeste = new File("fotos/", name);
+
         if(fTeste.exists()){
             name = "(nova)" + name;
         }
@@ -450,14 +454,15 @@ public class CadastroAnimalV2 extends javax.swing.JFrame {
 
             persistencia.salvarFoto(f, name);
             this.setNomeFoto(name);
-
+            
+            //se for edicao deleta a foto anterior da pasta
             if(this.getNovaFoto() != null){
                 if(!this.getNomeFoto().equals(this.getNovaFoto())){
                     Path p = Paths.get("fotos\\" + this.getNovaFoto());
                     try {
                         Files.delete(p);
-                    } catch (IOException ex) {
-                        Logger.getLogger(CadastroAnimalV2.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (NoSuchFileException ex) {
+                        System.err.format("Não foi possível deletar a imagem%n" + "%s: não encontrado. ", p);
                     }
                 }
 

@@ -10,6 +10,7 @@ import pets.persistenciaArquivo.PersistenciaArquivo;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Level;
@@ -539,8 +540,8 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
                     Path p = Paths.get("fotos\\" + this.getNovaFoto());
                     try {
                         Files.delete(p);
-                    } catch (IOException ex) {
-
+                    } catch (NoSuchFileException ex) {
+                        System.err.format("Não foi possível deletar a imagem%n" + "%s: não encontrado. ", p);
                     }
                 }
 
@@ -549,9 +550,9 @@ public class PerfilDonoV2 extends javax.swing.JFrame {
                 this.setNovaFoto("");
             }
 
-            } catch (Exception ex) {
-
-            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }   
 
     }//GEN-LAST:event_botaoFotoActionPerformed
 

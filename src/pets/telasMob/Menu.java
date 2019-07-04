@@ -13,7 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pets.modelo.ContaLogada;
-import pets.modelo.Dono;
 
 
 /**
@@ -29,9 +28,8 @@ public class Menu extends javax.swing.JFrame {
     public Menu() throws IOException {
         initComponents();
         
-        
+        //passa para o menu foto, nome e celular do dono da conta
         ContaLogada contaLogada = new ContaLogada();
-        Dono dTeste = new Dono();
         
         campoNome.setText(contaLogada.getCampo(2));
         

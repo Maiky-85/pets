@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -42,12 +43,15 @@ public class InicialV2 extends javax.swing.JFrame {
     public InicialV2() throws IOException {
         initComponents();
         
+        //pega a posicao x do label da foto do animal para usar como referência para as que forem criadas
         this.setPosX(jLabel2.getX());
         
+        //pega o arquivo de animais do dono da conta
         ContaLogada contaLogada = new ContaLogada();
         String conta=contaLogada.getEmailLogado();
         File arq = new File("animal_" + conta + ".csv");
         
+        //confere se o arquivo existe e cria uma lista de lista dos animais
         if(arq.exists()){
             FileReader fr = null;
             try {
@@ -69,6 +73,7 @@ public class InicialV2 extends javax.swing.JFrame {
                 Logger.getLogger(InicialV2.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+            //s
             if (dadosAnimal.size() > 1){         
                 jLabel2.setPreferredSize(new Dimension(43, 43));
                 jLabel2.setSize(43,43);
@@ -396,8 +401,8 @@ public class InicialV2 extends javax.swing.JFrame {
 
                     try {
                         Files.delete(p);
-                    } catch (IOException e) {
-                        throw new Exception("Não foi possível apagar foto");          
+                    } catch (NoSuchFileException ex) {
+                        System.err.format("Não foi possível deletar a imagem%n" + "%s: não encontrado. ", p);
                     }
                 }
             } catch (Exception ex) {          

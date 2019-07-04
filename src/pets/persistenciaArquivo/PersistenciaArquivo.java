@@ -61,7 +61,6 @@ public class PersistenciaArquivo {
                 escreveArq.close();
                 
             } catch (IOException e) {
-                e.printStackTrace();
                 throw new Exception ("Não foi possível salvar Clínica.");
             }
         }
@@ -94,10 +93,9 @@ public class PersistenciaArquivo {
             escreveArq.flush();
             escreveArq.close();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new Exception ("Não foi possível salvar Clínica.");
-        }
+            } catch (IOException e) {
+                throw new Exception ("Não foi possível salvar Clínica.");
+            }
         }        
     }    
     
@@ -134,7 +132,6 @@ public class PersistenciaArquivo {
                 escreveArq.close();
 
             } catch (IOException e) {
-                e.printStackTrace();
                 throw new Exception ("Não foi possível salvar Dono.");
             }
         }
@@ -170,10 +167,9 @@ public class PersistenciaArquivo {
             //escreveArq.flush();
             escreveArq.close();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new Exception ("Não foi possível salvar Dono.");
-        }
+            } catch (IOException e) {
+                throw new Exception ("Não foi possível salvar Dono.");
+            }
         }
     }
     
@@ -399,7 +395,7 @@ public class PersistenciaArquivo {
                 return true;
             
 	} catch (IOException e) {
-            e.printStackTrace();
+            throw new Exception ("Não foi possível atualizar animal.");
         }
         
         return false;
@@ -412,50 +408,50 @@ public class PersistenciaArquivo {
         File arq = new File(arquivo + conta + ".csv");
         File newArq = new File("tempArquivo.csv");
 
-    try {
-        FileReader fileReader = new FileReader(arq);
-        FileWriter fileWriter = new FileWriter(newArq);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        try {
+            FileReader fileReader = new FileReader(arq);
+            FileWriter fileWriter = new FileWriter(newArq);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        String linha = "";
+            String linha = "";
 
-        boolean verificador = false;
-        while ((linha = bufferedReader.readLine()) != null) {
-            int i=0;
-            int j=0;
-            String nome="";
-            while (j <= 1){
-                if (j==1 && linha.charAt(i) != ';')
-                    nome = nome + linha.charAt(i);
-                if (linha.charAt(i) == ';')
-                    j+=1;
-                i=i+1;
+            boolean verificador = false;
+            while ((linha = bufferedReader.readLine()) != null) {
+                int i=0;
+                int j=0;
+                String nome="";
+                while (j <= 1){
+                    if (j==1 && linha.charAt(i) != ';')
+                        nome = nome + linha.charAt(i);
+                    if (linha.charAt(i) == ';')
+                        j+=1;
+                    i=i+1;
+                }
+
+                if (!nome.equals(remover)){
+                    fileWriter.write(linha + "\r\n");          
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, remover + " removido.");
+                    verificador = true;
+                }        
             }
-            
-            if (!nome.equals(remover)){
-                fileWriter.write(linha + "\r\n");          
-            }
-            else{
-                JOptionPane.showMessageDialog(null, remover + " removido.");
-                verificador = true;
-            }        
-        }
-        if (!verificador)
-            JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
-            //liberamos o fluxo dos objetos ou fechamos o arquivo
-        
-                
-        fileWriter.close();
-        fileReader.close();     
-        bufferedReader.close();
-        
-        arq.delete();
-        newArq.renameTo(new File(arquivo + conta + ".csv")); 
-        if (verificador)
-            return true;
+            if (!verificador)
+                JOptionPane.showMessageDialog(null, remover + " não cadastrado.");
+                //liberamos o fluxo dos objetos ou fechamos o arquivo
+
+
+            fileWriter.close();
+            fileReader.close();     
+            bufferedReader.close();
+
+            arq.delete();
+            newArq.renameTo(new File(arquivo + conta + ".csv")); 
+            if (verificador)
+                return true;
 	} catch (IOException e) {
-    	e.printStackTrace();
-        throw new Exception ("Não foi possível deletar nome.");
+            
+            throw new Exception ("Não foi possível deletar nome.");
         }
     return false;
     }
@@ -477,7 +473,6 @@ public class PersistenciaArquivo {
 
         } catch (IOException e) {
             e.printStackTrace();
-            throw new Exception ("Não foi possível salvar Animal.");
         }
      }  
     
@@ -499,7 +494,7 @@ public class PersistenciaArquivo {
                     Path pathy = Paths.get("fotos\\" + name);
                     Files.write(pathy, bFile);
                 } catch (IOException e) {
-                    
+                    throw new Exception ("Não foi possível salvar foto.");
                 }
 
             } catch (IOException e) {
@@ -509,7 +504,7 @@ public class PersistenciaArquivo {
                     try {
                         fileInputStream.close();
                     } catch (IOException e) {
-
+                        e.printStackTrace();
                     }
                 }
 
