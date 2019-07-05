@@ -21,7 +21,7 @@ A proposta é desenvolver um sistema para rastreamento de animais domésticos pe
 
 ### 4. PROJECT MODEL CANVAS <br>
 
-![Alt text]()
+![Alt text](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/pmcInicial.png)
 
 
 ### 5. DIAGRAMA DE CLASSE <br>
@@ -30,5 +30,5 @@ A proposta é desenvolver um sistema para rastreamento de animais domésticos pe
 
 
 ### 6. PROTÓTIPO DE TELAS <br>
-[Protótipos de Telas]()
+[Protótipos de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
 
