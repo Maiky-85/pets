@@ -1,6 +1,13 @@
 # petSOS
 Trabalho desenvolvido durante a disciplina de Programação Orientada a Objetos no semestre 2019/1.
 
+### SUMÁRIO <br>
+1.  COMPONENTES
+2.  DOCUMENTAÇÃO INICIAL
+3.  DESCRIÇÃO DO PROBLEMA
+4.  PROJECT MODEL CANVAS
+5.  PROTÓTIPO DE TELAS
+6.  DIAGRAMA DE CLASSE
 
 ### 1. COMPONENTES <br>
 Integrantes do grupo:
@@ -26,7 +33,7 @@ A proposta é desenvolver um sistema para rastreamento de animais domésticos pe
 
 
 ### 5. PROTÓTIPO DE TELAS <br>
-* [Protótipo de Telas](#a)(https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
+* [Protótipo de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
 
 ### 6. DIAGRAMA DE CLASSE <br>
 
