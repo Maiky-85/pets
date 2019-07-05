@@ -26,7 +26,7 @@ A proposta é desenvolver um sistema para rastreamento de animais domésticos pe
 
 
 ### 5. PROTÓTIPO DE TELAS <br>
-* [Protótipos de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
+* [Protótipo de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
 
 ### 6. DIAGRAMA DE CLASSE <br>
 
