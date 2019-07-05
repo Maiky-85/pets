@@ -656,7 +656,7 @@ public class InicialV2 extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         Rede rede = null;
         try {
-            rede = new Rede();
+            rede = new Rede(dadosAnimal);
         } catch (IOException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
