@@ -10,9 +10,10 @@ Integrantes do grupo:
 
 ### 2. DOCUMENTAÇÃO INICIAL <br>
 
-[Diário de Bordo](https://docs.google.com/spreadsheets/d/1GQgeG8aE4QZdur7803_o1_vOC_cvYXlDJjpYhBjP4yo/edit?usp=sharing)
+* [Canvas de Aquecimento](https://docs.google.com/presentation/d/1dqixlyVd_Q4fs1I9Np_MCjCrg9seJaWzCX_ZSbCcXME/edit?usp=sharing)
 
-[Canvas de Aquecimento](https://docs.google.com/presentation/d/1dqixlyVd_Q4fs1I9Np_MCjCrg9seJaWzCX_ZSbCcXME/edit?usp=sharing)
+* [Diário de Bordo](https://docs.google.com/spreadsheets/d/1GQgeG8aE4QZdur7803_o1_vOC_cvYXlDJjpYhBjP4yo/edit?usp=sharing)
+
 
 ### 3. DESCRIÇÃO DO PROBLEMA <br>
 
@@ -30,5 +31,5 @@ A proposta é desenvolver um sistema para rastreamento de animais domésticos pe
 
 
 ### 6. PROTÓTIPO DE TELAS <br>
-[Protótipos de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
+* [Protótipos de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
 
