@@ -7,7 +7,6 @@ Trabalho desenvolvido durante a disciplina de Programação Orientada a Objetos 
 3.  DESCRIÇÃO DO PROBLEMA
 4.  PROJECT MODEL CANVAS
 5.  PROTÓTIPO DE TELAS
-6.  DIAGRAMA DE CLASSE
 
 ### 1. COMPONENTES <br>
 Integrantes do grupo:
@@ -18,6 +17,8 @@ Integrantes do grupo:
 ### 2. DOCUMENTAÇÃO INICIAL <br>
 
 * [Canvas de Aquecimento](https://docs.google.com/presentation/d/1dqixlyVd_Q4fs1I9Np_MCjCrg9seJaWzCX_ZSbCcXME/edit?usp=sharing)
+
+* [Diagrama de Classe Inicial](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/diagramaInicial.png)
 
 * [Diário de Bordo](https://docs.google.com/spreadsheets/d/1GQgeG8aE4QZdur7803_o1_vOC_cvYXlDJjpYhBjP4yo/edit?usp=sharing)
 
@@ -35,6 +36,4 @@ A proposta é desenvolver um sistema para rastreamento de animais domésticos pe
 ### 5. PROTÓTIPO DE TELAS <br>
 * [Protótipo de Telas](https://github.com/ykiam-dyolf/pets/blob/master/documentacao/prototipoTelasV2.pdf)
 
-### 6. DIAGRAMA DE CLASSE <br>
 
-![Alt text]()
